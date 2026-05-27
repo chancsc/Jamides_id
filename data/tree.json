@@ -209,12 +209,13 @@
     "q_amphimuta_sub": {
       "type": "question",
       "id": "q_amphimuta_sub",
-      "question": "Within the echelon-spot group, what is the shape of the postdiscal spots and how are they arranged on the forewing?",
-      "hint": "Three groups share the echelon arrangement of HW spots 5–7. Spot shape and FW spot alignment help separate them. Detailed features for the aedias group will be added when the species-level key is provided.",
+      "question": "Within the amphimuta group (echelon HW spots 5–7), which subgroup best fits the specimen?",
+      "hint": "Four subgroups. Muta: spots more quadrate/banded, FW space 2 stepped toward termen. Perimuta: FW spots 2 and 3 in line. Kurzi: tailless, rounded HW tornus, HW band widely dislocated at vein 2. Amphimuta (largest, 12 spp.): spots rounded, cilia often prolonged into a short tooth at vein 2.",
       "choices": [
-        { "label": "Spots more quadrate; FW space 2 spot is stepped outward toward the termen (amphimuta — muta subgroup)", "next": "g_amphimuta_muta" },
-        { "label": "Postdiscal spots in FW spaces 2 and 3 are in line (amphimuta — perimuta subgroup)", "next": "g_amphimuta_perimuta" },
-        { "label": "Spots rounded; does not fit muta or perimuta pattern (aedias group — further details pending)", "next": "g_aedias" }
+        { "label": "Spots more quadrate/banded; FW space 2 spot stepped outward toward termen (muta subgroup)", "next": "g_amphimuta_muta" },
+        { "label": "FW postdiscal spots in spaces 2 and 3 are in line (perimuta subgroup)", "next": "g_amphimuta_perimuta" },
+        { "label": "Tailless; rounded HW tornus; HW postdiscal band widely dislocated at vein 2 (kurzi subgroup)", "next": "r_kurzi" },
+        { "label": "Spots rounded; cilia often prolonged into a short tooth at vein 2 (amphimuta subgroup)", "next": "q_amph_s1" }
       ]
     },
 
@@ -473,23 +474,25 @@
       "type": "group",
       "id": "g_amphimuta_muta",
       "group_name": "amphimuta group — muta subgroup",
-      "description": "Postdiscal spots are more quadrate (squarish). The spot in FW space 2 is stepped out toward the termen, offset from the main band.",
+      "description": "Postdiscal spots are more quadrate (squarish/banded). The FW postdiscal spot in space 2 is stepped outward toward the termen, offset from the main band. Three Malaysian species.",
       "key_features": [
         "HW spots 5, 6, 7 in echelon (centres in straight line)",
-        "Spots more quadrate in shape",
+        "Spots more quadrate/banded in shape",
         "FW space 2 spot stepped outward toward termen"
-      ]
+      ],
+      "next": "q_muta_s1"
     },
 
     "g_amphimuta_perimuta": {
       "type": "group",
       "id": "g_amphimuta_perimuta",
       "group_name": "amphimuta group — perimuta subgroup",
-      "description": "Postdiscal spots in spaces 2 and 3 on the forewing underside are in line with each other.",
+      "description": "The FW postdiscal spots in spaces 2 and 3 are in line with each other. Two Malaysian species, one easily recognized by a yellowish discal area on the HW underside.",
       "key_features": [
         "HW spots 5, 6, 7 in echelon (centres in straight line)",
         "FW postdiscal spots in spaces 2 and 3 are in line"
-      ]
+      ],
+      "next": "q_perimuta_s1"
     },
 
     "g_hypomuta": {
@@ -1143,6 +1146,322 @@
       "name": "Arhopala denta",
       "common_name": "",
       "note": "Distinctive SHORT tail — only ~2.5 mm (others in the group have 3.5–4.0 mm). FW: basal spot present in space 10. Underside hair-brown with at most a slight pinkish glaze. Male: brilliant blue, black border reduced to a thread."
+    },
+
+    "r_kurzi": {
+      "type": "result",
+      "id": "r_kurzi",
+      "taxon_id": null,
+      "name": "Arhopala kurzi",
+      "common_name": "",
+      "note": "Tailless with a distinctly rounded HW tornus. HW postdiscal band widely dislocated at vein 2. Male: purple-blue with a thread-like black border. Single member of the kurzi subgroup."
+    },
+
+    "q_amph_s1": {
+      "type": "question",
+      "id": "q_amph_s1",
+      "question": "Does the hindwing have a short tail (tooth-like projection) at vein 2?",
+      "hint": "A. delta is the ONLY tailed member of the amphimuta subgroup. All other amphimuta subgroup species are tailless.",
+      "choices": [
+        { "label": "Yes — tailed at vein 2", "next": "r_delta" },
+        { "label": "No — tailless", "next": "q_amph_s2" }
+      ]
+    },
+
+    "q_amph_s2": {
+      "type": "question",
+      "id": "q_amph_s2",
+      "question": "On the forewing underside, is the basal cell spot absent?",
+      "hint": "A. avathina avathina is recognized by the absence of the basal cell spot on the FW underside; additionally, the HW postdiscal band is completely dislocated at vein 2. All other amphimuta subgroup members have a basal cell spot.",
+      "choices": [
+        { "label": "Yes — no basal cell spot on FW underside (HW band also completely dislocated at vein 2)", "next": "r_avathina_avathina" },
+        { "label": "No — basal cell spot present on FW underside", "next": "q_amph_s3" }
+      ]
+    },
+
+    "q_amph_s3": {
+      "type": "question",
+      "id": "q_amph_s3",
+      "question": "Is there a distinct white patch on the hindwing cilia just above the tornal lobe?",
+      "hint": "A. norda has a small but distinctive white patch on the HW cilia just above the tornal lobe, and also has less rounded (more angular) postdiscal spots compared to A. major.",
+      "choices": [
+        { "label": "Yes — white patch on HW cilia above tornal lobe; postdiscal spots less rounded", "next": "r_norda" },
+        { "label": "No — no white patch on HW cilia", "next": "q_amph_s4" }
+      ]
+    },
+
+    "q_amph_s4": {
+      "type": "question",
+      "id": "q_amph_s4",
+      "question": "Is the male's black border broad, 1.5 mm or wider?",
+      "hint": "A. major has a border expanding from 2.0 mm at tornus to 3.0 mm at apex (blue upperside). A. stubbsi has a broad ~2.0 mm border but is dull bluish purple. All others have narrow borders (0.5 mm or thread-like).",
+      "choices": [
+        { "label": "Yes — border ≥1.5 mm wide", "next": "q_amph_broad" },
+        { "label": "No — border narrow (0.5 mm or thread-like)", "next": "q_amph_s5" }
+      ]
+    },
+
+    "q_amph_broad": {
+      "type": "question",
+      "id": "q_amph_broad",
+      "question": "Is the male distinctly blue above, with the border widening from ~2.0 mm at the tornus to ~3.0 mm at the apex?",
+      "hint": "A. major major is bluer than A. amphimuta; its border expands toward the apex. A. stubbsi is dull bluish purple with a broad but even ~2.0 mm border.",
+      "choices": [
+        { "label": "Yes — distinctly blue; border expands 2.0→3.0 mm from tornus to apex", "next": "r_major_major" },
+        { "label": "No — dull bluish purple; border broad but even (~2.0 mm)", "next": "r_stubbsi" }
+      ]
+    },
+
+    "q_amph_s5": {
+      "type": "question",
+      "id": "q_amph_s5",
+      "question": "Is the male's black border reduced to a thread (very narrow, well under 0.5 mm)?",
+      "hint": "Thread-like border species: A. moolaiana yajuna (shining violet-blue; female blue reaches HW termen) and A. alica (dark dull purple; Bornean endemic). Regular 0.5 mm border species: A. amphimuta, A. sceva, A. zylda, A. baluensis, A. dajagaka.",
+      "choices": [
+        { "label": "Yes — border thread-like", "next": "q_amph_thread" },
+        { "label": "No — border regular ~0.5 mm", "next": "q_amph_s6" }
+      ]
+    },
+
+    "q_amph_thread": {
+      "type": "question",
+      "id": "q_amph_thread",
+      "question": "Is the male upperside a shining violet-blue, and does the female's blue colour extend to the hindwing termen?",
+      "hint": "A. moolaiana yajuna: shining violet-blue male; female blue reaches HW termen. A. alica: dark, dull purple male; Bornean endemic — found only in Borneo, not the Malay Peninsula.",
+      "choices": [
+        { "label": "Yes — shining violet-blue; female blue reaches HW termen (Peninsula)", "next": "r_moolaiana_yajuna" },
+        { "label": "No — dark dull purple; female blue does not reach HW termen (Bornean)", "next": "r_alica" }
+      ]
+    },
+
+    "q_amph_s6": {
+      "type": "question",
+      "id": "q_amph_s6",
+      "question": "Is the hindwing underside postdiscal series dislocated at vein 2, and is the species noticeably smaller than its allies?",
+      "hint": "A. sceva indra has the HW postdiscal series clearly dislocated at vein 2 and is a smaller species; male is dark violet-blue. In the remaining species (amphimuta, zylda, baluensis, dajagaka), the HW postdiscal band is not strongly dislocated at vein 2.",
+      "choices": [
+        { "label": "Yes — HW postdiscal series dislocated at vein 2; smaller species; male dark violet-blue", "next": "r_sceva_indra" },
+        { "label": "No — HW band not strongly dislocated at vein 2", "next": "q_amph_s7" }
+      ]
+    },
+
+    "q_amph_s7": {
+      "type": "question",
+      "id": "q_amph_s7",
+      "question": "Is the male a warm violet-purple (with a reddish hue rather than blue), and is the FW postdiscal spot in space 3 an oblique oval?",
+      "hint": "A. amphimuta amphimuta is violet-purple (warmer/redder than violet-blue) with the FW spot 3 usually an oblique oval, and the FW band slightly dislocated at vein 4. A. zylda, A. baluensis, and A. dajagaka are more violet-blue.",
+      "choices": [
+        { "label": "Yes — warm violet-purple; FW spot 3 oblique oval; FW band slightly dislocated at vein 4", "next": "r_amphimuta_amphimuta" },
+        { "label": "No — violet-blue (not warm purple)", "next": "q_amph_s8" }
+      ]
+    },
+
+    "q_amph_s8": {
+      "type": "question",
+      "id": "q_amph_s8",
+      "question": "Does the female have exceptionally narrow borders (narrower than typical 0.5 mm)?",
+      "hint": "A. zylda elioti: female has exceptionally narrow borders (a diagnostic feature). A. baluensis and A. dajagaka are Bornean endemics. If the specimen is from the Malay Peninsula, it is most likely A. zylda.",
+      "choices": [
+        { "label": "Yes — female exceptionally narrow-bordered (Peninsula species)", "next": "r_zylda_elioti" },
+        { "label": "No — female with normal borders (Bornean endemic)", "next": "q_amph_borneo" }
+      ]
+    },
+
+    "q_amph_borneo": {
+      "type": "question",
+      "id": "q_amph_borneo",
+      "question": "Does the female have unusually thick black borders and distinctly darker venation on the upperside?",
+      "hint": "A. dajagaka: female has thick black borders and darker venation. A. baluensis: HW cilia lacks the white spot in space 1a that is present in some allied species.",
+      "choices": [
+        { "label": "Yes — female with thick black borders and darker venation", "next": "r_dajagaka" },
+        { "label": "No — HW cilia lacks white spot in space 1a; female without thick borders", "next": "r_baluensis" }
+      ]
+    },
+
+    "r_delta": {
+      "type": "result",
+      "id": "r_delta",
+      "taxon_id": null,
+      "name": "Arhopala delta",
+      "common_name": "",
+      "note": "The ONLY tailed member of the amphimuta subgroup — short tooth-like tail at vein 2. Male: deep violet with a narrow, regular black border. Part of the amphimuta subgroup (HW spots 5–7 in echelon; spots rounded)."
+    },
+
+    "r_avathina_avathina": {
+      "type": "result",
+      "id": "r_avathina_avathina",
+      "taxon_id": null,
+      "name": "Arhopala avathina avathina",
+      "common_name": "",
+      "note": "Distinctive: FW underside lacks a basal cell spot (absent, not obscure). HW postdiscal band completely dislocated at vein 2. Otherwise similar to other amphimuta subgroup members."
+    },
+
+    "r_norda": {
+      "type": "result",
+      "id": "r_norda",
+      "taxon_id": null,
+      "name": "Arhopala norda",
+      "common_name": "",
+      "note": "Distinguished from A. major by the small white patch on the HW cilia just above the tornal lobe, and by less rounded (more angular) postdiscal spots on the underside."
+    },
+
+    "r_major_major": {
+      "type": "result",
+      "id": "r_major_major",
+      "taxon_id": null,
+      "name": "Arhopala major major",
+      "common_name": "",
+      "note": "Both sexes bluer than A. amphimuta above. Male: FW black border expands from 2.0 mm at tornus to 3.0 mm at apex. Underside similar to A. amphimuta. HW cilia often prolonged into a short tooth at vein 2."
+    },
+
+    "r_stubbsi": {
+      "type": "result",
+      "id": "r_stubbsi",
+      "taxon_id": null,
+      "name": "Arhopala stubbsi",
+      "common_name": "",
+      "note": "Male: rather dull bluish-purple with a broad, even ~2.0 mm black border — the widest border in the amphimuta subgroup. HW cilia often prolonged at vein 2."
+    },
+
+    "r_moolaiana_yajuna": {
+      "type": "result",
+      "id": "r_moolaiana_yajuna",
+      "taxon_id": null,
+      "name": "Arhopala moolaiana yajuna",
+      "common_name": "",
+      "note": "Male: shining violet-blue with a thread-like black border. Female: blue colour extends to the HW termen (diagnostic). HW cilia often prolonged into a short tooth at vein 2."
+    },
+
+    "r_alica": {
+      "type": "result",
+      "id": "r_alica",
+      "taxon_id": null,
+      "name": "Arhopala alica",
+      "common_name": "",
+      "note": "Bornean endemic. Male: dark, dull purple with a thread-like black border. Distinguished from A. moolaiana by its darker, duller coloration and Bornean range."
+    },
+
+    "r_sceva_indra": {
+      "type": "result",
+      "id": "r_sceva_indra",
+      "taxon_id": null,
+      "name": "Arhopala sceva indra",
+      "common_name": "",
+      "note": "A smaller species. HW underside postdiscal series is dislocated at vein 2 (distinctive within the amphimuta subgroup). Male: dark violet-blue."
+    },
+
+    "r_amphimuta_amphimuta": {
+      "type": "result",
+      "id": "r_amphimuta_amphimuta",
+      "taxon_id": null,
+      "name": "Arhopala amphimuta amphimuta",
+      "common_name": "",
+      "note": "Male: violet-purple (warmer/redder hue than violet-blue) with a regular ~0.5 mm black border. FW underside: postdiscal band slightly dislocated at vein 4; spot in space 3 usually an oblique oval. HW cilia often prolonged into a short tooth at vein 2."
+    },
+
+    "r_zylda_elioti": {
+      "type": "result",
+      "id": "r_zylda_elioti",
+      "taxon_id": null,
+      "name": "Arhopala zylda elioti",
+      "common_name": "",
+      "note": "Male: violet-blue with a regular ~0.5 mm black border. Female: exceptionally narrow borders (diagnostic — narrower than in allied species). Malay Peninsula."
+    },
+
+    "r_dajagaka": {
+      "type": "result",
+      "id": "r_dajagaka",
+      "taxon_id": null,
+      "name": "Arhopala dajagaka",
+      "common_name": "",
+      "note": "Bornean endemic. Male: dark bluish-purple with a ~0.5 mm border. Female: distinctively thick black borders and darker venation on the upperside."
+    },
+
+    "r_baluensis": {
+      "type": "result",
+      "id": "r_baluensis",
+      "taxon_id": null,
+      "name": "Arhopala baluensis",
+      "common_name": "",
+      "note": "Bornean endemic. HW cilia lacks the white spot in space 1a (present in some allied species). Male: dark purple-blue with a ~0.5 mm border."
+    },
+
+    "q_muta_s1": {
+      "type": "question",
+      "id": "q_muta_s1",
+      "question": "Is the species very small and duller bluish-purple on the male upperside?",
+      "hint": "A. tropaea is noticeably smaller than A. muta and A. moorei, with a duller bluish-purple male upperside. A. muta and A. moorei are larger and brighter blue.",
+      "choices": [
+        { "label": "Yes — very small; male duller bluish-purple", "next": "r_tropaea" },
+        { "label": "No — larger; male bright blue", "next": "q_muta_s2" }
+      ]
+    },
+
+    "q_muta_s2": {
+      "type": "question",
+      "id": "q_muta_s2",
+      "question": "On the male upperside, are both the forewing and hindwing the same shade of blue?",
+      "hint": "A. moorei busa: both wings the same shade of blue in the male. A. muta maranda: FW is bright blue but the HW is a slightly paler, more glistening blue.",
+      "choices": [
+        { "label": "Yes — both wings same shade of blue in male", "next": "r_moorei_busa" },
+        { "label": "No — FW brighter blue; HW slightly paler, more glistening", "next": "r_muta_maranda" }
+      ]
+    },
+
+    "r_tropaea": {
+      "type": "result",
+      "id": "r_tropaea",
+      "taxon_id": null,
+      "name": "Arhopala tropaea",
+      "common_name": "",
+      "note": "Very small species. Male: duller bluish-purple upperside. Underside: postdiscal spots quadrate/banded; FW space 2 spot stepped toward termen (muta subgroup)."
+    },
+
+    "r_moorei_busa": {
+      "type": "result",
+      "id": "r_moorei_busa",
+      "taxon_id": null,
+      "name": "Arhopala moorei busa",
+      "common_name": "",
+      "note": "Similar to A. muta maranda. Male: both wings the same shade of blue on the upperside (in A. muta the FW is brighter than the HW). Underside: spots quadrate; FW space 2 spot stepped toward termen."
+    },
+
+    "r_muta_maranda": {
+      "type": "result",
+      "id": "r_muta_maranda",
+      "taxon_id": null,
+      "name": "Arhopala muta maranda",
+      "common_name": "",
+      "note": "Male: bright blue FW; HW slightly paler, more glistening blue. Underside: postdiscal spots quadrate/banded; FW postdiscal spot in space 2 stepped outward toward the termen."
+    },
+
+    "q_perimuta_s1": {
+      "type": "question",
+      "id": "q_perimuta_s1",
+      "question": "Is there a yellowish discal area on the hindwing underside with obscure markings and no tornal green scales?",
+      "hint": "A. perimuta regina is easily recognized by the yellowish (not white or grey) discal area on the HW underside, with markings that are obscure or almost absent, and the complete absence of the tornal green scales found in many Arhopala. A. metamuta metamuta has a striking contrast — brilliant greenish-blue HW vs. dark violet-blue FW on the male upperside.",
+      "choices": [
+        { "label": "Yes — yellowish HW discal area; markings obscure; no tornal green scales", "next": "r_perimuta_regina" },
+        { "label": "No — HW underside normal; male HW brilliant greenish-blue contrasting with dark violet-blue FW", "next": "r_metamuta_metamuta" }
+      ]
+    },
+
+    "r_perimuta_regina": {
+      "type": "result",
+      "id": "r_perimuta_regina",
+      "taxon_id": null,
+      "name": "Arhopala perimuta regina",
+      "common_name": "",
+      "note": "Easily recognized: HW underside has a yellowish discal area with obscure or almost absent markings; tornal green scales completely absent. FW postdiscal spots 2 and 3 are in line (perimuta subgroup)."
+    },
+
+    "r_metamuta_metamuta": {
+      "type": "result",
+      "id": "r_metamuta_metamuta",
+      "taxon_id": null,
+      "name": "Arhopala metamuta metamuta",
+      "common_name": "",
+      "note": "Striking upperside: male has a brilliant greenish-blue HW that contrasts strongly with the dark, shining violet-blue FW. FW postdiscal spots 2 and 3 are in line (perimuta subgroup)."
     },
 
     "g_needs_more_info": {
