@@ -27,11 +27,22 @@
     "q_tailed_long_tail": {
       "type": "question",
       "id": "q_tailed_long_tail",
-      "question": "Is the tail very long and filamentous, approximately 3.5 mm?",
-      "hint": "The corinda group has an unusually long, thread-like tail (~3.5 mm). If so, also check the forewing underside: the basal half of space 1b should be completely darkened.",
+      "question": "Is the tail notably long and filamentous — roughly 3.5 mm or more?",
+      "hint": "Two groups have unusually long tails: the corinda group (~3.5 mm) and the aedias group (~6.0 mm). Both are distinctly longer than typical Arhopala tails. If uncertain, answer 'No' and proceed.",
       "choices": [
-        { "label": "Yes — very long filamentous tail (~3.5 mm); basal half of FW space 1b darkened", "next": "g_corinda" },
-        { "label": "No — typical short tail", "next": "q_tailed_ganesa" }
+        { "label": "Yes — tail is notably long (roughly 3.5–6 mm or more)", "next": "q_tailed_long_dark" },
+        { "label": "No — tail is short and typical", "next": "q_tailed_ganesa" }
+      ]
+    },
+
+    "q_tailed_long_dark": {
+      "type": "question",
+      "id": "q_tailed_long_dark",
+      "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
+      "hint": "This is the key difference between the two long-tailed groups. The corinda group has the basal half of FW underside space 1b completely darkened. The aedias group has a long tail (~6.0 mm) but lacks this darkening — the FW underside is normally marked.",
+      "choices": [
+        { "label": "Yes — basal half of FW underside space 1b completely darkened (~3.5 mm tail)", "next": "g_corinda" },
+        { "label": "No — FW underside normally marked, no darkening (~6.0 mm tail)", "next": "g_aedias" }
       ]
     },
 
@@ -678,11 +689,23 @@
       "type": "group",
       "id": "g_aedias",
       "group_name": "aedias group",
-      "description": "Like the amphimuta group, the aedias group has hindwing postdiscal spots in spaces 5, 6, and 7 in echelon (centres roughly in a straight line). Detailed distinguishing features and species-level key will be added in the next update.",
+      "description": "Characterised by a very long filamentous tail at vein 2 (~6.0 mm). HW postdiscal spots 5, 6, and 7 are in echelon. No dark area under the FW cell, and no spot at the base of HW space 6. One Malaysian species.",
       "key_features": [
-        "HW postdiscal spots 5, 6, 7 in echelon (centres in straight line)",
-        "Distinguishing features from amphimuta: further details pending"
-      ]
+        "Long filamentous tail at vein 2 (~6.0 mm)",
+        "HW postdiscal spots 5, 6, and 7 in echelon",
+        "No dark area under the FW cell",
+        "No spot at base of HW space 6"
+      ],
+      "next": "r_aedias"
+    },
+
+    "r_aedias": {
+      "type": "result",
+      "id": "r_aedias",
+      "taxon_id": null,
+      "name": "Arhopala aedias",
+      "common_name": "Large Metallic Oakblue",
+      "note": "Underside ground colour hair brown; spots narrowly outlined in pale buff lines. Male upperside: lustrous violet blue with black border reduced to a thread. Female upperside: purple blue with typical broad black borders. Two size forms occur: large (FW 25–29 mm) and small (FW 20–22 mm; small form has more rounded, darker spots beneath). Two subspecies: A. aedias agnis (forest at low to moderate elevations, standard) and A. aedias meritatas (Langkawi Islands — paler and brighter blue upperside in both sexes)."
     },
 
     "g_needs_more_info": {
