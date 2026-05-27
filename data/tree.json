@@ -473,12 +473,14 @@
       "type": "group",
       "id": "g_oenea",
       "group_name": "oenea group",
-      "description": "Forewing apex is acute and the termen is straight. The hindwing underside postdiscal spots are narrow, regular, and rectangular.",
+      "description": "FW apex acute and termen straight between veins 2–4. Underside postdiscal spots narrow, regular, and rectangular; FW band sinuous or only slightly dislocated at vein 4. Monotypic in the Peninsula. ⚠ Note: the Malayan representative (allata pandora) is tailed — routing via the tailless chain may need review.",
       "key_features": [
-        "FW apex acute; termen straight",
-        "HW postdiscal spots narrow, regular, rectangular",
-        "Tailless"
-      ]
+        "FW apex acute; termen straight between veins 2–4",
+        "Underside postdiscal spots narrow, regular, rectangular",
+        "FW band sinuous or slightly dislocated at vein 4",
+        "Tailed (allata pandora)"
+      ],
+      "next": "r_allata_pandora"
     },
 
     "g_amphimuta_muta": {
@@ -668,23 +670,28 @@
       "type": "group",
       "id": "g_vihara",
       "group_name": "vihara group",
-      "description": "Tailed species where the forewing postdiscal spot 4 is in continuation with spots 5 and 6. The hindwing postdiscal spot 6 is rounded and more or less separated from adjacent spots.",
+      "description": "Tailed. FW 20–22 mm. Distinguished from the similar eumolphus group by FW postdiscal spot 4 being in line with spots 5 and 6 (not moved out of line). Also lacks a costal spot in FW space 10. HW postdiscal spot 6 rounded, more or less separated. HW band only partially dislocated at vein 2. Monotypic.",
       "key_features": [
-        "Tailed",
-        "FW postdiscal spot 4 in continuation with spots 5 and 6",
-        "HW postdiscal spot 6 rounded and more or less separated"
-      ]
+        "Tailed; FW 20–22 mm",
+        "FW spot 4 in line with spots 5–6 (cf. eumolphus: spot 4 out of line)",
+        "No costal spot in FW space 10",
+        "HW spot 6 rounded, more or less separated",
+        "HW band partially dislocated at vein 2"
+      ],
+      "next": "r_vihara"
     },
 
     "g_rama": {
       "type": "group",
       "id": "g_rama",
       "group_name": "rama group",
-      "description": "Hindwing postdiscal spot 6 is outwardly sinuous (wavy outer edge). There is almost always a costal spot in FW space 10 on the underside.",
+      "description": "HW postdiscal spot 6 is outwardly sinuous or concave. A costal spot is normally present in FW space 10 on the underside. Three rare Malayan species: one tailless (arvina), two tailed (paralea 2.5 mm, buddha 1.0 mm).",
       "key_features": [
-        "HW postdiscal spot 6 outwardly sinuous (wavy outer edge)",
-        "Costal spot almost always present in FW space 10"
-      ]
+        "HW postdiscal spot 6 outwardly sinuous or concave",
+        "Costal spot normally present in FW space 10",
+        "Three spp.: one tailless, two tailed (different tail lengths)"
+      ],
+      "next": "q_rama_s1"
     },
 
     "g_agelastus": {
@@ -2473,6 +2480,73 @@
       "name": "Arhopala inornata inornata",
       "common_name": "",
       "note": "Tailless. FW ~21 mm. Very rounded HW tornus. Underside: no tornal green scales; HW postdiscal spot 6 placed immediately below spot 7. Male: bright violet-blue with border reduced to a thread. Female: bluer than male with exceptionally narrow borders (0.5 mm on HW)."
+    },
+
+    "r_allata_pandora": {
+      "type": "result",
+      "id": "r_allata_pandora",
+      "taxon_id": null,
+      "name": "Arhopala allata pandora",
+      "common_name": "",
+      "note": "Tailed at vein 2. FW ~22 mm. FW apex acute; termen straight between veins 2–4. Underside postdiscal band sinuous or only slightly dislocated at vein 4; HW postdiscal spots narrow, regular, rectangular. Male: dark purple; FW border 0.5 mm at tornus expanding to 1.5 mm at apex. Female: dark shining blue. Rare; recorded from NE India to Neomalaya and Philippines."
+    },
+
+    "q_rama_s1": {
+      "type": "question",
+      "id": "q_rama_s1",
+      "question": "Does the butterfly have a hindwing tail?",
+      "hint": "One of the three Malayan rama species (arvina) is tailless. The other two are tailed with different tail lengths.",
+      "choices": [
+        { "label": "Tailless", "next": "r_arvina_adalitas" },
+        { "label": "Tailed", "next": "q_rama_s2" }
+      ]
+    },
+
+    "q_rama_s2": {
+      "type": "question",
+      "id": "q_rama_s2",
+      "question": "How long is the hindwing tail, and are tornal green scales present?",
+      "hint": "paralea has a longer tail (2.5 mm), pale purplish-brown underside, and no or vestigial tornal green scales; it is montane on the Peninsula. buddha has a very short tail (~1.0 mm), hair-brown underside, and distinct tornal green scales.",
+      "choices": [
+        { "label": "Tail ~2.5 mm; underside pale purplish-brown; no/vestigial tornal green scales (montane)", "next": "r_paralea" },
+        { "label": "Tail ~1.0 mm (very short); underside hair-brown; tornal green scales present", "next": "r_buddha_cooperi" }
+      ]
+    },
+
+    "r_paralea": {
+      "type": "result",
+      "id": "r_paralea",
+      "taxon_id": null,
+      "name": "Arhopala paralea",
+      "common_name": "",
+      "note": "Tail 2.5 mm. Underside ground colour pale purplish-brown; tornal green scales absent or vestigial. Male: violet-blue; FW border 2.0 mm at mid-costa, slightly increasing toward tornus and apex; HW border 2.5 mm. Montane on the Malay Peninsula."
+    },
+
+    "r_buddha_cooperi": {
+      "type": "result",
+      "id": "r_buddha_cooperi",
+      "taxon_id": null,
+      "name": "Arhopala buddha cooperi",
+      "common_name": "",
+      "note": "Tail very short ~1.0 mm. Underside ground colour hair-brown; tornal green scales present and distinct. Male: shining violet-blue; black borders 1.0 mm wide. Female: may resemble female A. aurea but differs in narrower HW border and thinner tail."
+    },
+
+    "r_arvina_adalitas": {
+      "type": "result",
+      "id": "r_arvina_adalitas",
+      "taxon_id": null,
+      "name": "Arhopala arvina adalitas",
+      "common_name": "",
+      "note": "Tailless. Underside ground colour hair-brown; tornal green scales present. Male: darker blue than A. buddha; black border reduced to a thread. Female: purple-blue."
+    },
+
+    "r_vihara": {
+      "type": "result",
+      "id": "r_vihara",
+      "taxon_id": null,
+      "name": "Arhopala vihara",
+      "common_name": "",
+      "note": "Tailed. FW 20–22 mm. FW underside spot 4 in line with spots 5–6 (distinguishes from eumolphus group where spot 4 is out of line); no costal spot in FW space 10. HW spot 6 rounded, more or less separated; HW band only partially dislocated at vein 2. Male: dark violet-blue; border slightly less than 1.0 mm. Female: bluer shade. Two ssp.: vihara on the peninsular mainland; hirava on Langkawi."
     },
 
     "g_needs_more_info": {

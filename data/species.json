@@ -930,6 +930,51 @@
       "taxon_photos": [],
       "observation_count": 0,
       "wikipedia_url": ""
+    },
+    {
+      "id": null,
+      "name": "Arhopala allata pandora",
+      "common_name": "",
+      "inat_url": "https://www.inaturalist.org/search?q=Arhopala+allata",
+      "taxon_photos": [],
+      "observation_count": 0,
+      "wikipedia_url": ""
+    },
+    {
+      "id": null,
+      "name": "Arhopala paralea",
+      "common_name": "",
+      "inat_url": "https://www.inaturalist.org/search?q=Arhopala+paralea",
+      "taxon_photos": [],
+      "observation_count": 0,
+      "wikipedia_url": ""
+    },
+    {
+      "id": null,
+      "name": "Arhopala buddha cooperi",
+      "common_name": "",
+      "inat_url": "https://www.inaturalist.org/search?q=Arhopala+buddha",
+      "taxon_photos": [],
+      "observation_count": 0,
+      "wikipedia_url": ""
+    },
+    {
+      "id": null,
+      "name": "Arhopala arvina adalitas",
+      "common_name": "",
+      "inat_url": "https://www.inaturalist.org/search?q=Arhopala+arvina",
+      "taxon_photos": [],
+      "observation_count": 0,
+      "wikipedia_url": ""
+    },
+    {
+      "id": null,
+      "name": "Arhopala vihara vihara",
+      "common_name": "",
+      "inat_url": "https://www.inaturalist.org/search?q=Arhopala+vihara",
+      "taxon_photos": [],
+      "observation_count": 0,
+      "wikipedia_url": ""
     }
   ]
 }
