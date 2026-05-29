@@ -1755,7 +1755,11 @@
       "taxon_id": null,
       "name": "Arhopala delta",
       "common_name": "",
-      "note": "The ONLY tailed member of the amphimuta subgroup — short tooth-like tail at vein 2. Male: deep violet with a narrow, regular black border. Part of the amphimuta subgroup (HW spots 5–7 in echelon; spots rounded)."
+      "note": "The ONLY tailed member of the amphimuta subgroup — short tooth-like tail at vein 2. Male: deep violet with a narrow, regular black border. Part of the amphimuta subgroup (HW spots 5–7 in echelon; spots rounded).",
+      "features": {
+        "On the forewing underside, is the basal cell spot absent?": "No — basal cell spot present on FW underside",
+        "Is there a distinct white patch on the hindwing cilia just above the tornal lobe?": "No — no white patch on HW cilia"
+      }
     },
     "r_avathina_avathina": {
       "type": "result",
@@ -2411,7 +2415,13 @@
       "taxon_id": null,
       "name": "Arhopala agaba",
       "common_name": "",
-      "note": "Agaba subgroup — unique in the cleander group. HW underside: postdiscal spot 5 contiguous or amalgamated with the end-cell bar. HW postdiscal band only PARTIALLY dislocated at vein 2 (all other cleander group members have it completely dislocated). Large prominent HW tornal lobe."
+      "note": "Agaba subgroup — unique in the cleander group. HW underside: postdiscal spot 5 contiguous or amalgamated with the end-cell bar. HW postdiscal band only PARTIALLY dislocated at vein 2 (all other cleander group members have it completely dislocated). Large prominent HW tornal lobe.",
+      "features": {
+        "Is the underside pale slatey purple with conspicuous dark markings outlined by nearly-white striae?": "No",
+        "Does the underside have a slatey pink glaze with striae that are whiter than in other species?": "No — no slatey pink glaze",
+        "Are the wings notably rounded and elongate in shape?": "No — typical wing shape",
+        "Is the postdiscal band placed very close to the inner submarginal lunules?": "No — postdiscal band not especially close to submarginal lunules"
+      }
     },
     "q_cleander_s1": {
       "type": "question",
