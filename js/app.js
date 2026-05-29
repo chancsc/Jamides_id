@@ -2,6 +2,7 @@ const state = {
   tree: null,
   species: null,       // Map<taxon_id (number), species object>
   speciesIndex: [],    // [{name, common_name, note, taxon_photos, inat_url}] sorted A-Z
+  questionNumbers: null, // Map<questionText, number> — stable Q-numbers by DFS order
   currentNodeId: null,
   history: []          // [{ nodeId, choiceLabel }, ...]
 };
@@ -30,6 +31,7 @@ async function init() {
     state.tree = treeData;
     state.species = new Map(speciesData.species.map(s => [s.id, s]));
     state.speciesIndex = buildSpeciesIndex(treeData, speciesData);
+    state.questionNumbers = buildQuestionNumbers(treeData);
     state.currentNodeId = treeData.start;
     state.history = [];
 
@@ -82,6 +84,28 @@ function buildTreePaths(treeData) {
 
   dfs(treeData.start, [], new Set());
   return pathsMap;
+}
+
+// Assigns a stable Q-number to each unique question text in DFS encounter order.
+function buildQuestionNumbers(treeData) {
+  const nodes = treeData.nodes;
+  const numbers = new Map();
+  let n = 0;
+  const seen = new Set();
+  function dfs(id) {
+    if (seen.has(id)) return;
+    const node = nodes[id];
+    if (!node) return;
+    seen.add(id);
+    if (node.type === 'question') {
+      if (!numbers.has(node.question)) numbers.set(node.question, ++n);
+      for (const c of (node.choices || [])) if (c.next) dfs(c.next);
+    } else if (node.type === 'group') {
+      if (node.next) dfs(node.next);
+    }
+  }
+  dfs(treeData.start);
+  return numbers;
 }
 
 // Build a flat sorted array of all result nodes enriched with species photo/url data
@@ -453,9 +477,12 @@ function buildPathDisplay(paths) {
       return `<li class="path-step path-step--group"><span class="path-group">● ${escapeHtml(step.group)}</span></li>`;
     }
     const isCd = step.choice && step.choice.startsWith('Cannot determine');
+    const qn = state.questionNumbers && state.questionNumbers.has(step.question)
+      ? `<span class="path-qnum">Q${state.questionNumbers.get(step.question)}</span> `
+      : '';
     return `
       <li class="path-step${isCd ? ' path-step--skip' : ''}">
-        <span class="path-q">${escapeHtml(step.question)}</span>
+        <span class="path-q">${qn}${escapeHtml(step.question)}</span>
         <span class="path-a">↳ ${escapeHtml(step.choice)}</span>
       </li>`;
   }).join('');

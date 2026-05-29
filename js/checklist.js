@@ -4,6 +4,7 @@ const cs = {
   featureMatrix: null,    // Map<name, Map<questionText, choiceLabel>>
   questionMeta: null,     // Map<questionText, {choices: string[], hint: string}>
   questionCoverage: null, // Map<questionText, number> — species count using it
+  questionNumbers: null,  // Map<questionText, number> — stable Q-numbers by DFS order
   resultNotes: null,      // Map<name, string>
   speciesInfo: null,      // Map<name, {common_name, inat_url}>
   answers: new Map(),     // Map<questionText, choiceLabel>
@@ -12,7 +13,28 @@ const cs = {
   expandedName: null,     // species name currently expanded in detail panel
 };
 
-// ── Tree path builder (mirrors app.js) ──────────────────────────────────────
+// ── Tree utilities (mirrors app.js) ─────────────────────────────────────────
+
+function buildQuestionNumbers(td) {
+  const nodes = td.nodes;
+  const numbers = new Map();
+  let n = 0;
+  const seen = new Set();
+  function dfs(id) {
+    if (seen.has(id)) return;
+    const node = nodes[id];
+    if (!node) return;
+    seen.add(id);
+    if (node.type === 'question') {
+      if (!numbers.has(node.question)) numbers.set(node.question, ++n);
+      for (const c of (node.choices || [])) if (c.next) dfs(c.next);
+    } else if (node.type === 'group') {
+      if (node.next) dfs(node.next);
+    }
+  }
+  dfs(td.start);
+  return numbers;
+}
 
 function buildTreePaths(td) {
   const nodes = td.nodes;
@@ -101,6 +123,7 @@ function initData(treeData, speciesData) {
   cs.featureMatrix = matrix;
   cs.questionMeta = qMeta;
   cs.questionCoverage = qCov;
+  cs.questionNumbers = buildQuestionNumbers(treeData);
   cs.resultNotes = resultNotes;
   cs.speciesInfo = spInfo;
 }
@@ -246,9 +269,12 @@ function renderQuestions() {
          </details>`
       : '';
 
+    const qNum = cs.questionNumbers && cs.questionNumbers.has(q)
+      ? `<span class="cl-qnum">Q${cs.questionNumbers.get(q)}</span> `
+      : '';
     return `
       <div class="cl-q${sel ? ' answered' : ''}">
-        <p class="cl-qtext">${esc(q)}</p>
+        <p class="cl-qtext">${qNum}${esc(q)}</p>
         ${hintHTML}
         <div class="cl-choices">${btns}</div>
       </div>`;
