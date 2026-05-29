@@ -57,7 +57,7 @@
       "choices": [
         {
           "label": "Yes — male FW upperside has opaque or differently-coloured discal patch",
-          "next": "g_epimuta"
+          "next": "q_epimuta_s2"
         },
         {
           "label": "No",
@@ -1159,7 +1159,7 @@
       "taxon_id": null,
       "name": "Arhopala cardoni",
       "common_name": "",
-      "note": "Monotypic subgroup. Underside markings small and macular (dot-like). HW tailless and evenly rounded; no tornal green scales. Male: bright blue with violet tinge; FW border 2.0 mm at tornus expanding to 5.0 mm at apex. Female: purer blue with slightly wider black borders than the male."
+      "note": "Tailless; evenly rounded HW tornus with no tooth or tail at vein 2. Underside markings small and macular (dot-like); no tornal green scales. Male: bright blue with violet tinge; FW border 2.0 mm at tornus expanding to 5.0 mm at apex. Female: purer blue with slightly wider black borders than the male."
     },
     "r_alaconia_media": {
       "type": "result",
@@ -1839,7 +1839,7 @@
       "taxon_id": null,
       "name": "Arhopala moorei busa",
       "common_name": "",
-      "note": "Male: both wings the same shade of bluish-purple in all lights (FW 16–18 mm). Female: duller and more purple than A. muta's female. Underside: basal spot present in FW cell; spots quadrate; FW space 2 spot stepped toward termen. Tailless."
+      "note": "Tailless. Male: both wings the same shade of bluish-purple in all lights (FW 16–18 mm). Female: duller and more purple than A. muta's female. Underside: basal spot present in FW cell; spots quadrate; FW space 2 spot stepped toward termen."
     },
     "r_muta_maranda": {
       "type": "result",
@@ -1847,7 +1847,7 @@
       "taxon_id": null,
       "name": "Arhopala muta maranda",
       "common_name": "",
-      "note": "Male: FW rather dark bright blue; HW slightly paler and more glistening — the two wings are NOT the same shade in all lights (FW 17–19 mm). FW black border expands from 1.0–1.5 mm at tornus to 1.5–2.0 mm at apex. Female: shining blue with only a slight purple tint. Underside: basal spot present in FW cell; HW postdiscal band dislocated — inner edge of spot in space 2 in line with, or only slightly outside, the outer edge of spot 1b. Tailless."
+      "note": "Tailless. Male: FW rather dark bright blue; HW slightly paler and more glistening — the two wings are NOT the same shade in all lights (FW 17–19 mm). FW black border expands from 1.0–1.5 mm at tornus to 1.5–2.0 mm at apex. Female: shining blue with only a slight purple tint. Underside: basal spot present in FW cell; HW postdiscal band dislocated — inner edge of spot in space 2 in line with, or only slightly outside, the outer edge of spot 1b."
     },
     "q_perimuta_s1": {
       "type": "question",

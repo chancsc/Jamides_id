@@ -437,12 +437,13 @@ function buildPathDisplay(paths) {
   if (!paths || paths.length === 0) return '';
 
   // Canonical path: fewest "Cannot determine" choices.
-  // Contradiction penalty: starting "Yes — tailed" but later hitting a "Tailless" choice.
+  // Contradiction penalty: starting "Yes — tailed" but later hitting any tail-absence answer
+  // (covers: "Tailless", "No tail — ...", "No — tailless", "Yes — tailless (no HW tail)", etc.)
   const skipCount = p => {
     let score = p.filter(s => s.choice && s.choice.startsWith('Cannot determine')).length;
     const startsTailed = p.length > 0 && p[0].choice === 'Yes — hindwing is tailed';
-    const hasContradiction = p.some(s => s.choice && /^Tailless[;,\s]/.test(s.choice));
-    if (startsTailed && hasContradiction) score += 100;
+    const hasContradiction = startsTailed && p.some(s => s.choice && /tailless/i.test(s.choice));
+    if (hasContradiction) score += 100;
     return score;
   };
 
