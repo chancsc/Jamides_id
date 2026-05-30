@@ -108,15 +108,15 @@
     "q_long_tail_length": {
       "type": "question",
       "id": "q_long_tail_length",
-      "question": "Is the hindwing tail approximately 6 mm or longer?",
-      "hint": "The aedias group has a distinctly long tail of approximately 6 mm — roughly 1.5× the length of a typical Arhopala tail. The corinda group has a shorter tail of approximately 3.5 mm, which is long for Arhopala but not extreme. Corinda subspecies: acestes (Malay Peninsula and Singapore), corestes (Langkawi). If the tail is clearly very long (~6 mm), choose Yes. If it is moderately long (~3.5 mm), choose No.",
+      "question": "What is the underside ground colour and overall appearance?",
+      "hint": "When FW space 1b is hidden, use these field characters to separate the two long-tailed groups. A. aedias (Large Metallic Oakblue): ground colour hair brown; spots narrowly outlined in pale buff lines; large species (FW 20–29 mm); rounded FW apex; tail ~6 mm. A. corinda: ground colour sometimes glazed with purple wash; large dark patch visible under FW cell when not obscured; FW apex distinctly pointed with straight termen; tail ~3.5 mm. Note also that the tail is sometimes broken in field specimens, making length unreliable. Corinda subspecies: acestes (Malay Peninsula and Singapore), corestes (Langkawi). Aedias subspecies: agnis (standard); meritatas (Langkawi — paler, brighter blue upperside).",
       "choices": [
         {
-          "label": "Yes — tail distinctly long, approximately 6 mm (aedias group)",
+          "label": "Hair brown underside; spots narrowly buff-outlined; large species (FW 20–29 mm); rounded FW apex — A. aedias",
           "next": "g_aedias"
         },
         {
-          "label": "No — tail moderately long, approximately 3.5 mm (corinda group)",
+          "label": "Underside sometimes with purple wash; dark patch under FW cell; pointed FW apex, straight termen; smaller (tail ~3.5 mm) — A. corinda",
           "next": "g_corinda"
         }
       ]
@@ -1127,7 +1127,10 @@
       "taxon_id": null,
       "name": "Arhopala aedias",
       "common_name": "Large Metallic Oakblue",
-      "note": "Underside ground colour hair brown; spots narrowly outlined in pale buff lines. Male upperside: lustrous violet blue with black border reduced to a thread. Female upperside: purple blue with typical broad black borders. Two size forms occur: large (FW 25–29 mm) and small (FW 20–22 mm; small form has more rounded, darker spots beneath). Two subspecies: A. aedias agnis (forest at low to moderate elevations, standard) and A. aedias meritatas (Langkawi Islands — paler and brighter blue upperside in both sexes)."
+      "note": "Underside ground colour hair brown; spots narrowly outlined in pale buff lines. Male upperside: lustrous violet blue with black border reduced to a thread. Female upperside: purple blue with typical broad black borders. Two size forms occur: large (FW 25–29 mm) and small (FW 20–22 mm; small form has more rounded, darker spots beneath). Two subspecies: A. aedias agnis (forest at low to moderate elevations, standard) and A. aedias meritatas (Langkawi Islands — paler and brighter blue upperside in both sexes).",
+      "features": {
+        "What is the underside ground colour and overall appearance?": "Hair brown underside; spots narrowly buff-outlined; large species (FW 20–29 mm); rounded FW apex — A. aedias"
+      }
     },
     "q_agelastus_s1": {
       "type": "question",
@@ -2773,7 +2776,10 @@
       "taxon_id": null,
       "name": "Arhopala corinda acestes",
       "common_name": "",
-      "note": "Monotypic group. Filamentous HW tail ~3.5 mm. FW: pointed apex, straight termen. Underside: large purple-brown patch under FW cell (basal half of space 1b completely darkened); FW spot 4 shifted distad; no costal spot in FW space 10; ground colour sometimes glazed with purple wash. HW spot 6 outwardly convex; band partially dislocated at vein 2. Male: deep violet or dark purple, very narrow border. Female: purple-blue. Subspecies: acestes (Malay Peninsula and Singapore), corestes (Langkawi)."
+      "note": "Monotypic group. Filamentous HW tail ~3.5 mm. FW: pointed apex, straight termen. Underside: large purple-brown patch under FW cell (basal half of space 1b completely darkened); FW spot 4 shifted distad; no costal spot in FW space 10; ground colour sometimes glazed with purple wash. HW spot 6 outwardly convex; band partially dislocated at vein 2. Male: deep violet or dark purple, very narrow border. Female: purple-blue. Subspecies: acestes (Malay Peninsula and Singapore), corestes (Langkawi).",
+      "features": {
+        "What is the underside ground colour and overall appearance?": "Underside sometimes with purple wash; dark patch under FW cell; pointed FW apex, straight termen; smaller (tail ~3.5 mm) — A. corinda"
+      }
     },
     "q_democritus_s1": {
       "type": "question",
