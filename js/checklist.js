@@ -187,11 +187,14 @@ function getDisplayQuestions() {
   }
 
   // Build diversity map: question → set of distinct answers among top candidates
+  // Also build filtered coverage: count of top candidates that have each question.
   const diversity = new Map();
+  const filteredCov = new Map();
   for (const name of topNames) {
     for (const [q, c] of (cs.featureMatrix.get(name) || new Map())) {
       if (!diversity.has(q)) diversity.set(q, new Set());
       diversity.get(q).add(c);
+      filteredCov.set(q, (filteredCov.get(q) || 0) + 1);
     }
   }
 
@@ -219,11 +222,15 @@ function getDisplayQuestions() {
         return qa - qb;
       }
       // Unanswered: underside/morphology questions before pure upperside questions,
-      // then by coverage descending within each tier.
+      // then by filtered coverage descending within each tier.
+      // Filtered coverage (how many current top candidates have this question) is
+      // preferred over global coverage so that, e.g., after Q1=Yes (tailed), Q2
+      // ranks correctly among tailed-only questions rather than being displaced by
+      // questions that also appear on tailless canonical paths.
       const aUpper = /upperside/i.test(a);
       const bUpper = /upperside/i.test(b);
       if (aUpper !== bUpper) return aUpper ? 1 : -1;
-      return (cs.questionCoverage.get(b) || 0) - (cs.questionCoverage.get(a) || 0);
+      return (filteredCov.get(b) || 0) - (filteredCov.get(a) || 0);
     });
 }
 
