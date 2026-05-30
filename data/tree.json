@@ -361,7 +361,7 @@
         },
         {
           "label": "FW postdiscal band is continuous and unbroken; no costal spot in FW space 10; often a spot at base of FW space 3",
-          "next": "g_agelastus"
+          "next": "r_barami_penanga"
         },
         {
           "label": "HW postdiscal spots 5, 6, and 7 overlap with their centres forming a straight line (echelon)",
@@ -1146,22 +1146,6 @@
         },
         {
           "label": "No — FW space 10 lacks a costal spot",
-          "next": "q_agelastus_s2"
-        }
-      ]
-    },
-    "q_agelastus_s2": {
-      "type": "question",
-      "id": "q_agelastus_s2",
-      "question": "Within the agelastus group, does the hindwing have a tail?",
-      "hint": "Within the agelastus group, only Arhopala barami penanga is tailed. All other species are tailless.",
-      "choices": [
-        {
-          "label": "Yes — hindwing is tailed",
-          "next": "r_barami_penanga"
-        },
-        {
-          "label": "No — hindwing is tailless",
           "next": "q_agelastus_s3"
         }
       ]
