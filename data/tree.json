@@ -148,11 +148,11 @@
     "q_tailed_ganesa": {
       "type": "question",
       "id": "q_tailed_ganesa",
-      "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
-      "hint": "The ganesa group is characteristically small, with spots visible above the FW cell on the underside, plus a spot at the base of FW space 3. All ganesa have short tails. A useful supporting character: on the HW underside, the gap between the outer and central spots in space 7 is conspicuously whitened across all group members.",
+      "question": "Is this a small species with spots above the forewing cell, a spot at the base of forewing space 3, and the gap between the outer and central spots in hindwing space 7 conspicuously whitened?",
+      "hint": "The ganesa group is characteristically small, with spots visible above the FW cell on the underside, a spot at the base of FW space 3, and short tails. The whitened gap between the outer and central spots in HW space 7 is diagnostic for the whole group and is often the most immediately obvious character in a photograph.",
       "choices": [
         {
-          "label": "Yes — small; spots above FW cell; spot at base of FW space 3",
+          "label": "Yes — small; spots above FW cell; spot at base of FW space 3; HW space 7 gap whitened",
           "next": "g_ganesa"
         },
         {
