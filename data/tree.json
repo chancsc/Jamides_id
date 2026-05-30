@@ -153,43 +153,7 @@
         },
         {
           "label": "No — no silver outlines",
-          "next": "q_tailed_male_green"
-        }
-      ]
-    },
-    "q_tailed_male_green": {
-      "type": "question",
-      "id": "q_tailed_male_green",
-      "question": "Is the male upperside shining green?",
-      "hint": "In some Arhopala the male upperside is a distinctive shining green or brassy green (eumolphus and related groups). If the upperside is not visible or sex cannot be confirmed, choose 'Cannot determine' — the green-male groups can still be reached via underside spot arrangement (FW spot 4 out of line).",
-      "choices": [
-        {
-          "label": "Yes — shining green upperside (male)",
-          "next": "q_tailed_green_type"
-        },
-        {
-          "label": "No — blue, purple, brown, or female",
           "next": "q_tailed_dark_area"
-        },
-        {
-          "label": "Cannot determine — upperside not visible or sex uncertain",
-          "next": "q_tailed_dark_area"
-        }
-      ]
-    },
-    "q_tailed_green_type": {
-      "type": "question",
-      "id": "q_tailed_green_type",
-      "question": "How does the forewing postdiscal spot 4 relate to spots 5 and 6, and what is the hindwing cell length?",
-      "hint": "Eumolphus: FW spot 4 is moved out of line with the others; HW spot 6 is placed directly below spot 7. Aurea: HW cell is considerably longer than half the wing length; FW apex is acute with a straight or concave termen.",
-      "choices": [
-        {
-          "label": "FW spot 4 out of line; HW spot 6 directly below spot 7",
-          "next": "q_tailed_spot4_outofline"
-        },
-        {
-          "label": "HW cell considerably longer than half wing; FW apex acute with straight or concave termen",
-          "next": "g_aurea"
         }
       ]
     },
@@ -205,7 +169,7 @@
         },
         {
           "label": "No — no such marking",
-          "next": "q_tailed_ijanensis"
+          "next": "q_ijanensis_streak"
         },
         {
           "label": "Cannot determine — FW space 1b obscured by hindwing",
@@ -237,7 +201,7 @@
         },
         {
           "label": "None of the camdeo features present — does not appear to be a camdeo species",
-          "next": "q_tailed_ijanensis"
+          "next": "q_ijanensis_streak"
         }
       ]
     },
@@ -245,7 +209,7 @@
       "type": "question",
       "id": "q_tailed_ijanensis",
       "question": "In the male, does the forewing upperside black border run along the costa all the way to the wing base?",
-      "hint": "The ijanensis group male has a unique FW black border running along the costa all the way to the wing base. Note: if you arrived via the tailed path, you have already checked the HW underside whitish streak earlier — if you confirmed the streak was absent, choose 'No' here. If you arrived via the tailless entry and have not yet seen the streak question, choose 'Cannot determine' and the next step will check the HW underside streak.",
+      "hint": "The ijanensis group male has a unique FW black border running along the costa all the way to the wing base. You are here because the HW underside streak was not visible in the previous step. If the male upperside is visible, use this question to confirm or rule out A. ijanensis. If the upperside is also not visible, choose 'Cannot determine' to proceed past this check.",
       "choices": [
         {
           "label": "Yes — male FW border extends to base of costa; spot at base of HW space 6",
@@ -256,8 +220,8 @@
           "next": "q_tailed_anthelus"
         },
         {
-          "label": "Cannot determine — upperside not visible (check HW underside streak instead)",
-          "next": "q_ijanensis_streak"
+          "label": "Cannot determine — upperside not visible (proceed past ijanensis check)",
+          "next": "q_tailed_anthelus"
         }
       ]
     },
@@ -265,7 +229,7 @@
       "type": "question",
       "id": "q_ijanensis_streak",
       "question": "Is there a whitish streak on the hindwing underside running from the base of the dorsum to the apex?",
-      "hint": "A. ijanensis (ijanensis group) has a distinctive whitish streak on the HW underside from the base of the dorsum all the way to the apex. The HW cell is also notably long — approximately half the wing length or longer. A. anthelus and A. achelous lack this streak.",
+      "hint": "A. ijanensis (ijanensis group) has a distinctive whitish streak on the HW underside from the base of the dorsum all the way to the apex. The HW cell is also notably long — approximately half the wing length or longer. A. anthelus and A. achelous lack this streak. If the hindwing underside is not visible at all, choose 'Cannot determine' to check the male forewing upperside border instead.",
       "choices": [
         {
           "label": "Yes — whitish streak present on HW underside from dorsal base to apex",
@@ -274,6 +238,10 @@
         {
           "label": "No — no whitish streak",
           "next": "q_tailed_anthelus"
+        },
+        {
+          "label": "Cannot determine — HW underside not visible",
+          "next": "q_tailed_ijanensis"
         }
       ]
     },
@@ -389,7 +357,7 @@
       "choices": [
         {
           "label": "FW spot 4 out of line with others; HW spot 6 placed directly below spot 7",
-          "next": "q_tailed_spot4_outofline"
+          "next": "q_tailed_aurea_check"
         },
         {
           "label": "FW spot 4 in continuation with spots 5 and 6; HW spot 6 rounded and more or less separated",
@@ -406,6 +374,22 @@
         {
           "label": "HW postdiscal spots 5, 6, and 7 overlap with their centres forming a straight line (echelon)",
           "next": "q_amphimuta_sub"
+        }
+      ]
+    },
+    "q_tailed_aurea_check": {
+      "type": "question",
+      "id": "q_tailed_aurea_check",
+      "question": "Does the hindwing cell extend considerably longer than half the wing length, combined with an acute or concave FW apex?",
+      "hint": "The aurea group (A. aurea, A. horsfieldi) has an exceptionally long hindwing cell — considerably more than half the wing length — together with an acute FW apex that may appear concave along the termen between veins 2 and 4. The eumolphus group (A. eumolphus, A. acta, etc.) has a shorter HW cell. Note that aurea males are also shining green, whereas eumolphus males are blue or purple — but use the cell length as the primary character here.",
+      "choices": [
+        {
+          "label": "Yes — HW cell considerably longer than half wing; FW apex acute or concave",
+          "next": "g_aurea"
+        },
+        {
+          "label": "No — HW cell moderate length (eumolphus or oenea group)",
+          "next": "q_tailed_spot4_outofline"
         }
       ]
     },
