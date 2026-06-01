@@ -116,7 +116,7 @@
           "next": "g_corinda"
         },
         {
-          "label": "No — FW underside normally marked, no darkening",
+          "label": "No — basal half of FW space 1b not completely darkened",
           "next": "q_tailed_long_tail"
         },
         {
@@ -208,15 +208,15 @@
     "q_tailed_dark_area": {
       "type": "question",
       "id": "q_tailed_dark_area",
-      "question": "Is there a distinct dark area under the forewing cell (space 1b), bounded outwardly by a pale line?",
-      "hint": "The camdeo group has a characteristic darkened patch in FW underside space 1b with a clearly defined pale line running across it. This feature is diagnostic for the entire camdeo group. Note: in field photographs this area is often hidden under the hindwing — if FW space 1b is not visible, select Cannot determine and continue; the key will proceed without this character.",
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "hint": "The camdeo group has a restricted dark patch in FW underside space 1b with a clearly defined pale line running outwardly across it — this is a more localised marking than the complete basal-half darkening of the corinda group (already excluded). Note: in field photographs this area is often hidden under the hindwing — if FW space 1b is not visible, select Cannot determine and continue; the key will proceed without this character.",
       "choices": [
         {
-          "label": "Yes — distinct dark patch in FW space 1b with pale bordering line",
+          "label": "Yes — restricted dark patch present in FW space 1b with pale bordering line (camdeo group)",
           "next": "q_camdeo_sub"
         },
         {
-          "label": "No — no such marking",
+          "label": "No — no dark patch in FW space 1b",
           "next": "q_ijanensis_streak"
         },
         {
@@ -564,15 +564,15 @@
     "q_tailless_camdeo": {
       "type": "question",
       "id": "q_tailless_camdeo",
-      "question": "Is there a distinct dark area under the forewing cell (space 1b), bounded outwardly by a pale line?",
-      "hint": "A small number of camdeo group species are tailless (A. belphoebe cowani, A. myrzalina). The camdeo group is identified by a darkened patch in FW underside space 1b. In field photos this area is often hidden under the hindwing — if FW space 1b is not clearly visible, select Cannot determine; the key will continue without this character.",
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "hint": "A small number of camdeo group species are tailless (A. belphoebe cowani, A. myrzalina). The camdeo group is identified by a restricted dark patch in FW underside space 1b with a clearly defined pale bordering line. In field photos this area is often hidden under the hindwing — if FW space 1b is not clearly visible, select Cannot determine; the key will continue without this character.",
       "choices": [
         {
-          "label": "Yes — distinct dark patch in FW space 1b with pale bordering line",
+          "label": "Yes — restricted dark patch present in FW space 1b with pale bordering line (camdeo group)",
           "next": "q_camdeo_sub"
         },
         {
-          "label": "No — no such marking",
+          "label": "No — no dark patch in FW space 1b",
           "next": "q_tailless_echelon"
         },
         {
