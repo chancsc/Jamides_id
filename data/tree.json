@@ -29,27 +29,27 @@
         },
         {
           "label": "No — tail at the usual vein 2 (typical position)",
-          "next": "q_tailed_long_tail"
+          "next": "q_tailed_long_dark"
         }
       ]
     },
     "q_tailed_long_tail": {
       "type": "question",
       "id": "q_tailed_long_tail",
-      "question": "Is the tail notably long and filamentous — roughly 3.5 mm or more?",
-      "hint": "Two groups have unusually long tails: the corinda group (~3.5 mm) and the aedias group (~6.0 mm). Also A. overdijkinki (eumolphus group) has a notably long tail (~5 mm). All are distinctly longer than the typical Arhopala tail of ~2–3 mm. If uncertain or if the tail is broken, choose 'Cannot determine' to continue.",
+      "question": "Is the tail very long and thread-like — approximately 5 mm or longer?",
+      "hint": "Only two groups have very long tails clearly reaching 5 mm or more: A. overdijkinki (eumolphus group, ~5 mm) and A. aedias (aedias group, ~6 mm). The corinda group (~3.5 mm) was already separated by the previous question. All other tailed Arhopala have tails up to ~4 mm — answer No if the tail does not clearly exceed 5 mm.",
       "choices": [
         {
-          "label": "Yes — tail is notably long (roughly 3.5–6 mm or more)",
-          "next": "q_tailed_long_dark"
+          "label": "Yes — tail very long, approximately 5 mm or longer (eumolphus or aedias group)",
+          "next": "q_long_tail_spot4"
         },
         {
-          "label": "No — tail is short and typical",
+          "label": "No — tail moderate or typical for Arhopala (up to ~4 mm)",
           "next": "q_ijanensis_hw_streak"
         },
         {
           "label": "Cannot determine — tail length unclear or broken",
-          "next": "q_tailed_long_dark"
+          "next": "q_long_tail_length"
         }
       ]
     },
@@ -73,15 +73,35 @@
       "type": "question",
       "id": "q_tailed_epimuta",
       "question": "On the hindwing underside, is the postdiscal spot in space 6 positioned roughly midway between the postdiscal spot in space 5 and the end-cell bar?",
-      "hint": "The epimuta group (A. atosia, A. lurida) is defined by HW postdiscal spot 6 sitting midway between spot 5 and the end-cell bar — equidistant from both. Note: some species (e.g. A. pseudomuta, alitaeus group) have spot 6 slightly oblique or partially displaced without reaching midway — these answer No. Male epimuta group members also show an opaque or differently-coloured discal patch on the FW upperside (dense fuscous scales visible as a distinct patch).",
+      "hint": "Two groups share this character — HW spot 6 midway between spot 5 and the end-cell bar: the epimuta group (A. atosia, A. lurida) and the alitaeus group (including A. pseudomuta). If Yes, a spot in FW space 11 will be checked next to tell them apart. If spot 6 is not clearly midway — either at the same level as spot 5, or pulled only partially toward the bar — answer No.",
       "choices": [
         {
           "label": "Yes — postdiscal spot in space 6 is roughly midway between spot 5 and the end-cell bar",
+          "next": "q_epimuta_alitaeus_split"
+        },
+        {
+          "label": "No — spot 6 not clearly midway",
+          "next": "q_tailed_ganesa"
+        }
+      ]
+    },
+    "q_epimuta_alitaeus_split": {
+      "type": "question",
+      "id": "q_epimuta_alitaeus_split",
+      "question": "Is there a central spot in forewing underside space 11?",
+      "hint": "A central spot in FW space 11 (above the cell) identifies the alitaeus group, which shares the 'midway spot 6' character with the epimuta group. A. pseudomuta and other alitaeus-group members have this spot; the epimuta group (A. atosia, A. lurida) does not. If visible, this character is decisive.",
+      "choices": [
+        {
+          "label": "Yes — central spot present in FW space 11",
+          "next": "g_alitaeus"
+        },
+        {
+          "label": "No — no central spot in FW space 11",
           "next": "q_epimuta_s2"
         },
         {
-          "label": "No — spot 6 not clearly midway (whether at the same level as spot 5 or only slightly displaced)",
-          "next": "q_tailed_ganesa"
+          "label": "Cannot determine — FW space 11 not visible",
+          "next": "q_epimuta_s2"
         }
       ]
     },
@@ -89,15 +109,15 @@
       "type": "question",
       "id": "q_tailed_long_dark",
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
-      "hint": "This is the key difference between the two long-tailed groups. The corinda group has the basal half of FW underside space 1b completely darkened. The aedias group has a long tail (~6.0 mm) but lacks this darkening — the FW underside is normally marked. FW space 1b is often hidden under the hindwing in field shots — if not visible, select Cannot determine and the next question will use tail length instead.",
+      "hint": "The corinda group is immediately identified by the basal half of FW underside space 1b being completely darkened, bounded outwardly by a pale line. No other tailed Arhopala shares this character. FW space 1b is often hidden under the hindwing in field shots — if not visible, select Cannot determine; the next question will use tail length and overall appearance to identify the species.",
       "choices": [
         {
-          "label": "Yes — basal half of FW underside space 1b completely darkened (~3.5 mm tail)",
+          "label": "Yes — basal half of FW underside space 1b completely darkened (corinda group)",
           "next": "g_corinda"
         },
         {
           "label": "No — FW underside normally marked, no darkening",
-          "next": "q_long_tail_spot4"
+          "next": "q_tailed_long_tail"
         },
         {
           "label": "Cannot determine — FW space 1b obscured by hindwing",
@@ -122,6 +142,10 @@
         {
           "label": "Underside sometimes with purple wash; dark patch under FW cell; pointed FW apex, straight termen; smaller (tail ~3.5 mm) — A. corinda",
           "next": "g_corinda"
+        },
+        {
+          "label": "Cannot determine — none of these descriptions clearly match",
+          "next": "q_ijanensis_hw_streak"
         }
       ]
     },
