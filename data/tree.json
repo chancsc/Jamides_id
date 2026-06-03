@@ -493,14 +493,14 @@
       "type": "question",
       "id": "q_tailless_epimuta",
       "question": "On the hindwing underside, is postdiscal spot 6 displaced from the postdiscal row — shifted toward the end-cell bar rather than aligned with the level of spot 5?",
-      "hint": "Several groups show HW spot 6 displaced from the postdiscal row toward the end-cell bar — this includes the agelastus group (A. wildeyana, A. labuana, etc.), the agesilaus group (A. agesilaus, A. avatha), and the epimuta/antimuta/metamuta groups. If spot 6 is clearly pulled inward toward the discal cell — away from the level of spot 5 — answer Yes; follow-up questions will separate the groups using the HW vein-2 dislocation pattern and the FW postdiscal band character. If spot 6 remains broadly aligned with the postdiscal row at roughly the same level as spot 5, answer No.",
+      "hint": "Several groups show HW spot 6 displaced from the postdiscal row toward the end-cell bar — this includes the agelastus group (A. wildeyana, A. labuana, etc.), the agesilaus group (A. agesilaus, A. avatha), and the epimuta/antimuta/metamuta groups. If spot 6 is clearly pulled inward toward the discal cell — away from the level of spot 5 — answer Yes; follow-up questions will separate the groups using the HW vein-2 dislocation pattern and the FW postdiscal band character. If spots 5, 6 and 7 have their centres in line along the postdiscal row and spot 6 is not pulled inward, answer No.",
       "choices": [
         {
           "label": "Yes — spot 6 displaced toward the end-cell bar",
           "next": "q_tailless_epimuta_vein2"
         },
         {
-          "label": "No — spot 6 is in the postdiscal band at roughly the same level as spot 5",
+          "label": "No — HW spots 5, 6 and 7 with centres in line along the postdiscal row; spot 6 not displaced toward the end-cell bar",
           "next": "q_tailless_camdeo"
         }
       ]
