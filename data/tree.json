@@ -2071,7 +2071,10 @@
       "taxon_id": null,
       "name": "Arhopala anthelus grahami",
       "common_name": "",
-      "note": "One of the most beautiful in the genus. FW 28 mm. Underside: ≥3 spots in FW space 11; 2 spots at base of HW space 8; spots on FW and upper HW half deep purple-brown. Male: brilliant shining blue, narrow black border. Female: violet-blue with fairly broad black borders. Anthelus subgroup."
+      "note": "One of the most beautiful in the genus. FW 28 mm. Underside: ≥3 spots in FW space 11; 2 spots at base of HW space 8; spots on FW and upper HW half deep purple-brown. Male: brilliant shining blue, narrow black border. Female: violet-blue with fairly broad black borders. Anthelus subgroup.",
+      "features": {
+        "Is HW postdiscal spot 6 very small and displaced outward toward the end-cell bar, sitting below spot 7?": "No — HW spot 6 not unusually small or displaced; spots on upper HW half deep purple-brown"
+      }
     },
     "r_achelous_achelous": {
       "type": "result",
@@ -2079,7 +2082,10 @@
       "taxon_id": null,
       "name": "Arhopala achelous achelous",
       "common_name": "",
-      "note": "Tailed. FW 22 mm. Underside: strong purple tinge (nominate); no spots in FW space 11; single spot at base of HW space 8. Diagnostic: HW postdiscal spot 6 is very small, situated directly below spot 7 at the outer side of space 7 — distinctly displaced toward the end-cell bar. Subspecies A. achelous malu (Kedawi: Langkawi, Perlis, north Kedah) lacks most of the purple tinge found in the nominate. Male: shining dark blue, narrow ~0.5 mm black border. Achelous subgroup."
+      "note": "Tailed. FW 22 mm. Underside: strong purple tinge (nominate); no spots in FW space 11; single spot at base of HW space 8. Diagnostic: HW postdiscal spot 6 is very small, situated directly below spot 7 at the outer side of space 7 — distinctly displaced toward the end-cell bar. Subspecies A. achelous malu (Kedawi: Langkawi, Perlis, north Kedah) lacks most of the purple tinge found in the nominate. Male: shining dark blue, narrow ~0.5 mm black border. Achelous subgroup.",
+      "features": {
+        "Is HW postdiscal spot 6 very small and displaced outward toward the end-cell bar, sitting below spot 7?": "Yes — HW spot 6 very small, displaced outward below spot 7 toward end-cell bar"
+      }
     },
     "q_aurea_s1": {
       "type": "question",
