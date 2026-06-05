@@ -443,22 +443,6 @@
         },
         {
           "label": "No — postdiscal spots distinct; typical markings present",
-          "next": "q_tailless_inornata"
-        }
-      ]
-    },
-    "q_tailless_inornata": {
-      "type": "question",
-      "id": "q_tailless_inornata",
-      "question": "Does the hindwing have a very rounded tornus, and are tornal green scales absent?",
-      "hint": "The inornata group has a distinctively rounded hindwing tornus (anal angle). Unlike many other tailless Arhopala, it lacks metallic green or brassy tornal scales.",
-      "choices": [
-        {
-          "label": "Yes — very rounded HW tornus; no tornal green scales",
-          "next": "g_inornata"
-        },
-        {
-          "label": "No",
           "next": "q_tailless_perimuta"
         }
       ]
@@ -475,6 +459,22 @@
         },
         {
           "label": "No — HW discal area whitish-grey; markings well-defined",
+          "next": "q_tailless_inornata"
+        }
+      ]
+    },
+    "q_tailless_inornata": {
+      "type": "question",
+      "id": "q_tailless_inornata",
+      "question": "Does the hindwing have a very rounded tornus, and are tornal green scales absent?",
+      "hint": "The inornata group has a distinctively rounded hindwing tornus (anal angle). Unlike many other tailless Arhopala, it lacks metallic green or brassy tornal scales.",
+      "choices": [
+        {
+          "label": "Yes — very rounded HW tornus; no tornal green scales",
+          "next": "g_inornata"
+        },
+        {
+          "label": "No",
           "next": "q_tailless_hypomuta"
         }
       ]
