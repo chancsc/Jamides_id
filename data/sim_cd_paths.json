@@ -273,6 +273,36 @@
       "choice": "FW postdiscal band is continuous and unbroken; no costal spot in FW space 10; often a spot at base of FW space 3"
     }
   ],
+  "Arhopala kinabala": [
+    {
+      "question": "Does the hindwing have a tail?",
+      "choice": "No — hindwing is tailless"
+    },
+    {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
+    },
+    {
+      "question": "Are the underside markings almost entirely suppressed — the postdiscal spots replaced by a faint, obscure streak rather than a series of distinct separate spots, with most other typical markings absent?",
+      "choice": "No — postdiscal spots distinct; typical markings present"
+    },
+    {
+      "question": "Does the hindwing have a very rounded tornus, and are tornal green scales absent?",
+      "choice": "No"
+    },
+    {
+      "question": "Is there a small spot at the extreme base of hindwing space 6 on the underside?",
+      "choice": "No"
+    },
+    {
+      "question": "Are the underside spots prominent and rounded, with a central spot in FW space 11 and a notably short forewing vein 9?",
+      "choice": "Yes — prominent rounded spots; central FW spot in space 11; FW vein 9 notably short"
+    },
+    {
+      "question": "How many spots are in forewing space 11, and what is the underside ground colour?",
+      "choice": "Two spots in FW space 11; ground colour dark brown; markings blackish-brown"
+    }
+  ],
   "Arhopala labuana": [
     {
       "question": "Does the hindwing have a tail?",
