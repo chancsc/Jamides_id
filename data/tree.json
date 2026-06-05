@@ -450,15 +450,31 @@
     "q_tailless_inornata": {
       "type": "question",
       "id": "q_tailless_inornata",
-      "question": "Does the hindwing have a very rounded tornus, and are tornal green scales absent?",
-      "hint": "The inornata group has a distinctively rounded hindwing tornus (anal angle). Unlike many other tailless Arhopala, it lacks metallic green or brassy tornal scales.",
+      "question": "Does the hindwing have a very rounded tornus (strongly rounded anal angle, more extreme than in other tailless Arhopala)?",
+      "hint": "A. inornata has a distinctively and extremely rounded hindwing tornus (anal angle) — more rounded than in any other Malaysian tailless Arhopala. It also lacks metallic green or brassy tornal scales, but absence of green tornal scales alone does not indicate this group (A. perimuta also lacks them). The key character here is the extreme tornal shape.",
       "choices": [
         {
-          "label": "Yes — very rounded HW tornus; no tornal green scales",
+          "label": "Yes — HW tornus very rounded (extreme, inornata-type); no tornal green scales",
           "next": "g_inornata"
         },
         {
-          "label": "No",
+          "label": "No — tornus not as extremely rounded",
+          "next": "q_tailless_tornal_scales"
+        }
+      ]
+    },
+    "q_tailless_tornal_scales": {
+      "type": "question",
+      "id": "q_tailless_tornal_scales",
+      "question": "Are metallic green or brassy tornal scales present on the hindwing underside?",
+      "hint": "Most tailless Arhopala carry metallic green or brassy scales at the tornal angle of the HW underside. A. perimuta regina is an exception: it completely lacks tornal green scales, combined with a yellowish central discal area on the HW and obscure or almost-absent markings — making it one of the most distinctive tailless Arhopala. If green tornal scales are present (or absent but HW is not yellowish), continue.",
+      "choices": [
+        {
+          "label": "No — green tornal scales absent; HW has a yellowish central discal area; markings obscure (A. perimuta)",
+          "next": "q_tailless_hypomuta"
+        },
+        {
+          "label": "Yes — green tornal scales present",
           "next": "q_tailless_hypomuta"
         }
       ]
