@@ -21,10 +21,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -42,6 +38,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -83,10 +83,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -104,6 +100,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -145,10 +145,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -166,6 +162,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -233,10 +233,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -254,6 +250,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -277,6 +277,10 @@
     {
       "question": "Does the hindwing have a tail?",
       "choice": "No — hindwing is tailless"
+    },
+    {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
       "question": "Are the underside markings almost entirely suppressed — the postdiscal spots replaced by a faint, obscure streak rather than a series of distinct separate spots, with most other typical markings absent?",
@@ -327,6 +331,10 @@
     {
       "question": "Does the hindwing have a tail?",
       "choice": "No — hindwing is tailless"
+    },
+    {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
       "question": "Are the underside markings almost entirely suppressed — the postdiscal spots replaced by a faint, obscure streak rather than a series of distinct separate spots, with most other typical markings absent?",
@@ -381,6 +389,10 @@
     {
       "question": "Does the hindwing have a tail?",
       "choice": "No — hindwing is tailless"
+    },
+    {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
       "question": "Are the underside markings almost entirely suppressed — the postdiscal spots replaced by a faint, obscure streak rather than a series of distinct separate spots, with most other typical markings absent?",
@@ -449,6 +461,10 @@
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
     },
     {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
+    },
+    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -497,6 +513,10 @@
     {
       "question": "Is the tail very long and thread-like — approximately 5 mm or longer?",
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
+    },
+    {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
@@ -549,6 +569,10 @@
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
     },
     {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
+    },
+    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -597,6 +621,10 @@
     {
       "question": "Is the tail very long and thread-like — approximately 5 mm or longer?",
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
+    },
+    {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
@@ -649,6 +677,10 @@
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
     },
     {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
+    },
+    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -699,6 +731,10 @@
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
     },
     {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
+    },
+    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -739,6 +775,10 @@
     {
       "question": "Is the tail very long and thread-like — approximately 5 mm or longer?",
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
+    },
+    {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
@@ -785,6 +825,10 @@
     {
       "question": "Is the tail very long and thread-like — approximately 5 mm or longer?",
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
+    },
+    {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
@@ -835,6 +879,10 @@
     {
       "question": "Is the tail very long and thread-like — approximately 5 mm or longer?",
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
+    },
+    {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
@@ -1603,6 +1651,10 @@
     {
       "question": "Is the species noticeably small and duller bluish-purple on the male upperside?",
       "choice": "Cannot determine — upperside not visible"
+    },
+    {
+      "question": "On the male upperside, are both the forewing and hindwing exactly the same shade of blue in all lights?",
+      "choice": "Cannot determine — upperside not visible"
     }
   ],
   "Arhopala moorei busa": [
@@ -1719,10 +1771,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "Yes — FW band partially dislocated at vein 4; spot at base of FW space 10; no spot at base of HW space 6"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -1737,6 +1785,10 @@
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
       "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
+      "choice": "Yes — FW band partially dislocated at vein 4; spot at base of FW space 10; no spot at base of HW space 6"
     },
     {
       "question": "Does the forewing underside have at least 3 spots in space 11, AND does the hindwing underside have 2 subbasal spots in space 8?",
@@ -1765,10 +1817,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "Yes — FW band partially dislocated at vein 4; spot at base of FW space 10; no spot at base of HW space 6"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -1783,6 +1831,10 @@
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
       "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
+      "choice": "Yes — FW band partially dislocated at vein 4; spot at base of FW space 10; no spot at base of HW space 6"
     },
     {
       "question": "Does the forewing underside have at least 3 spots in space 11, AND does the hindwing underside have 2 subbasal spots in space 8?",
@@ -1811,10 +1863,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -1832,6 +1880,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -1881,10 +1933,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -1902,6 +1950,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -1955,10 +2007,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -1976,6 +2024,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -2029,10 +2081,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -2050,6 +2098,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -2099,10 +2151,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -2120,6 +2168,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -2673,10 +2725,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -2694,6 +2742,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -2731,10 +2783,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -2752,6 +2800,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -2793,10 +2845,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -2814,6 +2862,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -2859,10 +2911,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -2880,6 +2928,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -2901,10 +2953,6 @@
     {
       "question": "Is the forewing postdiscal spot in space 9 as wide as or wider than the spot in space 6?",
       "choice": "No — FW spot 9 narrower than spot 6, shifted basad"
-    },
-    {
-      "question": "Does hindwing postdiscal spot 6 completely fill the gap between spot 5 and the end-cell bar (no gap visible between spot 6 and the bar)?",
-      "choice": "Yes — HW spot 6 fills the gap; spot 6 touches or nearly touches the end-cell bar"
     }
   ],
   "Arhopala silhetensis adorea": [
@@ -2929,16 +2977,12 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
       "question": "On the hindwing underside, is the postdiscal spot in space 6 positioned roughly midway between the postdiscal spot in space 5 and the end-cell bar?",
-      "choice": "No — spot 6 in the postdiscal row at roughly the same level as spot 5"
+      "choice": "Yes — postdiscal spot in space 6 is roughly midway between spot 5 and the end-cell bar"
     },
     {
       "question": "Is there a whitish streak on the hindwing underside running from the base of the dorsum to the apex?",
@@ -2947,34 +2991,6 @@
     {
       "question": "Is there a central spot in forewing underside space 11?",
       "choice": "No — no central spot in FW space 11"
-    },
-    {
-      "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
-      "choice": "No"
-    },
-    {
-      "question": "Are the underside markings macular — composed of separated lines and dots rather than continuous solid bands?",
-      "choice": "No — markings form more continuous bands"
-    },
-    {
-      "question": "Is this a relatively large species with a conspicuously projecting tornal lobe on the hindwing, and postdiscal spots 6 and 7 placed vertically?",
-      "choice": "Yes — large; conspicuous projecting HW tornal lobe; spots 6 and 7 vertical"
-    },
-    {
-      "question": "Which cleander group subgroup does the specimen belong to?",
-      "choice": "Larger (FW > 21 mm); tornal lobe conspicuously projecting (cleander subgroup)"
-    },
-    {
-      "question": "Is the forewing postdiscal band NOT dislocated at vein 4 — straight through or only slightly sinuous?",
-      "choice": "No — FW band partially dislocated at vein 4"
-    },
-    {
-      "question": "Is the forewing postdiscal spot in space 9 as wide as or wider than the spot in space 6?",
-      "choice": "No — FW spot 9 narrower than spot 6, shifted basad"
-    },
-    {
-      "question": "Does hindwing postdiscal spot 6 completely fill the gap between spot 5 and the end-cell bar (no gap visible between spot 6 and the bar)?",
-      "choice": "No — gap between HW spot 6 and end-cell bar is wider than spot 6"
     }
   ],
   "Arhopala aurelia": [
@@ -2999,10 +3015,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -3020,6 +3032,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -3061,10 +3077,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -3082,6 +3094,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -3127,10 +3143,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -3148,6 +3160,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -3197,10 +3213,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -3218,6 +3230,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -3271,10 +3287,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -3292,6 +3304,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -3349,10 +3365,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -3370,6 +3382,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -3431,10 +3447,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -3452,6 +3464,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -3517,10 +3533,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -3538,6 +3550,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -3607,10 +3623,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -3628,6 +3640,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -3693,6 +3709,10 @@
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
     },
     {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
+    },
+    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -3723,10 +3743,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -3740,6 +3756,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -3773,10 +3793,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -3790,6 +3806,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -3817,6 +3837,10 @@
     {
       "question": "Is the tail very long and thread-like — approximately 5 mm or longer?",
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
+    },
+    {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
@@ -3857,6 +3881,10 @@
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
     },
     {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
+    },
+    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -3893,6 +3921,10 @@
     {
       "question": "Is the tail very long and thread-like — approximately 5 mm or longer?",
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
+    },
+    {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
@@ -3933,10 +3965,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -3954,6 +3982,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -4007,10 +4039,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -4028,6 +4056,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -4089,10 +4121,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -4110,6 +4138,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -4171,10 +4203,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -4205,10 +4233,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -4226,6 +4250,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -4287,10 +4315,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -4308,6 +4332,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -4365,6 +4393,10 @@
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
     },
     {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
+    },
+    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -4407,6 +4439,10 @@
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
     },
     {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
+    },
+    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -4447,6 +4483,10 @@
     {
       "question": "Is the tail very long and thread-like — approximately 5 mm or longer?",
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
+    },
+    {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
@@ -4495,6 +4535,10 @@
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
     },
     {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
+    },
+    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -4535,6 +4579,10 @@
     {
       "question": "Is the tail very long and thread-like — approximately 5 mm or longer?",
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
+    },
+    {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
@@ -4583,6 +4631,10 @@
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
     },
     {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
+    },
+    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -4617,6 +4669,10 @@
       "choice": "No — tail moderate or typical for Arhopala (up to ~4 mm)"
     },
     {
+      "question": "Is there a restricted dark patch in FW space 1b (under the forewing cell), bounded outwardly by a pale line?",
+      "choice": "Cannot determine — FW space 1b obscured by hindwing"
+    },
+    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -4647,10 +4703,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -4668,6 +4720,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -4713,10 +4769,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -4734,6 +4786,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -4775,10 +4831,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -4796,6 +4848,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -4875,10 +4931,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -4896,6 +4948,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -4951,6 +5007,14 @@
     {
       "question": "Within the amphimuta group (echelon HW spots 5–7), which subgroup best fits the specimen?",
       "choice": "Spots more quadrate/banded; FW space 2 spot stepped outward toward termen (muta subgroup)"
+    },
+    {
+      "question": "Is the species noticeably small and duller bluish-purple on the male upperside?",
+      "choice": "Cannot determine — upperside not visible"
+    },
+    {
+      "question": "On the male upperside, are both the forewing and hindwing exactly the same shade of blue in all lights?",
+      "choice": "Cannot determine — upperside not visible"
     }
   ],
   "Muta subgroup — moorei or muta maranda (unresolved)": [
@@ -4992,6 +5056,10 @@
     },
     {
       "question": "Is the species noticeably small and duller bluish-purple on the male upperside?",
+      "choice": "Cannot determine — upperside not visible"
+    },
+    {
+      "question": "On the male upperside, are both the forewing and hindwing exactly the same shade of blue in all lights?",
       "choice": "Cannot determine — upperside not visible"
     }
   ],
@@ -5059,10 +5127,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -5080,6 +5144,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {
@@ -5137,10 +5205,6 @@
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
     {
-      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
-      "choice": "No"
-    },
-    {
       "question": "On the forewing underside, is the basal half of space 1b completely darkened?",
       "choice": "Cannot determine — FW space 1b obscured by hindwing"
     },
@@ -5158,6 +5222,10 @@
     },
     {
       "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
       "choice": "No"
     },
     {

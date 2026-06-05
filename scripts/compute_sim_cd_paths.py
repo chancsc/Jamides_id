@@ -226,6 +226,10 @@ def get_display_questions(answers, scores, feature_matrix, q_meta, q_cov, tree_n
         for q, choice in answers.items():
             if not choice.startswith('Cannot determine'):
                 continue
+            # Collect next-questions from every node sharing this question text;
+            # only add when all agree (ambiguous multi-node cases must not inject
+            # a spurious followup from the wrong tree branch).
+            candidates = set()
             for node in tree_nodes.values():
                 if node.get('type') != 'question' or node.get('question') != q:
                     continue
@@ -234,8 +238,9 @@ def get_display_questions(answers, scores, feature_matrix, q_meta, q_cov, tree_n
                     continue
                 follow = tree_nodes.get(cd_choice['next'])
                 if follow and follow.get('type') == 'question':
-                    cd_followups.add(follow['question'])
-                break
+                    candidates.add(follow['question'])
+            if len(candidates) == 1:
+                cd_followups.update(candidates)
 
     all_q = [q for q, choices in diversity.items()
              if q in touched or len(choices) >= 2 or q in top1_features or q in cd_followups]
@@ -316,25 +321,36 @@ def compute_sim_cd_path(result_name, feature_matrix, q_meta, q_cov, tree_nodes,
                                           tree_nodes, question_order)
 
         # Find the first unanswered question in the visible window (15-cap) that
-        # this species knows how to answer.  Questions relevant only to competing
-        # species are skipped (not part of this species' key path).
+        # this species knows how to answer.  Canonical-path questions are answered
+        # from sim_answers.  Sim-CD questions that appear in the display but are NOT
+        # on the canonical path are answered as "Cannot determine" — Feature Scoring
+        # shows them (because they discriminate competing species), and a user who
+        # can't see the upperside/space 1-3 would answer them CD too.
         unanswered_seen = 0
-        next_q = None
+        next_q          = None
+        next_q_answer   = None
         for q in qs:
             if q not in answers:
                 unanswered_seen += 1
                 if unanswered_seen > 15:
                     break
                 if q in sim_answers:
-                    next_q = q
+                    next_q        = q
+                    next_q_answer = sim_answers[q]
                     break
+                elif is_sim_cd_question(q):
+                    cd_label = get_cd_choice_for_question(tree_nodes, q)
+                    if cd_label:
+                        next_q        = q
+                        next_q_answer = cd_label
+                        sim_cd_qs.add(q)   # track for stop condition
+                        break
 
         if next_q is None:
             break  # No more answerable questions in the visible window
 
-        answer = sim_answers[next_q]
-        answers[next_q] = answer
-        path.append({'question': next_q, 'choice': answer})
+        answers[next_q] = next_q_answer
+        path.append({'question': next_q, 'choice': next_q_answer})
 
         # Stop when species is ranked #1 with strictly better score than #2
         # AND all sim-CD questions that are in the feature pool have been answered.
