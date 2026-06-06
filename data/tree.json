@@ -1563,7 +1563,10 @@
       "taxon_id": null,
       "name": "Arhopala elopura",
       "common_name": "",
-      "note": "Underside hair-brown; markings barely darker than ground colour — contrast less than in A. pseudomuta. FW: no basal spot in space 10. HW: postdiscal space 6 partly fuscous. Male: purer blue with black border ~0.5 mm. Tail ~3.5–4.0 mm."
+      "note": "Underside ground colour uniform hair brown; markings notably faint, barely darker than the ground colour (less contrasting than A. pseudomuta). FW: costal spot in mid-space 11 above the central cell spot; postdiscal spot 4 shifted distad, out of line with spots 5 and 6; no spot at extreme base of space 10. HW: postdiscal band completely dislocated at vein 2; postdiscal space 6 partly fuscous; postdiscal spot 6 outwardly straight or convex — inner edge in line with or inside the inner edge of spot 7, touching or overlapping the end-cell bar; centres of spots 5, 6 and 7 widely out of line. Tail ~3.5–4.0 mm; FW 17–19 mm. Male: shining blue; black border very narrow, thread-like to just under 0.5 mm at apex. Female: broader black borders; blue areas often a purer shade than in related species.",
+      "features": {
+        "On the hindwing underside, is the postdiscal spot in space 6 positioned roughly midway between the postdiscal spot in space 5 and the end-cell bar?": "No — spot 6 displaced past midway; touching or overlapping the end-cell bar; spots 5, 6 and 7 widely out of line"
+      }
     },
     "r_arianaga": {
       "type": "result",
