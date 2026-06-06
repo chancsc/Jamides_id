@@ -183,12 +183,23 @@ function computeSimCdPath(resultName, matrix, treeNodes, canonicalAnswers) {
     simPath.push({ question: nextQ, choice: nextAns });
 
     // Stop once species is uniquely #1 by at least 2 points and all sim-CD questions answered.
-    // Gap >= 2 prevents stopping at a group-level question when the next question is
-    // the decisive subgroup discriminator (e.g. Q33→Q34 for A. agaba).
+    // After the gap >= 2 threshold is met, also continue if the species hasn't reached its
+    // maximum possible score yet AND there are still unanswered own-feature questions visible
+    // in the window. This ensures that confirmatory features (e.g. Q38–Q41 for A. agaba) are
+    // included without inflating paths for species already at max score.
     const newScores = scoreAllPure(answers, matrix);
     if (newScores.length > 0 && newScores[0].name === resultName &&
         (newScores.length < 2 || newScores[0].score >= newScores[1].score + 2)) {
-      if ([...simCdQs].every(q => answers.has(q))) break;
+      if ([...simCdQs].every(q => answers.has(q))) {
+        const atMax = newScores[0].score >= newScores[0].max;
+        if (atMax) break;
+        // Refresh window so questions unlocked by the last answer are visible.
+        getDisplayQuestionsPure(answers, newScores, matrix, treeNodes, questionOrder);
+        const ownLeft = questionOrder
+          .filter(q => !answers.has(q)).slice(0, 15)
+          .filter(q => simAnswers.has(q)).length;
+        if (ownLeft === 0) break;
+      }
     }
   }
 

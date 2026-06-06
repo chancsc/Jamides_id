@@ -506,12 +506,19 @@ function escapeHtml(str) {
 }
 
 // Like escapeHtml but converts [text](https://...) to clickable links.
+// Escapes plain-text segments individually so URLs are never pre-escaped.
 function renderHint(str) {
   if (!str) return '';
-  return escapeHtml(str).replace(
-    /\[([^\]]+)\]\((https:\/\/[^)]+)\)/g,
-    (_, text, url) => `<a href="${escapeAttr(url)}" target="_blank" rel="noopener">${text}</a>`
-  );
+  const re = /\[([^\]]+)\]\((https:\/\/[^)]+)\)/g;
+  const out = [];
+  let last = 0, m;
+  while ((m = re.exec(str)) !== null) {
+    out.push(escapeHtml(str.slice(last, m.index)));
+    out.push(`<a href="${escapeAttr(m[2])}" target="_blank" rel="noopener">${escapeHtml(m[1])}</a>`);
+    last = m.index + m[0].length;
+  }
+  out.push(escapeHtml(str.slice(last)));
+  return out.join('');
 }
 
 function escapeAttr(str) {

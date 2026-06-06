@@ -2447,6 +2447,10 @@
     {
       "question": "Does the forewing underside have at least 3 spots in space 11, AND does the hindwing underside have 2 subbasal spots in space 8?",
       "choice": "Yes — ≥3 spots in FW space 11; 2 subbasal spots in HW space 8; spots deep purple-brown"
+    },
+    {
+      "question": "Is HW postdiscal spot 6 very small and displaced outward toward the end-cell bar, sitting below spot 7?",
+      "choice": "No — HW spot 6 not unusually small or displaced; spots on upper HW half deep purple-brown"
     }
   ],
   "Arhopala achelous achelous": [
@@ -2497,6 +2501,10 @@
     {
       "question": "Does the forewing underside have at least 3 spots in space 11, AND does the hindwing underside have 2 subbasal spots in space 8?",
       "choice": "No — 0 spots in FW space 11; single spot at base of HW space 8"
+    },
+    {
+      "question": "Is HW postdiscal spot 6 very small and displaced outward toward the end-cell bar, sitting below spot 7?",
+      "choice": "Yes — HW spot 6 very small, displaced outward below spot 7 toward end-cell bar"
     }
   ],
   "Arhopala aurea": [
@@ -2571,6 +2579,14 @@
     {
       "question": "Is the underside glazed with a distinct purple wash?",
       "choice": "No — underside hair-brown (no purple glaze)"
+    },
+    {
+      "question": "Are the underside markings incomplete — lacking basal/central cell spots on the forewing and various basal/discal spots on the hindwing, with a narrow postdiscal band?",
+      "choice": "No — complete underside markings"
+    },
+    {
+      "question": "In which region was this butterfly observed?",
+      "choice": "Peninsular Malaysia or Singapore"
     }
   ],
   "Arhopala trogon": [
@@ -2801,6 +2817,10 @@
     {
       "question": "Are the underside markings incomplete — lacking basal/central cell spots on the forewing and various basal/discal spots on the hindwing, with a narrow postdiscal band?",
       "choice": "Yes — incomplete markings; male green turns to violet-blue at tornus of both wings"
+    },
+    {
+      "question": "Is the underside glazed with a distinct purple wash?",
+      "choice": "No — underside hair-brown (no purple glaze)"
     }
   ],
   "Arhopala borneensis": [
@@ -2875,6 +2895,14 @@
     {
       "question": "Are the underside markings incomplete — lacking basal/central cell spots on the forewing and various basal/discal spots on the hindwing, with a narrow postdiscal band?",
       "choice": "No — complete underside markings"
+    },
+    {
+      "question": "Is the underside glazed with a distinct purple wash?",
+      "choice": "No — underside hair-brown (no purple glaze)"
+    },
+    {
+      "question": "In which region was this butterfly observed?",
+      "choice": "Borneo (Sabah, Sarawak, Brunei, or Kalimantan)"
     }
   ],
   "Arhopala anarte": [
@@ -3499,6 +3527,22 @@
     {
       "question": "Which cleander group subgroup does the specimen belong to?",
       "choice": "HW spot 5 contiguous/merged with end-cell bar; HW band partially dislocated at vein 2 (agaba subgroup)"
+    },
+    {
+      "question": "Is the underside pale slatey purple with conspicuous dark markings outlined by nearly-white striae?",
+      "choice": "No"
+    },
+    {
+      "question": "Does the underside have a slatey pink glaze with striae that are whiter than in other species?",
+      "choice": "No — no slatey pink glaze"
+    },
+    {
+      "question": "Are the wings notably rounded and elongate in shape?",
+      "choice": "No — typical wing shape"
+    },
+    {
+      "question": "Is the postdiscal band placed very close to the inner submarginal lunules?",
+      "choice": "No — postdiscal band not especially close to submarginal lunules"
     }
   ],
   "Arhopala cleander aphadantas": [
@@ -3705,6 +3749,10 @@
     {
       "question": "Is the forewing postdiscal spot in space 9 as wide as or wider than the spot in space 6?",
       "choice": "No — FW spot 9 narrower than spot 6, shifted basad"
+    },
+    {
+      "question": "Does hindwing postdiscal spot 6 completely fill the gap between spot 5 and the end-cell bar (no gap visible between spot 6 and the bar)?",
+      "choice": "Yes — HW spot 6 fills the gap; spot 6 touches or nearly touches the end-cell bar"
     }
   ],
   "Arhopala silhetensis adorea": [
@@ -3751,6 +3799,34 @@
     {
       "question": "Is this a relatively large species with a conspicuously projecting tornal lobe on the hindwing, and postdiscal spots 6 and 7 placed vertically?",
       "choice": "Yes — large; conspicuous projecting HW tornal lobe; spots 6 and 7 vertical"
+    },
+    {
+      "question": "Is this a small species with spots above the forewing cell and a spot at the base of forewing space 3?",
+      "choice": "No"
+    },
+    {
+      "question": "Is the forewing postdiscal band only partially dislocated at vein 4, with a spot at the base of FW space 10 but NO spot at the base of HW space 6?",
+      "choice": "No"
+    },
+    {
+      "question": "Are the underside markings macular — composed of separated lines and dots rather than continuous solid bands?",
+      "choice": "No — markings form more continuous bands"
+    },
+    {
+      "question": "Which cleander group subgroup does the specimen belong to?",
+      "choice": "Larger (FW > 21 mm); tornal lobe conspicuously projecting (cleander subgroup)"
+    },
+    {
+      "question": "Is the forewing postdiscal band NOT dislocated at vein 4 — straight through or only slightly sinuous?",
+      "choice": "No — FW band partially dislocated at vein 4"
+    },
+    {
+      "question": "Is the forewing postdiscal spot in space 9 as wide as or wider than the spot in space 6?",
+      "choice": "No — FW spot 9 narrower than spot 6, shifted basad"
+    },
+    {
+      "question": "Does hindwing postdiscal spot 6 completely fill the gap between spot 5 and the end-cell bar (no gap visible between spot 6 and the bar)?",
+      "choice": "No — gap between HW spot 6 and end-cell bar is wider than spot 6"
     }
   ],
   "Arhopala aurelia": [
@@ -5791,6 +5867,14 @@
     {
       "question": "What best describes the forewing postdiscal spot 4 and the hindwing postdiscal spot 6?",
       "choice": "HW spot 6 is outwardly sinuous; costal spot present in FW space 10 (select this even if FW spot 4 is also out of line)"
+    },
+    {
+      "question": "Does the butterfly have a hindwing tail?",
+      "choice": "Tailed"
+    },
+    {
+      "question": "How long is the hindwing tail, and are tornal green scales present?",
+      "choice": "Tail ~2.5 mm; underside pale purplish-brown; no/vestigial tornal green scales (montane)"
     }
   ],
   "Arhopala buddha cooperi": [
@@ -5861,6 +5945,10 @@
     {
       "question": "Does the butterfly have a hindwing tail?",
       "choice": "Tailed"
+    },
+    {
+      "question": "How long is the hindwing tail, and are tornal green scales present?",
+      "choice": "Tail ~1.0 mm (very short); underside hair-brown; tornal green scales present"
     }
   ],
   "Arhopala arvina adalitas": [
