@@ -133,6 +133,24 @@ function esc(s) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+function escAttr(s) {
+  return (s || '').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function renderHint(str) {
+  if (!str) return '';
+  const re = /\[([^\]]+)\]\((https:\/\/[^)]+)\)/g;
+  const out = [];
+  let last = 0, m;
+  while ((m = re.exec(str)) !== null) {
+    out.push(esc(str.slice(last, m.index)));
+    out.push(`<a href="${escAttr(m[2])}" target="_blank" rel="noopener">${esc(m[1])}</a>`);
+    last = m.index + m[0].length;
+  }
+  out.push(esc(str.slice(last)));
+  return out.join('');
+}
+
 // Phrases in question text that link to Visual Guide sections
 const GUIDE_LINKS = new Map([
   ['hindwing space 6', 'guide.html#hw-space6-basal-spot'],
@@ -238,7 +256,7 @@ function renderQuestions() {
     const hintHTML = meta.hint
       ? `<details class="cl-hint" id="${hintId}">
            <summary>Hint</summary>
-           <p>${esc(meta.hint)}</p>
+           <p>${renderHint(meta.hint)}</p>
          </details>`
       : '';
 
