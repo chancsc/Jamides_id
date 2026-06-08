@@ -341,6 +341,7 @@
       "id": "q_tailed_agrata",
       "question": "What is the shape of the hindwing underside central cell spot, and are there specific absences on the forewing underside?",
       "hint": "The agrata group has two subgroups: ace (with a band-like cell spot across the whole HW cell) and agrata (lacking a FW postdiscal spot in space 9 and lacking a costal spot in space 10).",
+      "guide_link": "guide.html#hw-central-cell-spot",
       "choices": [
         {
           "label": "HW central cell spot is band-like, stretching entirely across the cell (ace subgroup)",
