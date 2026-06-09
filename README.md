@@ -1,8 +1,8 @@
-# Arhopala ID
+# Jamides ID
 
-A mobile-friendly web app for identifying common Malaysian *Arhopala* butterfly species from field photographs.
+A mobile-friendly web app for identifying Malaysian *Jamides* (Caerulean) butterfly species from field photographs.
 
-Live: [chancsc.github.io/Arhopala_id](https://chancsc.github.io/Arhopala_id)
+Live: [chancsc.github.io/Jamides_id](https://chancsc.github.io/Jamides_id)
 
 ---
 
@@ -71,7 +71,7 @@ Both scripts require Python 3.9+ and the `requests` library (`pip install reques
 
 ### `scripts/fetch_species.py` — Regenerate species metadata
 
-Fetches *Arhopala* species observed in Malaysia from the iNaturalist API and writes `data/species.json`.
+Fetches *Jamides* species observed in Malaysia from the iNaturalist API and writes `data/species.json`.
 
 ```
 python scripts/fetch_species.py
@@ -97,8 +97,7 @@ The ID Key and Feature Scoring share a single path-scoring algorithm:
 | Penalty | Meaning |
 |---------|---------|
 | +1 per CD step | Path contains a "Cannot determine" answer (bypasses an observable feature) |
-| +1 per escape-hatch step | Path uses the camdeo-group bypass choice (routes a non-camdeo species back into the main key) |
-| +100 contradiction | Tailed/tailless mismatch between the path's starting branch and the result's identification note |
+| +1 per escape-hatch step | Path uses a bypass choice (routes a species around a question it cannot answer) |
 
 The lowest-score path is canonical. Paths scoring ≥ 100 are excluded from canonical consideration.
 
@@ -108,7 +107,6 @@ The lowest-score path is canonical. Paths scoring ≥ 100 are excluded from cano
 |------|---------|
 | `[CD]` | Canonical path has a Cannot-determine step. Expected only for unresolved species groups. |
 | `[ESC]` | Canonical path uses the camdeo escape-hatch. Indicates a tree routing bug. |
-| `[TAILED-CONTR]` | Path branch contradicts the result note. Indicates a structural tree error. |
 | `[FEAT]` | Result node has a manual `features` override. Not a problem — intentional correction. |
 
 **Expected baseline (June 2026)**
@@ -129,4 +127,4 @@ Run the script after any edit to `data/tree.json` to catch regressions before de
 
 ## Coverage
 
-5 of 25 *Arhopala* species groups currently covered. Further groups will be added as the identification key is extended.
+21 Malaysian *Jamides* species covered across 2 groups (bochus group and celeno group). The celeno group is further divided into the celeno and elpis subgroups.

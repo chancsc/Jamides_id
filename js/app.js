@@ -203,7 +203,7 @@ function renderResult(node) {
   const sciName = (species && species.name) || node.name || '';
   const inatUrl = (species && species.inat_url)
     || (node.taxon_id ? `https://www.inaturalist.org/taxa/${node.taxon_id}` : null)
-    || `https://www.inaturalist.org/search?q=${encodeURIComponent(sciName || 'Arhopala')}`;
+    || `https://www.inaturalist.org/search?q=${encodeURIComponent(sciName || 'Jamides')}`;
 
   const noteHTML = node.note
     ? `<div class="id-note">${escapeHtml(node.note)}</div>`

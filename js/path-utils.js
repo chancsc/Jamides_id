@@ -4,10 +4,7 @@
 // which path is "canonical" for each species.  Keeping a single copy here ensures
 // a change to the scoring logic is automatically reflected in both.
 
-const ESCAPE_HATCHES = [
-  'None of the camdeo features present',
-  'HW spot 6 appears midway between spot 5 and the end-cell bar',
-];
+const ESCAPE_HATCHES = [];
 
 function isEscapeHatch(choice) {
   return choice && ESCAPE_HATCHES.some(eh => choice.startsWith(eh));
@@ -15,20 +12,9 @@ function isEscapeHatch(choice) {
 
 // Score a path — lower is better (canonical = lowest score).
 // +1 per "Cannot determine" step, +1 per escape-hatch step.
-// +100 when the path starts on the wrong tailed/tailless branch.
-function pathScore(path, note) {
-  const lc = (note || '').toLowerCase();
-  const resultIsTailed    = /^tailed/.test(lc);
-  const resultIsNotTailed = /^tailless/.test(lc);
+function pathScore(path, _note) {
   let score = path.filter(s => s.choice && s.choice.startsWith('Cannot determine')).length;
   score    += path.filter(s => isEscapeHatch(s.choice)).length;
-  if (path.length > 0) {
-    const startsTailed    = path[0].choice === 'Yes — hindwing is tailed';
-    const startsNotTailed = path[0].choice === 'No — hindwing is tailless';
-    if (startsTailed    && path.some(s => s.choice && /tailless/i.test(s.choice))) score += 100;
-    if (startsNotTailed && resultIsTailed)    score += 100;
-    if (startsTailed    && resultIsNotTailed) score += 100;
-  }
   return score;
 }
 

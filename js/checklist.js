@@ -1,4 +1,4 @@
-// checklist.js — Feature scoring mode for Arhopala ID
+// checklist.js — Feature scoring mode for Jamides ID
 
 const cs = {
   featureMatrix: null,    // Map<name, Map<questionText, choiceLabel>>
@@ -23,7 +23,7 @@ const cs = {
 // answers Map. Persist to localStorage so selections survive that — they only
 // go away when the user explicitly hits Reset.
 
-const ANSWERS_KEY = 'arhopala-cl-answers';
+const ANSWERS_KEY = 'jamides-cl-answers';
 
 function saveAnswers() {
   try {
