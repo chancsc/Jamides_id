@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fetch Malaysian Arhopala species from iNaturalist and write data/species.json.
+Fetch Malaysian Jamides species from iNaturalist and write data/species.json.
 
 Usage:
     pip install requests
@@ -22,18 +22,18 @@ MALAYSIA_PLACE_ID = 6870
 OUTPUT = Path(__file__).parent.parent / "data" / "species.json"
 
 session = requests.Session()
-session.headers.update({"User-Agent": "Arhopala-ID/1.0 (github.com/chancsc/Arhopala_id)"})
+session.headers.update({"User-Agent": "Jamides-ID/1.0 (github.com/chancsc/Jamides_id)"})
 
 
-def get_arhopala_taxon_id() -> int:
-    print("Resolving Arhopala genus taxon ID…")
-    r = session.get(f"{INAT_BASE}/taxa", params={"q": "Arhopala", "rank": "genus", "per_page": 20})
+def get_jamides_taxon_id() -> int:
+    print("Resolving Jamides genus taxon ID…")
+    r = session.get(f"{INAT_BASE}/taxa", params={"q": "Jamides", "rank": "genus", "per_page": 20})
     r.raise_for_status()
     for taxon in r.json()["results"]:
-        if taxon["name"] == "Arhopala":
-            print(f"  Found: Arhopala = taxon_id {taxon['id']}")
+        if taxon["name"] == "Jamides":
+            print(f"  Found: Jamides = taxon_id {taxon['id']}")
             return taxon["id"]
-    raise RuntimeError("Could not find Arhopala genus in iNaturalist taxa search")
+    raise RuntimeError("Could not find Jamides genus in iNaturalist taxa search")
 
 
 def fetch_all_species(taxon_id: int) -> list:
@@ -88,7 +88,7 @@ def build_entry(item: dict) -> dict:
 
 
 def main():
-    taxon_id = get_arhopala_taxon_id()
+    taxon_id = get_jamides_taxon_id()
     raw = fetch_all_species(taxon_id)
 
     species = sorted([build_entry(item) for item in raw], key=lambda s: s["name"])
