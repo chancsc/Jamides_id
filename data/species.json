@@ -1,197 +1,187 @@
 {
-  "_note": "Run scripts/fetch_species.py to populate this file with real iNaturalist data including taxon IDs and photos.",
   "generated": "2026-06-09",
   "place": "Malaysia",
-  "place_id": 6870,
+  "place_id": 7155,
   "species": [
     {
-      "id": null,
-      "name": "Jamides abdul abdul",
+      "id": 981080,
+      "name": "Jamides abdul",
       "common_name": "",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+abdul",
+      "inat_url": "https://www.inaturalist.org/taxa/981080",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 8,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jamides_abdul"
     },
     {
-      "id": null,
-      "name": "Jamides alecto ageladas",
-      "common_name": "Metallic Caerulean",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+alecto",
+      "id": 154058,
+      "name": "Jamides alecto",
+      "common_name": "Metallic Cerulean",
+      "inat_url": "https://www.inaturalist.org/taxa/154058",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 236,
+      "wikipedia_url": "http://en.wikipedia.org/wiki/Jamides_alecto"
     },
     {
-      "id": null,
-      "name": "Jamides aratus adana",
-      "common_name": "",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+aratus",
+      "id": 932824,
+      "name": "Jamides aratus",
+      "common_name": "Sunda Caerulean",
+      "inat_url": "https://www.inaturalist.org/taxa/932824",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 16,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jamides_aratus"
     },
     {
-      "id": null,
-      "name": "Jamides bochus nabonassar",
-      "common_name": "Dark Caerulean",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+bochus",
+      "id": 146669,
+      "name": "Jamides bochus",
+      "common_name": "Dark Cerulean",
+      "inat_url": "https://www.inaturalist.org/taxa/146669",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 48,
+      "wikipedia_url": "http://en.wikipedia.org/wiki/Jamides_bochus"
     },
     {
-      "id": null,
-      "name": "Jamides caeruleus caeruleus",
-      "common_name": "Metallic Caerulean",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+caeruleus",
+      "id": 980535,
+      "name": "Jamides caeruleus",
+      "common_name": "Sky Blue",
+      "inat_url": "https://www.inaturalist.org/taxa/980535",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 49,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jamides_caerulea"
     },
     {
-      "id": null,
+      "id": 946805,
       "name": "Jamides callistus",
       "common_name": "",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+callistus",
+      "inat_url": "https://www.inaturalist.org/taxa/946805",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 3,
+      "wikipedia_url": null
     },
     {
-      "id": null,
-      "name": "Jamides celeno aelianus",
-      "common_name": "Common Caerulean",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+celeno",
+      "id": 52069,
+      "name": "Jamides celeno",
+      "common_name": "Common Cerulean",
+      "inat_url": "https://www.inaturalist.org/taxa/52069",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 388,
+      "wikipedia_url": "http://en.wikipedia.org/wiki/Jamides_celeno"
     },
     {
-      "id": null,
-      "name": "Jamides cunilda nisanca",
+      "id": 981072,
+      "name": "Jamides cunilda",
       "common_name": "",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+cunilda",
+      "inat_url": "https://www.inaturalist.org/taxa/981072",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 56,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jamides_virgulatus"
     },
     {
-      "id": null,
-      "name": "Jamides cyta minna",
-      "common_name": "Pale Caerulean",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+cyta",
+      "id": 489731,
+      "name": "Jamides cyta",
+      "common_name": "Pale Cerulean",
+      "inat_url": "https://www.inaturalist.org/taxa/489731",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 4,
+      "wikipedia_url": "http://en.wikipedia.org/wiki/Jamides_cyta"
     },
     {
-      "id": null,
-      "name": "Jamides elpis pseudelpis",
-      "common_name": "Glistening Caerulean",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+elpis",
+      "id": 372035,
+      "name": "Jamides elpis",
+      "common_name": "Glistening Cerulean",
+      "inat_url": "https://www.inaturalist.org/taxa/372035",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 53,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jamides_elpis"
     },
     {
-      "id": null,
-      "name": "Jamides ferrari evansi",
-      "common_name": "Ferrari's Caerulean",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+ferrari",
+      "id": 847391,
+      "name": "Jamides ferrari",
+      "common_name": "Ferrar's Cerulean",
+      "inat_url": "https://www.inaturalist.org/taxa/847391",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 4,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jamides_ferrari"
     },
     {
-      "id": null,
-      "name": "Jamides limes",
-      "common_name": "",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+limes",
-      "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
-    },
-    {
-      "id": null,
+      "id": 981058,
       "name": "Jamides lugine",
       "common_name": "",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+lugine",
+      "inat_url": "https://www.inaturalist.org/taxa/981058",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 2,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jamides_lugine"
     },
     {
-      "id": null,
-      "name": "Jamides malaccanus malaccanus",
-      "common_name": "Malaccan Caerulean",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+malaccanus",
+      "id": 498160,
+      "name": "Jamides malaccanus",
+      "common_name": "Malaccan Cerulean",
+      "inat_url": "https://www.inaturalist.org/taxa/498160",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 47,
+      "wikipedia_url": "http://en.wikipedia.org/wiki/Jamides_malaccanus"
     },
     {
-      "id": null,
-      "name": "Jamides parasaturatus paramalaccanus",
-      "common_name": "",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+parasaturatus",
+      "id": 550268,
+      "name": "Jamides parasaturatus",
+      "common_name": "Glassy Caerulean",
+      "inat_url": "https://www.inaturalist.org/taxa/550268",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 18,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jamides_parasaturatus"
     },
     {
-      "id": null,
-      "name": "Jamides philatus subditus",
-      "common_name": "",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+philatus",
+      "id": 489863,
+      "name": "Jamides philatus",
+      "common_name": "Burmese Cerulean",
+      "inat_url": "https://www.inaturalist.org/taxa/489863",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 56,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jamides_philatus"
     },
     {
-      "id": null,
+      "id": 981052,
       "name": "Jamides puloensis",
       "common_name": "",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+puloensis",
+      "inat_url": "https://www.inaturalist.org/taxa/981052",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 3,
+      "wikipedia_url": null
     },
     {
-      "id": null,
-      "name": "Jamides pura pura",
-      "common_name": "White Caerulean",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+pura",
+      "id": 340846,
+      "name": "Jamides pura",
+      "common_name": "White Cerulean",
+      "inat_url": "https://www.inaturalist.org/taxa/340846",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 55,
+      "wikipedia_url": "http://en.wikipedia.org/wiki/Jamides_pura"
     },
     {
-      "id": null,
-      "name": "Jamides talinga talinga",
+      "id": 886067,
+      "name": "Jamides talinga",
+      "common_name": "Lesser Cerulean",
+      "inat_url": "https://www.inaturalist.org/taxa/886067",
+      "taxon_photos": [],
+      "observation_count": 27,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jamides_talinga"
+    },
+    {
+      "id": 981074,
+      "name": "Jamides virgulatus",
+      "common_name": "Dusky Cerulean",
+      "inat_url": "https://www.inaturalist.org/taxa/981074",
+      "taxon_photos": [],
+      "observation_count": 6,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jamides_virgulatus"
+    },
+    {
+      "id": 981061,
+      "name": "Jamides zebra",
       "common_name": "",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+talinga",
+      "inat_url": "https://www.inaturalist.org/taxa/981061",
       "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
-    },
-    {
-      "id": null,
-      "name": "Jamides yehi",
-      "common_name": "",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+yehi",
-      "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
-    },
-    {
-      "id": null,
-      "name": "Jamides zebra lakatti",
-      "common_name": "Zebra Caerulean",
-      "inat_url": "https://www.inaturalist.org/search?q=Jamides+zebra",
-      "taxon_photos": [],
-      "observation_count": 0,
-      "wikipedia_url": ""
+      "observation_count": 10,
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jamides_zebra"
     }
   ]
 }
