@@ -47,15 +47,15 @@
     "q_hw_wedge_spots": {
       "type": "question",
       "id": "q_hw_wedge_spots",
-      "question": "On the hindwing underside, are the submarginal spots prominently black and wedge-shaped (elongated spots between the inner and outer submarginal striae)?",
-      "hint": "In J. aratus adana and J. philatus subditus, the spaces between the inner and outer submarginal striae on the HW underside contain prominent black wedge-shaped spots. This pattern is shared by both species and is not found in other Malaysian Jamides. The two are easily separated by their very different upperside colour — J. aratus is almost white on both surfaces; J. philatus male is sky blue.",
+      "question": "On the hindwing underside, are the submarginal spots prominently black and wedge-shaped (∧-shaped, elongated spots between the inner and outer submarginal striae)?",
+      "hint": "In J. aratus adana and J. philatus subditus, the spaces between the inner and outer submarginal striae on the HW underside contain prominent black wedge-shaped (∧) spots. This pattern is shared by both species and is not found in other Malaysian Jamides. The two are easily separated by their very different upperside colour — J. aratus is almost white on both surfaces; J. philatus male is sky blue.",
       "choices": [
         {
-          "label": "Yes — prominent black wedge-shaped spots on HW submarginal area",
+          "label": "Yes — prominent black wedge-shaped (∧) spots on HW submarginal area",
           "next": "q_upperside_colour"
         },
         {
-          "label": "No — submarginal spots absent or not wedge-shaped",
+          "label": "No — submarginal spots absent or not wedge-shaped (∧)",
           "next": "q_hw_sub_dark"
         },
         {
@@ -387,7 +387,7 @@
       "taxon_id": null,
       "name": "Jamides aratus adana",
       "common_name": "",
-      "note": "Celeno group, celeno subgroup. Common on Pulau Tioman and other East Malaysian coastal islands; not recorded on the Malay Peninsula mainland. Distinguished from J. philatus subditus by its almost white upperside (both sexes). HW underside: prominent black wedge-shaped submarginal spots. FW postdiscal band continuous (vein 3–vein 7). Male FW border diffuse, ~1.0mm; HW upperside with double series of dark submarginal spots. Tailed at vein 2."
+      "note": "Celeno group, celeno subgroup. Common on Pulau Tioman and other East Malaysian coastal islands; not recorded on the Malay Peninsula mainland. Distinguished from J. philatus subditus by its almost white upperside (both sexes). HW underside: prominent black wedge-shaped (∧) submarginal spots. FW postdiscal band continuous (vein 3–vein 7). Male FW border diffuse, ~1.0mm; HW upperside with double series of dark submarginal spots. Tailed at vein 2."
     },
 
     "r_philatus": {
@@ -396,7 +396,7 @@
       "taxon_id": null,
       "name": "Jamides philatus subditus",
       "common_name": "",
-      "note": "Celeno group, celeno subgroup. Uncommon; forest habitats of the Malay Peninsula and Singapore. Distinguished from J. aratus adana by its blue upperside. HW underside: prominent black wedge-shaped submarginal spots (shared with J. aratus). FW postdiscal band continuous (vein 3–vein 7). Male: sky blue upperside with thread-like FW border; HW upperside lacks submarginal spots. Female: pale blue. Tailed at vein 2."
+      "note": "Celeno group, celeno subgroup. Uncommon; forest habitats of the Malay Peninsula and Singapore. Distinguished from J. aratus adana by its blue upperside. HW underside: prominent black wedge-shaped (∧) submarginal spots (shared with J. aratus). FW postdiscal band continuous (vein 3–vein 7). Male: sky blue upperside with thread-like FW border; HW upperside lacks submarginal spots. Female: pale blue. Tailed at vein 2."
     },
 
     "r_cyta": {
@@ -538,9 +538,9 @@
       "type": "group",
       "id": "g_aratus_philatus",
       "group_name": "J. aratus / J. philatus (upperside needed to separate)",
-      "description": "Both J. aratus adana and J. philatus subditus have identical HW underside patterns (prominent black wedge-shaped submarginal spots between the inner and outer submarginal striae). Without seeing the upperside, these species cannot be reliably separated. J. aratus is almost white on the upperside (both sexes); J. philatus male is sky blue with a thread-like FW border. Both are celeno-group species with continuous FW band and white straight striae.",
+      "description": "Both J. aratus adana and J. philatus subditus have identical HW underside patterns (prominent black wedge-shaped (∧) submarginal spots between the inner and outer submarginal striae). Without seeing the upperside, these species cannot be reliably separated. J. aratus is almost white on the upperside (both sexes); J. philatus male is sky blue with a thread-like FW border. Both are celeno-group species with continuous FW band and white straight striae.",
       "key_features": [
-        "Prominent black wedge-shaped spots on HW submarginal area (underside)",
+        "Prominent black wedge-shaped (∧) spots on HW submarginal area (underside)",
         "Straight white striae (celeno group)",
         "FW postdiscal band continuous, not dislocated at vein 3"
       ],
