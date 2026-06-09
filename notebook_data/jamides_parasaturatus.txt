@@ -1,0 +1,34 @@
+Species: jamides parasaturatus
+Query: jamides parasaturatus - share the underside ID keys, including wing length/size, tail info, upperside id keys
+Date: 2026-06-09
+============================================================
+
+Jamides parasaturatus paramalaccanus is a member of the celeno group and celeno subgroup. It is primarily a forest-dwelling species and is distinguished from its close relatives by the visibility of its markings and specific line arrangements.
+
+Underside Identification Keys
+
+Marking Style: As a member of the celeno group, it features straight white striae (lines).
+
+Forewing Band: The postdiscal band is continuous from vein 3 to vein 7. The portion of the band in space 3 is positioned more or less in line with the spots in spaces 4 and 5.
+
+Hindwing Pattern: It is characterized by having two pairs of continuous, straight white lines: one subbasal pair and one discal pair.
+
+Transparency: A primary diagnostic feature is that the underside markings are clearly visible from the upperside by transparency. This distinguishes it from Jamides malaccanus, where the markings are barely visible through the wings.
+
+Upperside Identification Keys
+
+Male: Paler blue than Jamides malaccanus. Notably, the male lacks submarginal markings on the hindwing, which are present in J. malaccanus.
+
+Female: Paler and clearer blue than the female of J. malaccanus.
+
+Size and Structural Features
+
+Size: It is a small to moderate-sized butterfly.
+
+Tail: It possesses a filamentous tail at the end of vein 2 on the hindwing.
+
+---
+
+Visual Reference
+
+Plate 80, Figure 8: Jamides parasaturatus paramalaccanus{:target="_blank"}

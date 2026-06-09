@@ -1,0 +1,36 @@
+Species: jamides virgulatus
+Query: jamides virgulatus - share the underside ID keys, including wing length/size, tail info, upperside id keys
+Date: 2026-06-09
+============================================================
+
+Jamides cunilda nisanca (formerly listed in the previous edition as Jamides virgulatus) is the Malayan representative of the elpis subgroup within the celeno group. While the true Jamides virgulatus is now considered endemic to Borneo, the Malayan taxon is identified as J. cunilda.
+
+Underside Identification Keys
+
+Subgroup Characteristic: As a member of the elpis subgroup, the postdiscal band on the forewing underside is completely dislocated at vein 3.
+
+Band Alignment: The postdiscal band is slightly dislocated at vein 6, with the portion in space 6 shifted basad (inward).
+
+Costal Markings: The underside of the forewing usually features a distinct pair of costal white dashes located above the end-cell bar.
+
+Tornal Area: The orange tornal area on the hindwing is comparatively large, frequently obliterating the outer postdiscal stria in space 2 and sometimes in space 3.
+
+Marking Definition: All white striae are narrow and clearly defined.
+
+Upperside Identification Keys
+
+Male: The upperside is purple blue. The black border on the forewing is usually a thread-like line but may occasionally expand slightly and diffusely at the apex. The male lacks androconia (scent scales).
+
+Female: The upperside is a much paler, slightly chalky blue. The black border on the forewing is diffuse and characteristically expands abruptly just above vein 4. The hindwing features a series of rather small and diffuse submarginal spots on a bluish ground.
+
+Size and Tail Information
+
+Size: A small to moderate-sized butterfly. It is generally larger than Jamides talinga (which has a forewing length of less than 15.0 mm).
+
+Tail: It possesses a filamentous tail at the end of vein 2 on the hindwing.
+
+---
+
+Visual Reference
+
+Plate 81, Figure 9: Jamides cunilda nisanca{:target="_blank"}

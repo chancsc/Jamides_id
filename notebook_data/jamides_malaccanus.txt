@@ -1,0 +1,34 @@
+Species: jamides malaccanus
+Query: jamides malaccanus - share the underside ID keys, including wing length/size, tail info, upperside id keys
+Date: 2026-06-09
+============================================================
+
+Jamides malaccanus malaccanus (The Malaccan Caerulean) is a forest-dwelling member of the celeno group and celeno subgroup. It is found in primary forest habitats and was recently recorded as resident in Singapore.
+
+Underside Identification Keys
+
+Marking Style: As part of the celeno group, it features straight white striae (lines) rather than lunulate ones.
+
+Forewing Band Alignment: The postdiscal band in space 3 is positioned more or less in line with the band in spaces 4 and 5. The band is continuous from vein 3 to vein 7.
+
+Hindwing Pattern: It is distinguished from common relatives like Jamides celeno by having two pairs of continuous, straight white lines on the hindwing: one subbasal pair and one discal pair.
+
+Transparency: A key diagnostic feature is that the underside markings are barely visible from the upperside by transparency. This helps distinguish it from the closely related Jamides parasaturatus, where the markings are clearly visible through the wings.
+
+Upperside Identification Keys
+
+Male: Shining, deep sky blue. Unlike many other members of the subgroup, the male possesses distinct black submarginal spots in the tornal half of the hindwing. The male also has battledore androconia (scent scales).
+
+Female: Blue upperside with the veins usually slightly dark-dusted in the distal third of the wings.
+
+Size and Structural Features
+
+Size: It is a small to moderate-sized butterfly.
+
+Tail: It possesses a filamentous tail at the end of vein 2 on the hindwing.
+
+---
+
+Visual Reference
+
+Plate 80, Figure 7: Jamides malaccanus malaccanus{:target="_blank"}

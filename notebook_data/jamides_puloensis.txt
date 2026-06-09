@@ -1,0 +1,30 @@
+Species: jamides puloensis
+Query: jamides puloensis - share the underside ID keys, including wing length/size, tail info, upperside id keys
+Date: 2026-06-09
+============================================================
+
+Jamides puloensis is a species documented in the notebook sources as occurring in Borneo, specifically recorded in areas such as Kinabalu Park (Poring).
+
+Size and Structural Features
+
+Wing Length: The forewing length typically ranges between 15.0 mm and 19.0 mm.
+
+Tail: As a member of the genus Jamides, it possesses a filamentous tail at the end of vein 2 on the hindwing.
+
+Upperside Identification Keys
+
+Male: The upperside is a shining white with some blue tints. The forewing features a thin black border. Notably, the male lacks androconia (scent scales).
+
+Female: The upperside is white and is distinguished by a thick black border on the forewing termen.
+
+Underside Identification Keys
+
+While the provided sources offer detailed upperside and size information for this species, they do not list specific diagnostic keys or descriptions for the underside pattern of Jamides puloensis beyond identifying it as a member of the genus.
+
+---
+
+Visual Reference
+
+The specific visual records for this species are contained within the Bornean endemic butterfly documentation provided in the sources.
+
+Plate 80: Jamides Species (Reference for Genus Characteristics){:target="_blank"}

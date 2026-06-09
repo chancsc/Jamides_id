@@ -1,0 +1,32 @@
+Species: jamides cyta
+Query: jamides cyta - share the underside ID keys, including wing length/size, tail info, upperside id keys
+Date: 2026-06-09
+============================================================
+
+Jamides cyta minna (The Pale Caerulean) is a relatively large member of its genus found in the Malay Peninsula and is the sole representative of its specific subgroup in the region.
+
+Underside Identification Keys
+
+Group and Subgroup: It belongs to the celeno group (characterized by straight white striae) and is the only local member of the cyta subgroup.
+
+Diagnostic Feature: It is uniquely distinguished by having the spaces between the inner and outer submarginal striae on the hindwing filled with dark brown (strongly darkened).
+
+Band Alignment: On the forewing, the postdiscal band in space 3 is positioned more or less in line with the spots in spaces 4 and 5.
+
+Upperside Identification Keys
+
+Male: Blue upperside. A key structural feature is the presence of long paddle-shaped androconia (scent scales), which differ significantly from the battledore androconia found in other subgroups.
+
+Female: Blue upperside.
+
+Size and Structural Features
+
+Size: It is described as one of the largest species within the genus Jamides.
+
+Tail: Like other members of the genus, it possesses a filamentous tail at the end of vein 2 on the hindwing.
+
+---
+
+Visual Reference
+
+Plate 81, Figure 4: Jamides cyta minna{:target="_blank"}

@@ -1,0 +1,34 @@
+Species: jamides yehi
+Query: jamides yehi - share the underside ID keys, including wing length/size, tail info, upperside id keys
+Date: 2026-06-09
+============================================================
+
+Jamides yehi is an exceptionally rare member of the celeno group and celeno subgroup. It was described based on a single damaged male specimen collected from Tapah Hills, Perak, which was missing its abdomen, antennae, and legs.
+
+Underside Identification Keys
+
+Marking Style: The underside is described as atypical for the genus Jamides. 
+
+Ground Colour: The ground colour is white.
+
+Markings: It features blackish brown markings rather than the typical white striae.
+
+Tornal Spot: Despite the atypical pattern, it retains the characteristic black tornal spot crowned with orange on the hindwing.
+
+Band Alignment: The postdiscal band in space 3 is positioned more or less in line with the band in spaces 4 and 5. The band is continuous from vein 3 to vein 7.
+
+Upperside Identification Keys
+
+Androconia: Unlike most other members of the celeno subgroup, the male of Jamides yehi lacks battledore androconia (scent scales).
+
+Size and Structural Features
+
+Wing Length: The forewing length is 19.0 mm.
+
+Tail: It is a tailed species, possessing a filamentous tail at the end of vein 2 on the hindwing.
+
+---
+
+Visual Reference
+
+Plate 80, Figure 11: Jamides yehi{:target="_blank"}

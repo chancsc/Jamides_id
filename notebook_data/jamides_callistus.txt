@@ -1,0 +1,10 @@
+Species: jamides callistus
+Query: jamides callistus - share the underside ID keys, including wing length/size, tail info, upperside id keys
+Date: 2026-06-09
+============================================================
+
+Based on the provided notebook sources, Jamides callistus (Röber, 1886) is identified as a species occurring in the Kinabalu Park region of Sabah (recorded in areas such as Poring, Poring Hot Springs, and Sayap). However, the sources do not contain specific identification keys, underside/upperside descriptions, wing length, or tail information for this species.
+
+The species is listed only in the faunal checklist for Kinabalu Park and is not included in the descriptive text or identification keys for the genus Jamides found in the Butterflies of the Malay Peninsula or the documentation of Bornean endemics.
+
+Visual records for Jamides callistus are not provided on the primary plates (Plate 80 and Plate 81) or the revision plates included in the sources.

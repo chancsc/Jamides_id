@@ -1,0 +1,34 @@
+Species: jamides caeruleus
+Query: jamides caeruleus - share the underside ID keys, including wing length/size, tail info, upperside id keys
+Date: 2026-06-09
+============================================================
+
+Jamides caeruleus caeruleus (The Metallic Caerulean) is a common and widely distributed member of the celeno group and elpis subgroup.
+
+Underside Identification Keys
+
+Subgroup Characteristic: As part of the elpis subgroup, the postdiscal band on the forewing underside is completely dislocated at vein 3.
+
+Band Alignment: The postdiscal band on the forewing is slightly dislocated at vein 6, with the portion in space 6 shifted basad (inward).
+
+Hindwing Pattern: A key diagnostic feature is the arrangement of the subbasal striae. The second white stria from the base in space 7 is in line with the third stria from the base in the cell (or at least closer to it than to the second cell stria).
+
+Costal Markings: Unlike some similar species, the underside of the forewing usually lacks costal white dashes above the end-cell bar.
+
+Upperside Identification Keys
+
+Male: Brilliant metallic caerulean blue. The black border on the forewing increases to about 1.0 mm at the apex. The male lacks battledore androconia (scent scales).
+
+Female: The upperside blue is deeper and more shining than in other species of the elpis subgroup.
+
+Size and Tail Information
+
+Wing Length: It is a moderate-sized species with a forewing length typically greater than 15.0 mm.
+
+Tail: It possesses a filamentous tail at the end of vein 2 on the hindwing.
+
+---
+
+Visual Reference
+
+Plate 80, Figure 6: Jamides caeruleus caeruleus{:target="_blank"}
