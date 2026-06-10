@@ -194,6 +194,7 @@ const GUIDE_LINKS = new Map([
   ['postdiscal spot 6', 'guide.html#spot6-end-cell-bar'],
   ['shifted distad (outward, out of line with spots 5 and 6)', 'guide.html#fw-spot4-distad'],
   ['dislocated at vein 4', 'guide.html#fw-band-vein4'],
+  ['wedge-shaped (∧-shaped, elongated spots between the inner and outer submarginal striae)', 'guide.html#hw-wedge-spots'],
 ]);
 
 function linkifyQ(text) {
