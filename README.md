@@ -106,20 +106,31 @@ The lowest-score path is canonical. Paths scoring ≥ 100 are excluded from cano
 | Flag | Meaning |
 |------|---------|
 | `[CD]` | Canonical path has a Cannot-determine step. Expected only for unresolved species groups. |
-| `[ESC]` | Canonical path uses the camdeo escape-hatch. Indicates a tree routing bug. |
+| `[ESC]` | Canonical path uses an escape-hatch "none of these" choice. Indicates a tree routing bug (not currently used in the Jamides tree). |
 | `[FEAT]` | Result node has a manual `features` override. Not a problem — intentional correction. |
 
 **Expected baseline (June 2026)**
 
 ```
-score 0  (clean direct path)  : 108 / 114
-score 1–99 (CD or ESC step)   :   6 / 114  — all unresolved species groups
-score ≥100 (contradiction)    :   0 / 114
+score 0  (clean direct path)  : 19 / 19
+score 1–99 (CD or ESC step)   :  0 / 19
+score ≥100 (contradiction)    :  0 / 19
+CD coverage gaps              : 20
+Orphaned nodes                :  0
 ```
 
-The 6 imperfect paths are unresolved species clusters where the key cannot separate two species with certainty; their canonical paths inherently contain one CD step. Any new contradiction (score ≥ 100) or unexpected ESC flag indicates a tree structural bug to fix.
+All 19 species have a clean canonical path with no CD step. The 20 CD coverage gaps
+are expected: many "Cannot determine" choices intentionally route across the
+elpis/celeno subgroup split (e.g. CD on the FW vein-3 dislocation question routes
+to the celeno-subgroup branch), so a species whose canonical path continues past
+that point is no longer reachable via that CD branch. This does not affect any
+species' own canonical or sim-CD path — those are validated separately via
+`npm run regen-validate` (see `data/sim_cd_paths.json`). Any new contradiction
+(score ≥ 100) or unexpected ESC flag indicates a tree structural bug to fix.
 
-**Exit codes:** `0` = all clean, `1` = one or more imperfect or contradictory paths.
+**Exit codes:** `0` = all checks pass, `1` = CD coverage gaps, orphaned nodes,
+imperfect, or contradictory paths found (a non-zero exit is expected for Jamides
+due to the CD coverage gaps above).
 
 Run the script after any edit to `data/tree.json` to catch regressions before deploying.
 
