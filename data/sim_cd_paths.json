@@ -1,40 +1,4 @@
 {
-  "Jamides aratus adana": [
-    {
-      "question": "What is the style of the underside postdiscal striae (the transverse markings)?",
-      "choice": "White, straight or slightly wavy striae"
-    },
-    {
-      "question": "Is the underside ground colour white with blackish-brown markings (an inverted pattern unusual for the genus)?",
-      "choice": "No — grey or pale grey ground with white striae"
-    },
-    {
-      "question": "On the hindwing underside, are the submarginal spots prominently black and wedge-shaped (∧-shaped, elongated spots between the inner and outer submarginal striae)?",
-      "choice": "Yes — prominent black wedge-shaped (∧) spots on HW submarginal area"
-    },
-    {
-      "question": "What is the upperside ground colour? (Jamides aratus vs philatus — upperside character needed)",
-      "choice": "Cannot determine upperside colour"
-    }
-  ],
-  "Jamides philatus subditus": [
-    {
-      "question": "What is the style of the underside postdiscal striae (the transverse markings)?",
-      "choice": "White, straight or slightly wavy striae"
-    },
-    {
-      "question": "Is the underside ground colour white with blackish-brown markings (an inverted pattern unusual for the genus)?",
-      "choice": "No — grey or pale grey ground with white striae"
-    },
-    {
-      "question": "On the hindwing underside, are the submarginal spots prominently black and wedge-shaped (∧-shaped, elongated spots between the inner and outer submarginal striae)?",
-      "choice": "Yes — prominent black wedge-shaped (∧) spots on HW submarginal area"
-    },
-    {
-      "question": "What is the upperside ground colour? (Jamides aratus vs philatus — upperside character needed)",
-      "choice": "Cannot determine upperside colour"
-    }
-  ],
   "Jamides malaccanus malaccanus": [
     {
       "question": "What is the style of the underside postdiscal striae (the transverse markings)?",
