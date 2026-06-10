@@ -35,298 +35,6 @@
       "choice": "Cannot determine upperside colour"
     }
   ],
-  "Jamides abdul abdul": [
-    {
-      "question": "What is the style of the underside postdiscal striae (the transverse markings)?",
-      "choice": "White, straight or slightly wavy striae"
-    },
-    {
-      "question": "Is the underside ground colour white with blackish-brown markings (an inverted pattern unusual for the genus)?",
-      "choice": "No — grey or pale grey ground with white striae"
-    },
-    {
-      "question": "On the hindwing underside, are the submarginal spots prominently black and wedge-shaped (∧-shaped, elongated spots between the inner and outer submarginal striae)?",
-      "choice": "No — submarginal spots absent or not wedge-shaped (∧)"
-    },
-    {
-      "question": "Are the spaces between the HW inner and outer submarginal striae distinctly darkened?",
-      "choice": "No — submarginal area not distinctly darkened"
-    },
-    {
-      "question": "Is the forewing postdiscal band completely dislocated at vein 3 — the portion in space 3 shifted basad (inward), out of line with the band in spaces 4 and 5?",
-      "choice": "Cannot determine dislocation at vein 3"
-    },
-    {
-      "question": "Is the forewing postdiscal band also slightly dislocated at vein 6 — the portion in space 6 shifted basad (inward)?",
-      "choice": "No — band dislocated at vein 3 only; space 6 not shifted inward"
-    }
-  ],
-  "Jamides talinga talinga": [
-    {
-      "question": "What is the style of the underside postdiscal striae (the transverse markings)?",
-      "choice": "White, straight or slightly wavy striae"
-    },
-    {
-      "question": "Is the underside ground colour white with blackish-brown markings (an inverted pattern unusual for the genus)?",
-      "choice": "No — grey or pale grey ground with white striae"
-    },
-    {
-      "question": "On the hindwing underside, are the submarginal spots prominently black and wedge-shaped (∧-shaped, elongated spots between the inner and outer submarginal striae)?",
-      "choice": "No — submarginal spots absent or not wedge-shaped (∧)"
-    },
-    {
-      "question": "Are the spaces between the HW inner and outer submarginal striae distinctly darkened?",
-      "choice": "No — submarginal area not distinctly darkened"
-    },
-    {
-      "question": "Is the forewing postdiscal band completely dislocated at vein 3 — the portion in space 3 shifted basad (inward), out of line with the band in spaces 4 and 5?",
-      "choice": "Cannot determine dislocation at vein 3"
-    },
-    {
-      "question": "Is the forewing postdiscal band also slightly dislocated at vein 6 — the portion in space 6 shifted basad (inward)?",
-      "choice": "Yes — band also slightly dislocated at vein 6 (space 6 shifted inward)"
-    },
-    {
-      "question": "On the forewing underside, are there distinct white costal dashes above the end-cell bar?",
-      "choice": "Yes — distinct white costal dashes above the FW end-cell bar"
-    },
-    {
-      "question": "On the hindwing underside, are the subbasal striae dislocated (the paired lines broken or offset, not running as a continuous unbroken pair)?",
-      "choice": "Yes — HW subbasal striae dislocated (not running as a continuous pair)"
-    }
-  ],
-  "Jamides limes": [
-    {
-      "question": "What is the style of the underside postdiscal striae (the transverse markings)?",
-      "choice": "White, straight or slightly wavy striae"
-    },
-    {
-      "question": "Is the underside ground colour white with blackish-brown markings (an inverted pattern unusual for the genus)?",
-      "choice": "No — grey or pale grey ground with white striae"
-    },
-    {
-      "question": "On the hindwing underside, are the submarginal spots prominently black and wedge-shaped (∧-shaped, elongated spots between the inner and outer submarginal striae)?",
-      "choice": "No — submarginal spots absent or not wedge-shaped (∧)"
-    },
-    {
-      "question": "Are the spaces between the HW inner and outer submarginal striae distinctly darkened?",
-      "choice": "No — submarginal area not distinctly darkened"
-    },
-    {
-      "question": "Is the forewing postdiscal band completely dislocated at vein 3 — the portion in space 3 shifted basad (inward), out of line with the band in spaces 4 and 5?",
-      "choice": "Cannot determine dislocation at vein 3"
-    },
-    {
-      "question": "Is the forewing postdiscal band also slightly dislocated at vein 6 — the portion in space 6 shifted basad (inward)?",
-      "choice": "Yes — band also slightly dislocated at vein 6 (space 6 shifted inward)"
-    },
-    {
-      "question": "On the forewing underside, are there distinct white costal dashes above the end-cell bar?",
-      "choice": "Yes — distinct white costal dashes above the FW end-cell bar"
-    },
-    {
-      "question": "On the hindwing underside, are the subbasal striae dislocated (the paired lines broken or offset, not running as a continuous unbroken pair)?",
-      "choice": "No — HW subbasal striae continuous (unbroken paired lines)"
-    },
-    {
-      "question": "Are the white underside striae broad and rather diffuse, or narrow and clearly defined?",
-      "choice": "Broad and rather diffuse (larger species, FW ≥18mm; Bornean)"
-    }
-  ],
-  "Jamides cunilda nisanca": [
-    {
-      "question": "What is the style of the underside postdiscal striae (the transverse markings)?",
-      "choice": "White, straight or slightly wavy striae"
-    },
-    {
-      "question": "Is the underside ground colour white with blackish-brown markings (an inverted pattern unusual for the genus)?",
-      "choice": "No — grey or pale grey ground with white striae"
-    },
-    {
-      "question": "On the hindwing underside, are the submarginal spots prominently black and wedge-shaped (∧-shaped, elongated spots between the inner and outer submarginal striae)?",
-      "choice": "No — submarginal spots absent or not wedge-shaped (∧)"
-    },
-    {
-      "question": "Are the spaces between the HW inner and outer submarginal striae distinctly darkened?",
-      "choice": "No — submarginal area not distinctly darkened"
-    },
-    {
-      "question": "Is the forewing postdiscal band completely dislocated at vein 3 — the portion in space 3 shifted basad (inward), out of line with the band in spaces 4 and 5?",
-      "choice": "Cannot determine dislocation at vein 3"
-    },
-    {
-      "question": "Is the forewing postdiscal band also slightly dislocated at vein 6 — the portion in space 6 shifted basad (inward)?",
-      "choice": "Yes — band also slightly dislocated at vein 6 (space 6 shifted inward)"
-    },
-    {
-      "question": "On the forewing underside, are there distinct white costal dashes above the end-cell bar?",
-      "choice": "Yes — distinct white costal dashes above the FW end-cell bar"
-    },
-    {
-      "question": "On the hindwing underside, are the subbasal striae dislocated (the paired lines broken or offset, not running as a continuous unbroken pair)?",
-      "choice": "No — HW subbasal striae continuous (unbroken paired lines)"
-    },
-    {
-      "question": "Are the white underside striae broad and rather diffuse, or narrow and clearly defined?",
-      "choice": "Narrow and clearly defined"
-    }
-  ],
-  "Jamides alecto ageladas": [
-    {
-      "question": "What is the style of the underside postdiscal striae (the transverse markings)?",
-      "choice": "White, straight or slightly wavy striae"
-    },
-    {
-      "question": "Is the underside ground colour white with blackish-brown markings (an inverted pattern unusual for the genus)?",
-      "choice": "No — grey or pale grey ground with white striae"
-    },
-    {
-      "question": "On the hindwing underside, are the submarginal spots prominently black and wedge-shaped (∧-shaped, elongated spots between the inner and outer submarginal striae)?",
-      "choice": "No — submarginal spots absent or not wedge-shaped (∧)"
-    },
-    {
-      "question": "Are the spaces between the HW inner and outer submarginal striae distinctly darkened?",
-      "choice": "No — submarginal area not distinctly darkened"
-    },
-    {
-      "question": "Is the forewing postdiscal band completely dislocated at vein 3 — the portion in space 3 shifted basad (inward), out of line with the band in spaces 4 and 5?",
-      "choice": "Cannot determine dislocation at vein 3"
-    },
-    {
-      "question": "Is the forewing postdiscal band also slightly dislocated at vein 6 — the portion in space 6 shifted basad (inward)?",
-      "choice": "Yes — band also slightly dislocated at vein 6 (space 6 shifted inward)"
-    },
-    {
-      "question": "On the forewing underside, are there distinct white costal dashes above the end-cell bar?",
-      "choice": "No — no costal dashes above end-cell bar"
-    },
-    {
-      "question": "Are the white underside striae slightly broader and more diffuse than typical for the genus?",
-      "choice": "Slightly broader and more diffuse (larger species, FW >15mm)"
-    }
-  ],
-  "Jamides elpis pseudelpis": [
-    {
-      "question": "What is the style of the underside postdiscal striae (the transverse markings)?",
-      "choice": "White, straight or slightly wavy striae"
-    },
-    {
-      "question": "Is the underside ground colour white with blackish-brown markings (an inverted pattern unusual for the genus)?",
-      "choice": "No — grey or pale grey ground with white striae"
-    },
-    {
-      "question": "On the hindwing underside, are the submarginal spots prominently black and wedge-shaped (∧-shaped, elongated spots between the inner and outer submarginal striae)?",
-      "choice": "No — submarginal spots absent or not wedge-shaped (∧)"
-    },
-    {
-      "question": "Are the spaces between the HW inner and outer submarginal striae distinctly darkened?",
-      "choice": "No — submarginal area not distinctly darkened"
-    },
-    {
-      "question": "Is the forewing postdiscal band completely dislocated at vein 3 — the portion in space 3 shifted basad (inward), out of line with the band in spaces 4 and 5?",
-      "choice": "Cannot determine dislocation at vein 3"
-    },
-    {
-      "question": "Is the forewing postdiscal band also slightly dislocated at vein 6 — the portion in space 6 shifted basad (inward)?",
-      "choice": "Yes — band also slightly dislocated at vein 6 (space 6 shifted inward)"
-    },
-    {
-      "question": "On the forewing underside, are there distinct white costal dashes above the end-cell bar?",
-      "choice": "No — no costal dashes above end-cell bar"
-    },
-    {
-      "question": "Are the white underside striae slightly broader and more diffuse than typical for the genus?",
-      "choice": "Narrow and clearly defined"
-    },
-    {
-      "question": "On the HW underside, where is the second white stria from the base in space 7 positioned relative to the cell striae?",
-      "choice": "About midway between the 2nd and 3rd cell striae (middle position)"
-    }
-  ],
-  "Jamides ferrari evansi": [
-    {
-      "question": "What is the style of the underside postdiscal striae (the transverse markings)?",
-      "choice": "White, straight or slightly wavy striae"
-    },
-    {
-      "question": "Is the underside ground colour white with blackish-brown markings (an inverted pattern unusual for the genus)?",
-      "choice": "No — grey or pale grey ground with white striae"
-    },
-    {
-      "question": "On the hindwing underside, are the submarginal spots prominently black and wedge-shaped (∧-shaped, elongated spots between the inner and outer submarginal striae)?",
-      "choice": "No — submarginal spots absent or not wedge-shaped (∧)"
-    },
-    {
-      "question": "Are the spaces between the HW inner and outer submarginal striae distinctly darkened?",
-      "choice": "No — submarginal area not distinctly darkened"
-    },
-    {
-      "question": "Is the forewing postdiscal band completely dislocated at vein 3 — the portion in space 3 shifted basad (inward), out of line with the band in spaces 4 and 5?",
-      "choice": "Cannot determine dislocation at vein 3"
-    },
-    {
-      "question": "Is the forewing postdiscal band also slightly dislocated at vein 6 — the portion in space 6 shifted basad (inward)?",
-      "choice": "Yes — band also slightly dislocated at vein 6 (space 6 shifted inward)"
-    },
-    {
-      "question": "On the forewing underside, are there distinct white costal dashes above the end-cell bar?",
-      "choice": "No — no costal dashes above end-cell bar"
-    },
-    {
-      "question": "Are the white underside striae slightly broader and more diffuse than typical for the genus?",
-      "choice": "Narrow and clearly defined"
-    },
-    {
-      "question": "On the HW underside, where is the second white stria from the base in space 7 positioned relative to the cell striae?",
-      "choice": "In line with or closer to the 3rd cell stria (outer position)"
-    },
-    {
-      "question": "In the female: is the lowermost HW submarginal spot on the underside distinctly elongated or linear (rather than rounded)?",
-      "choice": "Female: lowermost HW submarginal spot distinctly linear (elongated)"
-    }
-  ],
-  "Jamides caeruleus caeruleus": [
-    {
-      "question": "What is the style of the underside postdiscal striae (the transverse markings)?",
-      "choice": "White, straight or slightly wavy striae"
-    },
-    {
-      "question": "Is the underside ground colour white with blackish-brown markings (an inverted pattern unusual for the genus)?",
-      "choice": "No — grey or pale grey ground with white striae"
-    },
-    {
-      "question": "On the hindwing underside, are the submarginal spots prominently black and wedge-shaped (∧-shaped, elongated spots between the inner and outer submarginal striae)?",
-      "choice": "No — submarginal spots absent or not wedge-shaped (∧)"
-    },
-    {
-      "question": "Are the spaces between the HW inner and outer submarginal striae distinctly darkened?",
-      "choice": "No — submarginal area not distinctly darkened"
-    },
-    {
-      "question": "Is the forewing postdiscal band completely dislocated at vein 3 — the portion in space 3 shifted basad (inward), out of line with the band in spaces 4 and 5?",
-      "choice": "Cannot determine dislocation at vein 3"
-    },
-    {
-      "question": "Is the forewing postdiscal band also slightly dislocated at vein 6 — the portion in space 6 shifted basad (inward)?",
-      "choice": "Yes — band also slightly dislocated at vein 6 (space 6 shifted inward)"
-    },
-    {
-      "question": "On the forewing underside, are there distinct white costal dashes above the end-cell bar?",
-      "choice": "No — no costal dashes above end-cell bar"
-    },
-    {
-      "question": "Are the white underside striae slightly broader and more diffuse than typical for the genus?",
-      "choice": "Narrow and clearly defined"
-    },
-    {
-      "question": "On the HW underside, where is the second white stria from the base in space 7 positioned relative to the cell striae?",
-      "choice": "In line with or closer to the 3rd cell stria (outer position)"
-    },
-    {
-      "question": "In the female: is the lowermost HW submarginal spot on the underside distinctly elongated or linear (rather than rounded)?",
-      "choice": "Female: lowermost HW submarginal spot rounded"
-    }
-  ],
   "Jamides malaccanus malaccanus": [
     {
       "question": "What is the style of the underside postdiscal striae (the transverse markings)?",
@@ -346,7 +54,7 @@
     },
     {
       "question": "Is the forewing postdiscal band completely dislocated at vein 3 — the portion in space 3 shifted basad (inward), out of line with the band in spaces 4 and 5?",
-      "choice": "Cannot determine dislocation at vein 3"
+      "choice": "No — band continuous, space 3 more or less in line with spaces 4 and 5"
     },
     {
       "question": "On the hindwing underside, how many pairs of continuous white lines are present?",
@@ -376,7 +84,7 @@
     },
     {
       "question": "Is the forewing postdiscal band completely dislocated at vein 3 — the portion in space 3 shifted basad (inward), out of line with the band in spaces 4 and 5?",
-      "choice": "Cannot determine dislocation at vein 3"
+      "choice": "No — band continuous, space 3 more or less in line with spaces 4 and 5"
     },
     {
       "question": "On the hindwing underside, how many pairs of continuous white lines are present?",
@@ -406,7 +114,7 @@
     },
     {
       "question": "Is the forewing postdiscal band completely dislocated at vein 3 — the portion in space 3 shifted basad (inward), out of line with the band in spaces 4 and 5?",
-      "choice": "Cannot determine dislocation at vein 3"
+      "choice": "No — band continuous, space 3 more or less in line with spaces 4 and 5"
     },
     {
       "question": "On the hindwing underside, how many pairs of continuous white lines are present?",
@@ -440,7 +148,7 @@
     },
     {
       "question": "Is the forewing postdiscal band completely dislocated at vein 3 — the portion in space 3 shifted basad (inward), out of line with the band in spaces 4 and 5?",
-      "choice": "Cannot determine dislocation at vein 3"
+      "choice": "No — band continuous, space 3 more or less in line with spaces 4 and 5"
     },
     {
       "question": "On the hindwing underside, how many pairs of continuous white lines are present?",
@@ -474,7 +182,7 @@
     },
     {
       "question": "Is the forewing postdiscal band completely dislocated at vein 3 — the portion in space 3 shifted basad (inward), out of line with the band in spaces 4 and 5?",
-      "choice": "Cannot determine dislocation at vein 3"
+      "choice": "No — band continuous, space 3 more or less in line with spaces 4 and 5"
     },
     {
       "question": "On the hindwing underside, how many pairs of continuous white lines are present?",

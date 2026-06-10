@@ -88,14 +88,14 @@ function pickFallbackPath(paths, note, resultFeatures) {
 
 // ── Simulation CD path ────────────────────────────────────────────────────────
 
-// Returns true if the question is about upperside features or spaces 1–3 on the
-// underside — features that a field observer using only a photo may not be able
-// to assess reliably.
+// Returns true if the question is about upperside features — features that a
+// field observer using only a photo of a resting butterfly (underside only)
+// may not be able to assess reliably.
 // Pass the node's choices array (optional) to also catch questions whose text
 // doesn't say "upperside" but whose CD choice label does (e.g. border-width Qs).
 function isSimCdQuestion(question, choices) {
   const q = (question || '').toLowerCase();
-  if (q.includes('upperside') || q.includes('upper side') || /\bspace [123][ab]?\b/.test(q))
+  if (q.includes('upperside') || q.includes('upper side'))
     return true;
   if (Array.isArray(choices)) {
     return choices.some(c =>
