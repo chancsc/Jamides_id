@@ -57,10 +57,6 @@
         {
           "label": "No — submarginal spots absent or not wedge-shaped (∧)",
           "next": "q_hw_sub_dark"
-        },
-        {
-          "label": "Cannot determine",
-          "next": "q_hw_sub_dark"
         }
       ]
     },
