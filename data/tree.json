@@ -27,14 +27,14 @@
       "type": "question",
       "id": "q_inverted",
       "question": "Is the underside ground colour white with blackish-brown markings (an inverted pattern unusual for the genus)?",
-      "hint": "In Jamides yehi, the ground colour is white and the markings are blackish-brown — the reverse of the typical Jamides pattern (pale ground with white striae). Despite the unusual pattern, J. yehi retains the characteristic black tornal spot crowned with orange on the HW. This species is exceptionally rare and known from only a single specimen from Tapah Hills, Perak. In a normal specimen the ground is pale greyish or brownish and the striae are white.",
+      "hint": "In Jamides yehi, the ground colour is white and the markings are blackish-brown — the reverse of the typical Jamides pattern (pale ground with white striae). Despite the unusual pattern, J. yehi retains the characteristic black tornal spot crowned with orange on the HW. This species is exceptionally rare and known from only a single specimen from Tapah Hills, Perak. In a normal specimen the ground is grey or pale grey and the striae are white.",
       "choices": [
         {
           "label": "Yes — white ground colour with blackish-brown markings (inverted pattern)",
           "next": "r_yehi"
         },
         {
-          "label": "No — normal pale ground with white striae",
+          "label": "No — grey or pale grey ground with white striae",
           "next": "q_hw_wedge_spots"
         },
         {
