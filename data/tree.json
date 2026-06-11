@@ -65,14 +65,14 @@
       "type": "question",
       "id": "q_aratus_philatus_location",
       "question": "Where was this individual photographed?",
-      "hint": "Both J. aratus adana and J. philatus subditus have identical HW underside patterns, but their distributions barely overlap. J. aratus adana is common on Pulau Tioman and other east-coast islands of Peninsular Malaysia and has never been recorded on the mainland. J. philatus subditus is an uncommon forest species of mainland Peninsular Malaysia and Singapore. If the upperside is visible: J. aratus is almost white on both surfaces (male has a diffuse ~1.0mm black FW border and a double series of dark HW submarginal spots); J. philatus male is sky blue with a thread-like FW border and no HW submarginal spots, female pale blue.",
+      "hint": "Both J. aratus adana and J. philatus subditus have identical HW underside patterns, but their distributions barely overlap. J. aratus adana is common on Pulau Tioman and other east-coast islands of Peninsular Malaysia and has never been recorded on the mainland or Borneo. J. philatus subditus is an uncommon forest species of mainland Peninsular Malaysia, Singapore, and Sabah (Borneo). If the upperside is visible: J. aratus is almost white on both surfaces (male has a diffuse ~1.0mm black FW border and a double series of dark HW submarginal spots); J. philatus male is sky blue with a thread-like FW border and no HW submarginal spots, female pale blue.",
       "choices": [
         {
           "label": "Pulau Tioman or another east-coast island of Peninsular Malaysia",
           "next": "r_aratus"
         },
         {
-          "label": "Mainland Peninsular Malaysia (forest) or Singapore",
+          "label": "Mainland Peninsular Malaysia (forest), Singapore, or Sabah (Borneo)",
           "next": "r_philatus"
         },
         {
@@ -383,7 +383,7 @@
       "taxon_id": null,
       "name": "Jamides aratus adana",
       "common_name": "",
-      "note": "Celeno group, celeno subgroup. Common on Pulau Tioman and other East Malaysian coastal islands; not recorded on the Malay Peninsula mainland. Distinguished from J. philatus subditus by its almost white upperside (both sexes). HW underside: prominent black wedge-shaped (∧) submarginal spots. FW postdiscal band continuous (vein 3–vein 7). Male FW border diffuse, ~1.0mm; HW upperside with double series of dark submarginal spots. Tailed at vein 2."
+      "note": "Celeno group, celeno subgroup. Common on Pulau Tioman and other east-coast islands of Peninsular Malaysia; not recorded on the Malay Peninsula mainland or in Borneo. Distinguished from J. philatus subditus by its almost white upperside (both sexes). HW underside: prominent black wedge-shaped (∧) submarginal spots. FW postdiscal band continuous (vein 3–vein 7). Male FW border diffuse, ~1.0mm; HW upperside with double series of dark submarginal spots. Tailed at vein 2."
     },
 
     "r_philatus": {
@@ -392,7 +392,7 @@
       "taxon_id": null,
       "name": "Jamides philatus subditus",
       "common_name": "",
-      "note": "Celeno group, celeno subgroup. Uncommon; forest habitats of the Malay Peninsula and Singapore. Distinguished from J. aratus adana by its blue upperside. HW underside: prominent black wedge-shaped (∧) submarginal spots (shared with J. aratus). FW postdiscal band continuous (vein 3–vein 7). Male: sky blue upperside with thread-like FW border; HW upperside lacks submarginal spots. Female: pale blue. Tailed at vein 2."
+      "note": "Celeno group, celeno subgroup. Uncommon; forest habitats of the Malay Peninsula, Singapore, and Sabah (Borneo). Distinguished from J. aratus adana by its blue upperside. HW underside: prominent black wedge-shaped (∧) submarginal spots (shared with J. aratus). FW postdiscal band continuous (vein 3–vein 7). Male: sky blue upperside with thread-like FW border; HW upperside lacks submarginal spots. Female: pale blue. Tailed at vein 2."
     },
 
     "r_cyta": {
@@ -534,13 +534,13 @@
       "type": "group",
       "id": "g_aratus_philatus",
       "group_name": "J. aratus / J. philatus (location needed to separate)",
-      "description": "Both J. aratus adana and J. philatus subditus have identical HW underside patterns (prominent black wedge-shaped (∧) submarginal spots between the inner and outer submarginal striae). Without knowing where the photo was taken, these species cannot be reliably separated. J. aratus is found on Pulau Tioman and other east-coast islands of Peninsular Malaysia (never on the mainland); J. philatus is a forest species of mainland Peninsular Malaysia and Singapore. If the upperside is visible, J. aratus is almost white (both sexes); J. philatus male is sky blue with a thread-like FW border. Both are celeno-group species with continuous FW band and white straight striae.",
+      "description": "Both J. aratus adana and J. philatus subditus have identical HW underside patterns (prominent black wedge-shaped (∧) submarginal spots between the inner and outer submarginal striae). Without knowing where the photo was taken, these species cannot be reliably separated. J. aratus is found on Pulau Tioman and other east-coast islands of Peninsular Malaysia (never on the mainland or in Borneo); J. philatus is a forest species of mainland Peninsular Malaysia, Singapore, and Sabah (Borneo). If the upperside is visible, J. aratus is almost white (both sexes); J. philatus male is sky blue with a thread-like FW border. Both are celeno-group species with continuous FW band and white straight striae.",
       "key_features": [
         "Prominent black wedge-shaped (∧) spots on HW submarginal area (underside)",
         "Straight white striae (celeno group)",
         "FW postdiscal band continuous, not dislocated at vein 3"
       ],
-      "no_next_note": "To confirm to species: Pulau Tioman / east-coast islands of Peninsular Malaysia = J. aratus; mainland Peninsular Malaysia or Singapore = J. philatus. If location is unknown, the upperside colour can help: almost white = J. aratus; blue = J. philatus.",
+      "no_next_note": "To confirm to species: Pulau Tioman / east-coast islands of Peninsular Malaysia = J. aratus; mainland Peninsular Malaysia, Singapore, or Sabah (Borneo) = J. philatus. If location is unknown, the upperside colour can help: almost white = J. aratus; blue = J. philatus.",
       "member_results": ["r_aratus", "r_philatus"]
     },
 
