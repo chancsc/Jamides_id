@@ -47,7 +47,7 @@
     "q_hw_wedge_spots": {
       "type": "question",
       "id": "q_hw_wedge_spots",
-      "question": "On the hindwing underside, are the submarginal spots prominently black and wedge-shaped (∧-shaped, elongated spots between the inner and outer submarginal striae)?",
+      "question": "On the hindwing underside, are the submarginal spots prominently black and wedge-shaped (∧), elongated spots between the inner and outer submarginal striae?",
       "hint": "In J. aratus adana and J. philatus subditus, the spaces between the inner and outer submarginal striae on the HW underside contain prominent black wedge-shaped (∧) spots. This pattern is shared by both species and is not found in other Malaysian Jamides. The two are easily separated by their very different upperside colour — J. aratus is almost white on both surfaces; J. philatus male is sky blue.",
       "choices": [
         {

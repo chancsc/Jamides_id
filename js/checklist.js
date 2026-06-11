@@ -195,7 +195,7 @@ const GUIDE_LINKS = new Map([
   ['shifted distad (outward, out of line with spots 5 and 6)', 'guide.html#fw-spot4-distad'],
   ['dislocated at vein 4', 'guide.html#fw-band-vein4'],
   ['second white stria from the base in space 7 positioned relative to the cell striae', 'guide.html#hw-stria7-cell-striae'],
-  ['wedge-shaped (∧-shaped, elongated spots between the inner and outer submarginal striae)', 'guide.html#hw-wedge-spots'],
+  ['wedge-shaped (∧)', 'guide.html#hw-wedge-spots'],
   ['dislocated at vein 3', 'guide.html#fw-band-vein3-vein6'],
   ['also slightly dislocated at vein 6 — the portion in space 6 shifted basad (inward)', 'guide.html#fw-band-vein3-vein6'],
   ['distinct white costal dashes above the end-cell bar', 'guide.html#fw-band-vein3-vein6'],
