@@ -202,6 +202,13 @@ const GUIDE_LINKS = new Map([
   ['how many pairs of continuous white lines are present', 'guide.html#hw-two-pairs-striae'],
 ]);
 
+// Phrases in choice labels that link to Visual Guide sections (rendered as a
+// small icon next to the choice button, since the button text itself can't
+// contain a nested link).
+const CHOICE_GUIDE_LINKS = new Map([
+  ['strongly filled with dark brown', 'guide.html#hw-submarginal-dark-cyta'],
+]);
+
 function linkifyQ(text) {
   let html = esc(text);
   for (const [phrase, url] of GUIDE_LINKS) {
@@ -288,11 +295,14 @@ function renderQuestions() {
 
     const btns = meta.choices.map(c => {
       const isCD = c.startsWith('Cannot determine');
-      return `<button class="cl-cbtn${sel === c ? ' sel' : ''}${isCD ? ' cd' : ''}"
+      const btn = `<button class="cl-cbtn${sel === c ? ' sel' : ''}${isCD ? ' cd' : ''}"
               data-q="${esc(q)}" data-c="${esc(c)}"
               title="${esc(c)}">
         ${esc(c)}
       </button>`;
+      const guideUrl = [...CHOICE_GUIDE_LINKS].find(([phrase]) => c.includes(phrase))?.[1];
+      if (!guideUrl) return btn;
+      return `<span class="cl-cbtn-wrap">${btn}<a class="cl-guide-icon" href="${guideUrl}" target="_blank" rel="noopener" title="Visual guide">🖼️</a></span>`;
     }).join('');
 
     const hintId = `hint-${idx}`;
