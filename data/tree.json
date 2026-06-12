@@ -86,18 +86,31 @@
       "type": "question",
       "id": "q_hw_sub_dark",
       "question": "Are the spaces between the HW inner and outer submarginal striae distinctly darkened?",
-      "hint": "Jamides cyta minna is uniquely distinguished by having the spaces between the inner and outer submarginal striae on the HW underside strongly filled with dark brown — forming a conspicuous dark band. J. cyta is also one of the largest Malaysian Jamides. Jamides lugine (Bornean endemic) has these spaces only barely darker than the ground colour, and its overall underside colour and pattern are duller and more greyish-brown — approaching J. bochus — despite having straight white striae, unlike the pale grey ground typical of other celeno-group/cyta-subgroup species. In all other species the submarginal area is not distinctly darkened.",
+      "hint": "Jamides cyta minna is uniquely distinguished by having the spaces between the inner and outer submarginal striae on the HW underside strongly filled with dark brown — forming a conspicuous dark band. J. cyta is also one of the largest Malaysian Jamides. In all other species the submarginal area is not distinctly darkened, or at most only barely darker than the ground colour (e.g. J. lugine).",
       "choices": [
         {
           "label": "Yes — strongly filled with dark brown (conspicuous dark band)",
           "next": "r_cyta"
         },
         {
-          "label": "Barely darker than ground, with the overall underside duller and more greyish-brown (approaching J. bochus) despite straight white striae — Bornean species",
+          "label": "No — not distinctly darkened (or at most barely darker than ground)",
+          "next": "q_lugine_ground_colour"
+        }
+      ]
+    },
+
+    "q_lugine_ground_colour": {
+      "type": "question",
+      "id": "q_lugine_ground_colour",
+      "question": "Is the overall underside duller and more greyish-brown, with a pattern approaching Jamides bochus, despite having straight white striae?",
+      "hint": "Jamides lugine is a Bornean endemic whose underside pattern and ground colour approach J. bochus — duller and more greyish-brown than the typical pale grey ground of other celeno-group/cyta-subgroup species — even though it still has the straight white striae characteristic of the celeno group. If the underside looks like the typical pale grey ground colour, answer No.",
+      "choices": [
+        {
+          "label": "Yes — duller, greyish-brown, bochus-like underside (Bornean species)",
           "next": "r_lugine"
         },
         {
-          "label": "No — submarginal area not distinctly darkened",
+          "label": "No — typical pale grey ground colour",
           "next": "q_fw_vein3"
         },
         {
