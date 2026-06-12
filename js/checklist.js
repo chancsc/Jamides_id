@@ -198,7 +198,7 @@ const GUIDE_LINKS = new Map([
   ['wedge-shaped (∧)', 'guide.html#hw-wedge-spots'],
   ['dislocated at vein 3', 'guide.html#fw-band-vein3-vein6'],
   ['dislocated at vein 6', 'guide.html#fw-band-vein3-vein6'],
-  ['white costal dashes', 'guide.html#fw-band-vein3-vein6'],
+  ['white costal dashes', 'guide.html#fw-costal-dashes-endcell'],
   ['how many pairs of continuous white lines are present', 'guide.html#hw-two-pairs-striae'],
 ]);
 
