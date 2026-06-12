@@ -202,9 +202,8 @@ const GUIDE_LINKS = new Map([
   ['how many pairs of continuous white lines are present', 'guide.html#hw-two-pairs-striae'],
 ]);
 
-// Phrases in choice labels that link to Visual Guide sections (rendered as a
-// small icon next to the choice button, since the button text itself can't
-// contain a nested link).
+// Phrases in choice labels that link to Visual Guide sections, rendered as
+// an inline link within the choice button text.
 const CHOICE_GUIDE_LINKS = new Map([
   ['strongly filled with dark brown', 'guide.html#hw-submarginal-dark-cyta'],
 ]);
@@ -216,6 +215,18 @@ function linkifyQ(text) {
       `<a href="${url}" class="guide-link" target="_blank" rel="noopener">${esc(phrase)}</a>`);
   }
   return html;
+}
+
+// Like linkifyQ, but only applies the first matching CHOICE_GUIDE_LINKS phrase.
+function linkifyChoice(text) {
+  for (const [phrase, url] of CHOICE_GUIDE_LINKS) {
+    const idx = text.indexOf(phrase);
+    if (idx === -1) continue;
+    const before = text.slice(0, idx);
+    const after = text.slice(idx + phrase.length);
+    return `${esc(before)}<a href="${url}" class="guide-link" target="_blank" rel="noopener">${esc(phrase)}</a>${esc(after)}`;
+  }
+  return esc(text);
 }
 
 
@@ -295,14 +306,11 @@ function renderQuestions() {
 
     const btns = meta.choices.map(c => {
       const isCD = c.startsWith('Cannot determine');
-      const btn = `<button class="cl-cbtn${sel === c ? ' sel' : ''}${isCD ? ' cd' : ''}"
+      return `<button class="cl-cbtn${sel === c ? ' sel' : ''}${isCD ? ' cd' : ''}"
               data-q="${esc(q)}" data-c="${esc(c)}"
               title="${esc(c)}">
-        ${esc(c)}
+        ${linkifyChoice(c)}
       </button>`;
-      const guideUrl = [...CHOICE_GUIDE_LINKS].find(([phrase]) => c.includes(phrase))?.[1];
-      if (!guideUrl) return btn;
-      return `<span class="cl-cbtn-wrap">${btn}<a class="cl-guide-icon" href="${guideUrl}" target="_blank" rel="noopener" title="Visual guide">🖼️</a></span>`;
     }).join('');
 
     const hintId = `hint-${idx}`;
@@ -353,6 +361,7 @@ function onQuestionClick(e) {
     renderQuestions();
     return;
   }
+  if (e.target.closest('.guide-link')) return;
   const btn = e.target.closest('.cl-cbtn');
   if (!btn) return;
   const q = btn.dataset.q;
