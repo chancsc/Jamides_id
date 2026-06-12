@@ -86,14 +86,14 @@
       "type": "question",
       "id": "q_hw_sub_dark",
       "question": "Are the spaces between the HW inner and outer submarginal striae distinctly darkened?",
-      "hint": "Jamides cyta minna is uniquely distinguished by having the spaces between the inner and outer submarginal striae on the HW underside strongly filled with dark brown — forming a conspicuous dark band. J. cyta is also one of the largest Malaysian Jamides. Jamides lugine (Bornean endemic) has the same spaces only barely darker than the ground colour. In all other species the submarginal area is not distinctly darkened.",
+      "hint": "Jamides cyta minna is uniquely distinguished by having the spaces between the inner and outer submarginal striae on the HW underside strongly filled with dark brown — forming a conspicuous dark band. J. cyta is also one of the largest Malaysian Jamides. Jamides lugine (Bornean endemic) has these spaces only barely darker than the ground colour, and its overall underside colour and pattern are duller and more greyish-brown — approaching J. bochus — despite having straight white striae, unlike the pale grey ground typical of other celeno-group/cyta-subgroup species. In all other species the submarginal area is not distinctly darkened.",
       "choices": [
         {
           "label": "Yes — strongly filled with dark brown (conspicuous dark band)",
           "next": "r_cyta"
         },
         {
-          "label": "Barely darker than ground (very faint darkening; Bornean species)",
+          "label": "Barely darker than ground, with the overall underside duller and more greyish-brown (approaching J. bochus) despite straight white striae",
           "next": "r_lugine"
         },
         {
