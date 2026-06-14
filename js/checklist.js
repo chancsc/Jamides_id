@@ -202,6 +202,11 @@ const GUIDE_LINKS = new Map([
   ['how many pairs of continuous white lines are present', 'guide.html#hw-two-pairs-striae'],
 ]);
 
+// Species names in question text that link to their iNaturalist taxon page
+const INAT_LINKS = new Map([
+  ['Jamides bochus', 'https://www.inaturalist.org/taxa/146669'],
+]);
+
 // Phrases in choice labels that link to Visual Guide sections, rendered as
 // an inline link within the choice button text.
 const CHOICE_GUIDE_LINKS = new Map([
@@ -211,6 +216,10 @@ const CHOICE_GUIDE_LINKS = new Map([
 function linkifyQ(text) {
   let html = esc(text);
   for (const [phrase, url] of GUIDE_LINKS) {
+    html = html.replace(esc(phrase),
+      `<a href="${url}" class="guide-link" target="_blank" rel="noopener">${esc(phrase)}</a>`);
+  }
+  for (const [phrase, url] of INAT_LINKS) {
     html = html.replace(esc(phrase),
       `<a href="${url}" class="guide-link" target="_blank" rel="noopener">${esc(phrase)}</a>`);
   }
