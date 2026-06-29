@@ -204,7 +204,7 @@ const GUIDE_LINKS = new Map([
 
 // Species names in question text that link to their iNaturalist taxon page
 const INAT_LINKS = new Map([
-  ['Jamides bochus', 'https://www.inaturalist.org/taxa/146669'],
+  ['Jamides bochus', 'https://www.inaturalist.org/observations?verifiable=true&taxon_id=146669&preferred_place_id=6734'],
 ]);
 
 // Phrases in choice labels that link to Visual Guide sections, rendered as
