@@ -1,1 +1,39 @@
+Query: share all the diagnostic key of Jamides in full text, exclude plate info and visual reference
 
+1 (21): Underside forewing postdiscal band in space 3 more or less in line with the band in spaces 4 and 5.
+2 (7): Underside forewing postdiscal band slightly dislocated at vein 6, with the portion in space 6 shifted basad.
+3 (4): Underside greyish brown with very pale buff, lunulate striae. ♂ upperside metallic blue with very broad black forewing border; no androconia. ♀ non-metallic blue. (bochus group).... Jamides bochus
+4: Underside paler and greyer, with white to whitish striae. ♂ upperside not metallic, with or without androconia. (celeno group).
+5 (6): Underside with the spaces between the inner and outer submarginal striae strongly darkened. ♂ upperside blue with long paddle-shaped androconia. ♀ blue. (celeno group, cyta subgroup).... Jamides cyta
+6: Underside spaces between inner and outer submarginal striae barely darker than the ground colour. ♂ upperside purple with narrow border; no androconia. ♀ paler purple. Borneo. ... Jamides lugine
+7: Underside forewing postdiscal band continuous from vein 3 to vein 7. ♂ with battledore androconia except for J. yehi which has no androconia. (celeno group, celeno subgroup).
+8 (9): ♂ underside atypical for Jamides: white with blackish brown markings but with the usual black tornal spot crowned with orange; fwl 19 mm. ♀ unknown.... Jamides yehi
+9 (18): Underside hindwing spaces between inner and outer submarginal striae not blackened.
+10 (15): Underside hind wing striae arranged so that there is only a subbasal pair of continuous, straight white lines.
+11 (12): ♂ upperside whitish blue with the forewing border increasing to at least 1.0 mm at apex. ♀ upperside almost white. ... Jamides celeno
+12: ♂ upperside pale, slightly shining blue, with forewing border less than 1.0 mm at apex. ♀ upperside pale; clear blue.
+13 (14): ♂ upperside unicolorous blue; forewing border a thread. ♀ upperside forewing with the underside markings visible by transparency.... Jamides pura
+14: ♂ upperside forewing blue deepens and border expands slightly and diffusely towards the apex. ♀ upperside forewing with the underside markings barely visible by transparency.... Jamides zebra
+15: Underside hindwing striae arranged so that there are discal as well as subbasal pairs of continuous, straight white lines.
+16 (17): ♂ upperside shining, deep sky blue with black submarginal spots in the tornal half of the hindwing, and the underside markings barely visible by transparency. ♀ upperside with the veins usually slightly dark-dusted in the distal third. ... Jamides malaccanus
+17: ♂ upperside paler blue without submarginal markings on the hindwing, and with the underside markings visible by transparency. ♀ upperside paler and clearer blue.... Jamides parasaturatus
+18: Underside hindwing with the spaces between the inner and outer submarginal striae forming black, wedge-shaped spots.
+19 (20): ♂ upperside sky blue, with the forewing border a thread and the hindwing without submarginal spots. ♀ upperside pale blue. ... Jamides philatus
+20: ♂ upperside almost white. ♀ upperside forewing with diffuse border nearly 1.0 mm wide; hindwing with a double series of dark submarginal spots. ... Jamides aratus
+21: Underside forewing postdiscal band completely dislocated at vein 4, so that the inner stria in space 3 forms a more or less continuous line with the outer stria or the end-cell bar and the outer postdiscal striae in spaces 1b and 2. ♂ with or without androconia. (celeno group, elpis subgroup).
+22 (37): Underside all white striae clearly defined.
+23 (36): Underside forewing postdiscal band slightly dislocated at vein 6, the portion in space 6 shifted basad. ♂ upperside blue. ♀ upperside forewing black border not extending along costa to base (except narrowly in J. alecto).
+24 (27): Underside hindwing striae arranged so that there is a more or less continuous pair of subbasal white lines.
+25 (26): ♂ upperside purple blue, forewing border usually a thread but sometimes expanding slightly and diffusely at apex; hindwing with faint submarginal markings, no androconia. ♀ much paler, slightly chalky blue, with forewing border rather diffuse and usually expanding abruptly just above vein 4; hindwing submarginal spots rather small and diffuse on a bluish ground. Underside forewing usually with a pair of costal white dashes above the end-cell bar; hindwing orange tornal area comparatively large often obliterating the outer postdiscal stria in space 2 and sometimes that in space 3 also. ... Jamides cunilda
+26: ♂ upperside paler blue, with the forewing border expanding to about 1.0 mm at apex and the hindwing with submarginal markings; androconia present. ♀ upperside forewing border regular, hindwing submarginal spots well defined on a whitish ground, that in space 2 being rather linear. Underside without costal white dashes; hindwing with orange area not reaching the postdiscal stria in space 2.... Jamides ferrari
+27: Underside hindwing subbasal striae dislocated.
+28 (29): Underside forewing usually with a pair of costal white dashes above the end-cell bar. Small, fwl less than 15.0 mm. ♂ upperside shining blue, with the forewing border 1.0 mm at tornus increasing to at least 2.0 mm at apex; no androconia. ♀ upperside pale silky blue.... Jamides talinga
+29: Underside forewing without costal dashes, except in J. limes sometimes. Larger, forewing normally more than 15.0 mm.
+30 (31): Underside hindwing with the second white stria from the base in space 7 in line with the third stria from the base in the cell, or at least nearer to this stria than to the second cell stria. ♂ upperside metallic caerulean blue, with forewing border increasing to about 1.0 mm at apex; hindwing without submarginal spots; no androconia. ♀ upperside blue deeper and more shining than in the other species of the group.... Jamides caeruleus
+31: Underside hindwing with the second white stria from the base in space 7 about midway between the second and third striae from the base in the cell. ♂ upperside paler blue.
+32 (35): ♂ upperside border a thread, hindwing without submarginal markings. ♀ upperside forewing border ends at midcosta.
+33 (34): Smaller, fwl less than 18.0 mm. Underside striae narrow; tornal orange area on hindwing not unusually large. ♂ upperside pale shining sky blue; androconia present.... Jamides elpis
+34: Larger, fwl at least 18.0 mm. Underside striae broad and rather diffuse; usually with costal white dashes above end-cell bar on forewing; orange tornal area on hindwing large. ♂ without androconia. Borneo.... Jamides limes
+35: ♂ upperside forewing border expands to about 1.0 mm at apex; hindwing with submarginal markings; no androconia. ♀ upperside forewing border runs narrowly to base along costa. ... Jamides alecto
+36: Underside forewing postdiscal band slightly curved but not dislocated at vein 6. ♂ upperside green, with broad borders; no androconia. ♀ upperside blue, forewing border extending broadly along the costa to the base.... Jamides abdul
+37: Underside postdiscal and submarginal striae so broad, and with such narrow dark interspaces, that the outer halves of both wings are mostly white. ♂ upperside pale blue; no androconia. Sumatra. ... Jamides lucide
