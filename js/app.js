@@ -734,8 +734,15 @@ function buildCPKeyPath(speciesName) {
 
   const stepsHTML = leadNums.map(n => {
     const text = leads[String(n)] || '';
-    return `<li class="path-step" data-key-num="${escapeHtml(String(n))}">
-      <span class="path-q"><strong>Key ${escapeHtml(String(n))}.</strong></span>
+    // Entry couplet: if this lead is a couplet's first (entry) lead, the entry
+    // number is the lead itself; otherwise it's the num_a of the couplet whose
+    // alternate (num_b) it is. This surfaces the couplet you started from
+    // (e.g. Key 1 → 21) so the trail is complete from the first couplet.
+    const entryCp = couplets.find(c => c.num_a === n) || couplets.find(c => c.num_b === n);
+    const entry = entryCp ? entryCp.num_a : n;
+    const heading = entry === n ? `Key ${entry}` : `Key ${entry} &rarr; ${n}`;
+    return `<li class="path-step" data-key-num="${escapeHtml(String(entry))}">
+      <span class="path-q"><strong>${heading}.</strong></span>
       <span class="path-a">${escapeHtml(text)}</span>
     </li>`;
   }).join('');
