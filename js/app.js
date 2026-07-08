@@ -745,7 +745,11 @@ function buildCPKeyPath(speciesName) {
     if (!cur) break;
     const choice = n === cur.num_a ? 'A' : n === cur.num_b ? 'B' : null;
     if (choice === null) break; // stale/invalid path — stop rendering
-    steps.push({ entry: cur.num_a, lead: n, text: leads[String(n)] || '' });
+    // Use the couplet's own answer text, not the lead's — a shared lead (9) has
+    // one lead entry but different meanings in Key 8 (its alternate) vs Key 9
+    // (its entry), so leads['9'] would show Key 9's wording under Key 8.
+    const text = choice === 'A' ? cur.a_text : cur.b_text;
+    steps.push({ entry: cur.num_a, lead: n, text: text || '' });
     if (isTerminal(n)) { cur = null; break; }
     // Advance exactly as ksGetNext does in the scoring tool.
     if (choice === 'A') {
