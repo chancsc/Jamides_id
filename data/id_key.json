@@ -275,7 +275,9 @@
         "Jamides alecto ageladas",
         "Jamides abdul abdul"
       ],
-      "species_b": []
+      "species_b": [
+        "Jamides lucide"
+      ]
     },
     {
       "id": "cp_23_36",
@@ -524,6 +526,10 @@
       23,
       27,
       28
+    ],
+    "Jamides lucide": [
+      21,
+      37
     ],
     "Jamides caeruleus caeruleus": [
       21,
