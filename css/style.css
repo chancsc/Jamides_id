@@ -970,6 +970,17 @@ details[open] .path-summary::before { content: '▼ '; }
   color: var(--primary);
 }
 
+/* Show actual lead number in bubble instead of running counter */
+.path-details--cpkey .path-step[data-key-num] { counter-increment: none; }
+.path-details--cpkey .path-step[data-key-num]::before {
+  content: attr(data-key-num);
+  font-size: 0.6rem;
+  min-width: 1.05rem;
+  width: auto;
+  padding: 0 0.15em;
+  border-radius: 4px;
+}
+
 .cpkey-bubble-row {
   display: flex; flex-wrap: wrap; align-items: center;
   gap: 0.05rem; margin: 0 0 0.55rem;

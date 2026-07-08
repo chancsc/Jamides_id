@@ -153,6 +153,7 @@ function ksScoreAll() {
     }
     return { name, score, max };
   }).sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
     const pA = a.max > 0 ? a.score / a.max : 0;
     const pB = b.max > 0 ? b.score / b.max : 0;
     return pB - pA || a.name.localeCompare(b.name);

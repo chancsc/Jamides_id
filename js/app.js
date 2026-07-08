@@ -737,7 +737,7 @@ function buildCPKeyPath(speciesName) {
     // Find couplet: prefer num_a match (used as primary/forward lead), fall back to num_b
     const cp = couplets.find(c => c.num_a === n) || couplets.find(c => c.num_b === n);
     if (!cp) {
-      return `<li class="path-step">
+      return `<li class="path-step" data-key-num="${escapeHtml(String(n))}">
         <span class="path-q"><strong>Key ${escapeHtml(String(n))}.</strong></span>
         <span class="path-a">${escapeHtml(chosenText)}</span>
       </li>`;
@@ -747,7 +747,7 @@ function buildCPKeyPath(speciesName) {
     const falseNum = isChosenA ? cp.num_b : cp.num_a;
     const falseText = leads[String(falseNum)] || '';
 
-    const chosenLi = `<li class="path-step">
+    const chosenLi = `<li class="path-step" data-key-num="${escapeHtml(String(n))}">
       <span class="path-q"><strong>Key ${escapeHtml(String(n))}.</strong></span>
       <span class="path-a">${escapeHtml(chosenText)}</span>
     </li>`;
