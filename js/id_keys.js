@@ -240,9 +240,14 @@ function ksRenderHistory() {
     if (!cp) return '';
     const leadNum = a.choice === 'A' ? cp.num_a : a.choice === 'B' ? cp.num_b : null;
     const entry = `Key ${cp.num_a}`;
+    // Suppress "→ M" when the alternate lead M is already the next couplet in
+    // the trail (e.g. "Key 8 → 9" then "Key 9" would repeat 9).
+    const nextA = ks.answers[i + 1];
+    const nextCp = nextA && ks.couplets.find(c => c.id === nextA.coupletId);
     let label;
     if (a.choice === 'skip') label = `${entry} → Skip`;
     else if (leadNum === cp.num_a) label = entry;            // chose the entry lead
+    else if (nextCp && nextCp.num_a === leadNum) label = entry; // arrow == next couplet
     else label = `${entry} → ${leadNum}`;                    // jumped to the alternate lead
     return `<span class="ks-hist-item" data-step="${i}" role="button" tabindex="0" title="Back to Key ${ksEscAttr(String(cp.num_a))}">${ksEsc(label)}</span>`;
   }).filter(Boolean).join('<span class="ks-hist-sep">&#8250;</span>');

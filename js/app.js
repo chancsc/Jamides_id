@@ -756,8 +756,12 @@ function buildCPKeyPath(speciesName) {
     }
   }
 
-  const stepsHTML = steps.map(s => {
-    const heading = s.entry === s.lead ? `Key ${s.entry}` : `Key ${s.entry} &rarr; ${s.lead}`;
+  const stepsHTML = steps.map((s, i) => {
+    // Show the "→ M" arrow only when the alternate lead M isn't already the
+    // next couplet in the trail — otherwise "Key 8 → 9" then "Key 9" repeats 9.
+    const next = steps[i + 1];
+    const showArrow = s.lead !== s.entry && (!next || next.entry !== s.lead);
+    const heading = showArrow ? `Key ${s.entry} &rarr; ${s.lead}` : `Key ${s.entry}`;
     return `<li class="path-step" data-key-num="${escapeHtml(String(s.entry))}">
       <span class="path-q"><strong>${heading}.</strong></span>
       <span class="path-a">${escapeHtml(s.text)}</span>
