@@ -169,12 +169,12 @@ function ksEscAttr(s) {
   return (s || '').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-function ksLinkify(text, phrase, url) {
+function ksLinkify(text, phrase, url, cls) {
   if (!phrase || !url || !text) return ksEsc(text);
   const idx = text.indexOf(phrase);
   if (idx === -1) return ksEsc(text);
   return ksEsc(text.slice(0, idx))
-    + `<a href="${ksEscAttr(url)}" class="ks-guide-link" target="_blank" rel="noopener">${ksEsc(phrase)}</a>`
+    + `<a href="${ksEscAttr(url)}" class="${ksEsc(cls || 'ks-guide-link')}" target="_blank" rel="noopener">${ksEsc(phrase)}</a>`
     + ksEsc(text.slice(idx + phrase.length));
 }
 
@@ -284,9 +284,11 @@ function ksRenderCouplet() {
     ? `<button class="ks-btn ks-btn-skip" data-id="${ksEscAttr(cp.id)}" data-v="skip">Skip — upperside feature</button>`
     : '';
 
-  const qHTML = cp.question_link
-    ? `<a href="${ksEscAttr(cp.question_link)}" class="ks-q-link" target="_blank" rel="noopener">${ksEsc(cp.question)}</a>`
-    : ksEsc(cp.question);
+  const qHTML = (cp.question_link && cp.question_phrase)
+    ? ksLinkify(cp.question, cp.question_phrase, cp.question_link, 'ks-q-link')
+    : cp.question_link
+      ? `<a href="${ksEscAttr(cp.question_link)}" class="ks-q-link" target="_blank" rel="noopener">${ksEsc(cp.question)}</a>`
+      : ksEsc(cp.question);
 
   el.innerHTML = `
     <div class="ks-cp" id="ks-cp-current">
