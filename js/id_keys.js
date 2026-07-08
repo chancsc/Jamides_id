@@ -236,10 +236,9 @@ function ksRenderHistory() {
     const cp = ks.couplets.find(c => c.id === a.coupletId);
     if (!cp) return '';
     const leadNum = a.choice === 'A' ? cp.num_a : a.choice === 'B' ? cp.num_b : null;
-    const label = a.choice === 'skip'
-      ? `${cp.label}: Skip`
-      : `${cp.label}: Key ${leadNum}`;
-    return `<span class="ks-hist-item" data-step="${i}" role="button" tabindex="0" title="Back to ${ksEscAttr(cp.label)}">${ksEsc(label)}</span>`;
+    const pairLabel = `${cp.num_a}·${cp.num_b}`;
+    const label = a.choice === 'skip' ? `${pairLabel}: Skip` : `Key ${leadNum}`;
+    return `<span class="ks-hist-item" data-step="${i}" role="button" tabindex="0" title="Back to ${ksEscAttr(pairLabel)}">${ksEsc(label)}</span>`;
   }).filter(Boolean).join('<span class="ks-hist-sep">&#8250;</span>');
 
   el.innerHTML = `<div class="ks-hist">${items}</div>`;
@@ -250,15 +249,10 @@ function ksRenderCouplet() {
   if (!el) return;
 
   if (ks.result) {
-    const info = ks.speciesInfo.get(ks.result.speciesName) || {};
-    const inatHref = info.inat_url ? ksEscAttr(info.inat_url) : '';
     el.innerHTML = `
       <div class="ks-result-card">
         <p class="ks-result-label">&#9658; Identification</p>
-        <p class="ks-result-species">Key ${ksEsc(String(ks.result.leadNum))}: <em>${ksEsc(ks.result.speciesName)}</em></p>
-        ${info.common_name ? `<p class="ks-result-common">${ksEsc(info.common_name)}</p>` : ''}
-        <p class="ks-result-text">${ksEsc(ks.result.text)}</p>
-        ${inatHref ? `<a class="ks-inat-link" href="${inatHref}" target="_blank" rel="noopener">View on iNaturalist &#8594;</a>` : ''}
+        <p class="ks-result-species">Key ${ksEsc(String(ks.result.leadNum))}</p>
       </div>`;
     return;
   }
@@ -293,7 +287,7 @@ function ksRenderCouplet() {
 
   el.innerHTML = `
     <div class="ks-cp" id="ks-cp-current">
-      <p class="ks-cp-label"><span class="ks-label-tag">${ksEsc(cp.label)}</span> ${qHTML}</p>
+      <p class="ks-cp-label"><span class="ks-label-tag">${cp.num_a}·${cp.num_b}</span> ${qHTML}</p>
       ${hintHTML}
       <div class="ks-btn-row">
         <button class="ks-btn ks-btn-a" data-id="${ksEscAttr(cp.id)}" data-v="A">
@@ -316,9 +310,9 @@ function ksRender() {
   const badge = document.getElementById('ks-answered-count');
   if (badge) {
     if (ks.result) {
-      badge.textContent = 'Done';
+      badge.textContent = `Key ${ks.result.leadNum}`;
     } else if (ks.currentCouplet) {
-      badge.textContent = ks.currentCouplet.label;
+      badge.textContent = `${ks.currentCouplet.num_a}·${ks.currentCouplet.num_b}`;
     } else {
       badge.textContent = '';
     }
