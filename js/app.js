@@ -732,24 +732,41 @@ function buildCPKeyPath(speciesName) {
   }
   if (!leadNums || leadNums.length === 0) return '';
 
-  const stepsHTML = leadNums.map(n => {
-    const text = leads[String(n)] || '';
-    // Entry couplet: if this lead is a couplet's first (entry) lead, the entry
-    // number is the lead itself; otherwise it's the num_a of the couplet whose
-    // alternate (num_b) it is. This surfaces the couplet you started from
-    // (e.g. Key 1 → 21) so the trail is complete from the first couplet.
-    const entryCp = couplets.find(c => c.num_a === n) || couplets.find(c => c.num_b === n);
-    const entry = entryCp ? entryCp.num_a : n;
-    const heading = entry === n ? `Key ${entry}` : `Key ${entry} &rarr; ${n}`;
-    return `<li class="path-step" data-key-num="${escapeHtml(String(entry))}">
+  // Walk the couplet chain so each chosen lead is resolved against the couplet
+  // we are actually at (a lead number can appear in two couplets — e.g. lead 9
+  // is the alternate of Key 8 and the entry of Key 9). Tracking the current
+  // couplet disambiguates it and makes this read identically to the C&P Key
+  // Scoring breadcrumb: "Key N" when the entry lead was taken, "Key N → M" when
+  // the alternate M was taken.
+  const isTerminal = n => (leads[String(n)] || '').includes('Jamides');
+  let cur = couplets[0];
+  const steps = [];
+  for (const n of leadNums) {
+    if (!cur) break;
+    const choice = n === cur.num_a ? 'A' : n === cur.num_b ? 'B' : null;
+    if (choice === null) break; // stale/invalid path — stop rendering
+    steps.push({ entry: cur.num_a, lead: n, text: leads[String(n)] || '' });
+    if (isTerminal(n)) { cur = null; break; }
+    // Advance exactly as ksGetNext does in the scoring tool.
+    if (choice === 'A') {
+      const idx = couplets.indexOf(cur);
+      cur = idx >= 0 && idx + 1 < couplets.length ? couplets[idx + 1] : null;
+    } else {
+      cur = couplets.find(c => c.num_a === n) || couplets.find(c => c.num_a === n + 1) || null;
+    }
+  }
+
+  const stepsHTML = steps.map(s => {
+    const heading = s.entry === s.lead ? `Key ${s.entry}` : `Key ${s.entry} &rarr; ${s.lead}`;
+    return `<li class="path-step" data-key-num="${escapeHtml(String(s.entry))}">
       <span class="path-q"><strong>${heading}.</strong></span>
-      <span class="path-a">${escapeHtml(text)}</span>
+      <span class="path-a">${escapeHtml(s.text)}</span>
     </li>`;
   }).join('');
 
   return `
     <details class="path-details path-details--cpkey">
-      <summary class="path-summary">C&amp;P key path — ${leadNums.length} step${leadNums.length !== 1 ? 's' : ''}</summary>
+      <summary class="path-summary">C&amp;P key path — ${steps.length} step${steps.length !== 1 ? 's' : ''}</summary>
       <div class="path-content">
         <ol class="path-steps">${stepsHTML}</ol>
       </div>
