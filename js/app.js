@@ -733,33 +733,11 @@ function buildCPKeyPath(speciesName) {
   if (!leadNums || leadNums.length === 0) return '';
 
   const stepsHTML = leadNums.map(n => {
-    const chosenText = leads[String(n)] || '';
-    // Find couplet: prefer num_a match (used as primary/forward lead), fall back to num_b
-    const cp = couplets.find(c => c.num_a === n) || couplets.find(c => c.num_b === n);
-    if (!cp) {
-      return `<li class="path-step" data-key-num="${escapeHtml(String(n))}">
-        <span class="path-q"><strong>Key ${escapeHtml(String(n))}.</strong></span>
-        <span class="path-a">${escapeHtml(chosenText)}</span>
-      </li>`;
-    }
-
-    const isChosenA = cp.num_a === n;
-    const falseNum = isChosenA ? cp.num_b : cp.num_a;
-    const falseText = leads[String(falseNum)] || '';
-
-    const chosenLi = `<li class="path-step" data-key-num="${escapeHtml(String(n))}">
+    const text = leads[String(n)] || '';
+    return `<li class="path-step" data-key-num="${escapeHtml(String(n))}">
       <span class="path-q"><strong>Key ${escapeHtml(String(n))}.</strong></span>
-      <span class="path-a">${escapeHtml(chosenText)}</span>
+      <span class="path-a">${escapeHtml(text)}</span>
     </li>`;
-
-    const falseLi = `<li class="path-step path-step--false">
-      <span class="path-q"><strong>Key ${escapeHtml(String(falseNum))}.</strong></span>
-      <span class="path-a">${escapeHtml(falseText)}</span>
-      <span class="path-false-note">(False, go to Key ${escapeHtml(String(n))})</span>
-    </li>`;
-
-    // Show in lead-number order (lower first, then higher)
-    return n < falseNum ? chosenLi + falseLi : falseLi + chosenLi;
   }).join('');
 
   return `
