@@ -78,9 +78,12 @@ function ksGetNext(cp, choice) {
     const idx = ks.couplets.indexOf(cp);
     return (idx >= 0 && idx + 1 < ks.couplets.length) ? ks.couplets[idx + 1] : null;
   }
-  // B: find couplet with num_a = leadNum + 1, or = leadNum (special K5 dual-lead-9 case)
-  return ks.couplets.find(c => c.num_a === leadNum + 1)
-      || ks.couplets.find(c => c.num_a === leadNum)
+  // B (statement FALSE): per C&P notation "N (M)", jump to statement M (= leadNum).
+  // If statement M is itself a couplet head (a couplet with num_a === leadNum
+  // exists, e.g. lead 9 = couplet "9 (18)"), read that couplet next. Otherwise M
+  // is a plain contrast lead that flows on to the next statement (num_a = leadNum + 1).
+  return ks.couplets.find(c => c.num_a === leadNum)
+      || ks.couplets.find(c => c.num_a === leadNum + 1)
       || null;
 }
 
