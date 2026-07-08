@@ -236,9 +236,12 @@ function ksRenderHistory() {
     const cp = ks.couplets.find(c => c.id === a.coupletId);
     if (!cp) return '';
     const leadNum = a.choice === 'A' ? cp.num_a : a.choice === 'B' ? cp.num_b : null;
-    const pairLabel = `${cp.num_a}·${cp.num_b}`;
-    const label = a.choice === 'skip' ? `${pairLabel}: Skip` : `Key ${leadNum}`;
-    return `<span class="ks-hist-item" data-step="${i}" role="button" tabindex="0" title="Back to ${ksEscAttr(pairLabel)}">${ksEsc(label)}</span>`;
+    const entry = `Key ${cp.num_a}`;
+    let label;
+    if (a.choice === 'skip') label = `${entry} → Skip`;
+    else if (leadNum === cp.num_a) label = entry;            // chose the entry lead
+    else label = `${entry} → ${leadNum}`;                    // jumped to the alternate lead
+    return `<span class="ks-hist-item" data-step="${i}" role="button" tabindex="0" title="Back to Key ${ksEscAttr(String(cp.num_a))}">${ksEsc(label)}</span>`;
   }).filter(Boolean).join('<span class="ks-hist-sep">&#8250;</span>');
 
   el.innerHTML = `<div class="ks-hist">${items}</div>`;
@@ -292,7 +295,7 @@ function ksRenderCouplet() {
 
   el.innerHTML = `
     <div class="ks-cp" id="ks-cp-current">
-      <p class="ks-cp-label"><span class="ks-label-tag">${cp.num_a}·${cp.num_b}</span> ${qHTML}</p>
+      <p class="ks-cp-label"><span class="ks-label-tag">Key ${cp.num_a}</span> ${qHTML}</p>
       ${hintHTML}
       <div class="ks-btn-row">
         <button class="ks-btn ks-btn-a" data-id="${ksEscAttr(cp.id)}" data-v="A">
@@ -317,7 +320,7 @@ function ksRender() {
     if (ks.result) {
       badge.textContent = `Key ${ks.result.leadNum}`;
     } else if (ks.currentCouplet) {
-      badge.textContent = `${ks.currentCouplet.num_a}·${ks.currentCouplet.num_b}`;
+      badge.textContent = `Key ${ks.currentCouplet.num_a}`;
     } else {
       badge.textContent = '';
     }
