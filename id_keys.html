@@ -129,9 +129,35 @@
     .ks-guide-link:hover { color: var(--primary); text-decoration-style: solid; }
     .ks-btn.sel .ks-guide-link:hover { color: rgba(255,255,255,0.9); }
 
-    /* Show more */
-    .ks-more { display: block; width: 100%; background: none; border: none; font-size: 0.82rem; color: var(--primary); cursor: pointer; padding: 0.6rem 0; text-align: center; border-radius: var(--radius); }
-    .ks-more:hover { background: rgba(45,90,39,0.07); }
+    /* History breadcrumb */
+    .ks-hist {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.15rem;
+      padding: 0.45rem 0 0.55rem;
+      font-size: 0.75rem;
+    }
+    .ks-hist-item {
+      color: var(--primary); font-weight: 500;
+      cursor: pointer; padding: 0.1rem 0.25rem;
+      border-radius: 3px; white-space: nowrap;
+    }
+    .ks-hist-item:hover { background: rgba(45,90,39,0.1); text-decoration: underline; }
+    .ks-hist-sep { color: var(--text-muted); padding: 0 0.05rem; }
+
+    /* Result card */
+    .ks-result-card {
+      background: var(--card); border-radius: var(--radius);
+      box-shadow: 0 1px 5px rgba(45,90,39,0.18);
+      border-left: 4px solid var(--primary);
+      padding: 0.85rem 1rem;
+      margin-bottom: 0.7rem;
+    }
+    .ks-result-label { font-size: 0.7rem; font-weight: 700; color: var(--primary); letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 0.35rem; }
+    .ks-result-species { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.15rem; }
+    .ks-result-species em { font-style: italic; }
+    .ks-result-common { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.45rem; }
+    .ks-result-text { font-size: 0.8rem; color: #555; line-height: 1.5; margin-bottom: 0.6rem; }
+    .ks-inat-link { font-size: 0.78rem; color: var(--primary); font-weight: 500; text-decoration: none; }
+    .ks-inat-link:hover { text-decoration: underline; }
 
     @media (min-width: 640px) {
       .ks-cp-label { font-size: 0.9rem; }
@@ -156,15 +182,15 @@
 
     <div class="ks-page">
       <p class="ks-intro">
-        Score couplets from the C&amp;P dichotomous key. Answer only the features visible in your photo —
-        unanswered couplets do not penalise any candidate. Upperside-dependent couplets have a
-        <em>Skip</em> option. Candidates are ranked in real time below.
+        Work through the C&amp;P dichotomous key one couplet at a time. Select A or B to advance;
+        upperside couplets where one branch is identifiable offer a <em>Skip</em> option.
+        Candidates are ranked in real time below.
       </p>
 
-      <div class="ks-section-label">Key couplets</div>
+      <div id="ks-history"></div>
       <div id="ks-couplets"></div>
 
-      <div class="ks-section-label" style="margin-top:1.5rem;">Candidates</div>
+      <div class="ks-section-label">Candidates</div>
       <div class="ks-panel">
         <div id="ks-candidates">
           <p class="ks-empty">Answer couplet questions above to rank candidates.</p>
@@ -192,10 +218,6 @@
         <a href="index.html" class="menu-nav-item" aria-label="Home — where to start">
           <span class="menu-nav-item-label">Home</span>
           <span class="menu-nav-item-desc">Where to start</span>
-        </a>
-        <a href="key.html" class="menu-nav-item" aria-label="ID Key — step-by-step identification">
-          <span class="menu-nav-item-label">ID Key</span>
-          <span class="menu-nav-item-desc">Step-by-step identification</span>
         </a>
         <a href="checklist.html" class="menu-nav-item" aria-label="Feature Scoring — score multiple features at once">
           <span class="menu-nav-item-label">Feature Scoring</span>

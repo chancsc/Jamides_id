@@ -996,6 +996,12 @@ details[open] .path-summary::before { content: '▼ '; }
   font-style: italic;
 }
 
+.path-step--false { counter-increment: none; }
+.path-step--false::before { display: none; }
+.path-step--false .path-q { color: var(--text-muted); }
+.path-step--false .path-a { color: var(--text-muted); font-weight: 400; font-style: italic; }
+.path-false-note { display: block; font-size: 0.7rem; color: var(--text-muted); margin-top: 0.06rem; }
+
 /* ===== App topbar (ID Key + Species Search pages) ===== */
 .app-topbar {
   position: sticky;

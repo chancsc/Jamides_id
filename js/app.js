@@ -722,9 +722,9 @@ function buildCPKeyPath(speciesName) {
   if (!state.idKeyData) return '';
   const paths = state.idKeyData.species_paths;
   const leads = state.idKeyData.leads;
-  if (!paths || !leads) return '';
+  const couplets = state.idKeyData.couplets;
+  if (!paths || !leads || !couplets) return '';
 
-  // Match by first two words (genus + species epithet) to handle subspecies variants
   const sp2 = speciesName.split(' ').slice(0, 2).join(' ');
   let leadNums = null;
   for (const [key, val] of Object.entries(paths)) {
@@ -732,23 +732,40 @@ function buildCPKeyPath(speciesName) {
   }
   if (!leadNums || leadNums.length === 0) return '';
 
-  const bubbles = leadNums.map(n =>
-    `<span class="cpkey-lead" title="${escapeAttr(leads[String(n)] || '')}">&#8202;${escapeHtml(String(n))}&#8202;</span>`
-  ).join('<span class="cpkey-sep">·</span>');
-
   const stepsHTML = leadNums.map(n => {
-    const txt = leads[String(n)] || '';
-    return `<li class="path-step">
-      <span class="path-q"><strong>Lead ${escapeHtml(String(n))}.</strong></span>
-      <span class="path-a">${escapeHtml(txt)}</span>
+    const chosenText = leads[String(n)] || '';
+    // Find couplet: prefer num_a match (used as primary/forward lead), fall back to num_b
+    const cp = couplets.find(c => c.num_a === n) || couplets.find(c => c.num_b === n);
+    if (!cp) {
+      return `<li class="path-step">
+        <span class="path-q"><strong>Key ${escapeHtml(String(n))}.</strong></span>
+        <span class="path-a">${escapeHtml(chosenText)}</span>
+      </li>`;
+    }
+
+    const isChosenA = cp.num_a === n;
+    const falseNum = isChosenA ? cp.num_b : cp.num_a;
+    const falseText = leads[String(falseNum)] || '';
+
+    const chosenLi = `<li class="path-step">
+      <span class="path-q"><strong>Key ${escapeHtml(String(n))}.</strong></span>
+      <span class="path-a">${escapeHtml(chosenText)}</span>
     </li>`;
+
+    const falseLi = `<li class="path-step path-step--false">
+      <span class="path-q"><strong>Key ${escapeHtml(String(falseNum))}.</strong></span>
+      <span class="path-a">${escapeHtml(falseText)}</span>
+      <span class="path-false-note">(False, go to Key ${escapeHtml(String(n))})</span>
+    </li>`;
+
+    // Show in lead-number order (lower first, then higher)
+    return n < falseNum ? chosenLi + falseLi : falseLi + chosenLi;
   }).join('');
 
   return `
     <details class="path-details path-details--cpkey">
-      <summary class="path-summary">C&amp;P key path — ${leadNums.length} lead${leadNums.length !== 1 ? 's' : ''}</summary>
+      <summary class="path-summary">C&amp;P key path — ${leadNums.length} step${leadNums.length !== 1 ? 's' : ''}</summary>
       <div class="path-content">
-        <div class="cpkey-bubble-row">${bubbles}</div>
         <ol class="path-steps">${stepsHTML}</ol>
       </div>
     </details>
@@ -771,7 +788,6 @@ function showSpeciesDetailInline(sp) {
     ${noteHTML}
     ${buildPathDisplay(sp.paths, sp.note, sp.resultFeatures, sp.name)}
     ${buildCPKeyPath(sp.name)}
-    ${buildPhotoGallery(sp)}
     <a class="btn-inat" href="${escapeAttr(sp.inat_url)}" target="_blank" rel="noopener noreferrer">
       ${iconExternal()} View on iNaturalist
     </a>

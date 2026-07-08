@@ -1,45 +1,47 @@
-// id_keys.js — C&P Dichotomous Key feature scoring for Jamides ID
+// id_keys.js — C&P Dichotomous Key sequential navigation for Jamides ID
 
 const ks = {
-  couplets: null,      // array from id_key.json
-  speciesInfo: null,   // Map<name, {common_name, inat_url}>
-  answers: new Map(),  // Map<couplet_id, 'A' | 'B' | 'skip'>
+  couplets: null,       // array from id_key.json
+  leads: null,          // object {leadNum(str): text}
+  speciesInfo: null,    // Map<name, {common_name, inat_url}>
+  answers: [],          // [{coupletId, choice}] — history in order
+  currentCouplet: null, // couplet currently shown (null when done)
+  result: null,         // {leadNum, text, speciesName} when terminal, else null
   scores: [],
-  showAll: false,
   expandedName: null,
 };
 
-const ANSWERS_KEY = 'jamides-ks-answers';
+const ANSWERS_KEY = 'jamides-ks-answers-v2';
 
 function ksSaveAnswers() {
-  try { localStorage.setItem(ANSWERS_KEY, JSON.stringify([...ks.answers])); } catch (e) {}
-}
-
-function ksLoadAnswers() {
-  try {
-    const raw = localStorage.getItem(ANSWERS_KEY);
-    if (!raw) return new Map();
-    const pairs = JSON.parse(raw);
-    if (!Array.isArray(pairs)) return new Map();
-    const valid = new Set((ks.couplets || []).map(c => c.id));
-    return new Map(pairs.filter(([id, v]) => valid.has(id) && ['A', 'B', 'skip'].includes(v)));
-  } catch (e) { return new Map(); }
+  try { localStorage.setItem(ANSWERS_KEY, JSON.stringify({ answers: ks.answers })); } catch (e) {}
 }
 
 function ksClearAnswers() {
   try { localStorage.removeItem(ANSWERS_KEY); } catch (e) {}
 }
 
+function ksLoadAnswers() {
+  try {
+    const raw = localStorage.getItem(ANSWERS_KEY);
+    if (!raw) return [];
+    const data = JSON.parse(raw);
+    if (!data || !Array.isArray(data.answers)) return [];
+    const valid = new Set((ks.couplets || []).map(c => c.id));
+    return data.answers.filter(a => valid.has(a.coupletId) && ['A', 'B', 'skip'].includes(a.choice));
+  } catch (e) { return []; }
+}
+
 // ── Data init ────────────────────────────────────────────────────────────────
 
 function ksInitData(keyData, speciesData) {
   ks.couplets = keyData.couplets;
+  ks.leads = keyData.leads;
 
   const sp2Map = new Map();
   for (const s of speciesData.species)
     sp2Map.set(s.name.split(' ').slice(0, 2).join(' '), s);
 
-  // Build full-name → species-info map (keyed by full subspecific name)
   ks.speciesInfo = new Map();
   const allNames = new Set();
   for (const cp of ks.couplets) {
@@ -56,34 +58,98 @@ function ksInitData(keyData, speciesData) {
   }
 }
 
+// ── Navigation ────────────────────────────────────────────────────────────────
+
+function ksIsTerminal(leadNum) {
+  return (ks.leads[String(leadNum)] || '').includes('Jamides');
+}
+
+function ksExtractSpecies(text) {
+  const match = text.match(/\bJamides\s+\w+(?:\s+\w+)?/);
+  return match ? match[0] : '';
+}
+
+function ksGetNext(cp, choice) {
+  // Returns next couplet for A or B choice, or null if terminal/end
+  const leadNum = choice === 'A' ? cp.num_a : cp.num_b;
+  if (ksIsTerminal(leadNum)) return null;
+
+  if (choice === 'A') {
+    const idx = ks.couplets.indexOf(cp);
+    return (idx >= 0 && idx + 1 < ks.couplets.length) ? ks.couplets[idx + 1] : null;
+  }
+  // B: find couplet with num_a = leadNum + 1, or = leadNum (special K5 dual-lead-9 case)
+  return ks.couplets.find(c => c.num_a === leadNum + 1)
+      || ks.couplets.find(c => c.num_a === leadNum)
+      || null;
+}
+
+function ksSkipNext(cp) {
+  // For skip (upperside couplets): go via whichever branch is non-terminal
+  const aTerminal = ksIsTerminal(cp.num_a);
+  const bTerminal = ksIsTerminal(cp.num_b);
+  if (!aTerminal) return ksGetNext(cp, 'A');
+  if (!bTerminal) return ksGetNext(cp, 'B');
+  return null; // both terminal — skip not possible
+}
+
+function ksReplayHistory() {
+  ks.currentCouplet = ks.couplets[0];
+  ks.result = null;
+
+  for (let i = 0; i < ks.answers.length; i++) {
+    const a = ks.answers[i];
+    const cp = ks.couplets.find(c => c.id === a.coupletId);
+    if (!cp || cp !== ks.currentCouplet) {
+      // History no longer matches current couplet — truncate
+      ks.answers = ks.answers.slice(0, i);
+      break;
+    }
+
+    if (a.choice === 'skip') {
+      const next = ksSkipNext(cp);
+      if (!next) { ks.answers = ks.answers.slice(0, i); break; }
+      ks.currentCouplet = next;
+      continue;
+    }
+
+    const leadNum = a.choice === 'A' ? cp.num_a : cp.num_b;
+    if (ksIsTerminal(leadNum)) {
+      const text = ks.leads[String(leadNum)] || '';
+      ks.result = { leadNum, text, speciesName: ksExtractSpecies(text) };
+      ks.currentCouplet = null;
+      break;
+    }
+    ks.currentCouplet = ksGetNext(cp, a.choice);
+  }
+}
+
 // ── Scoring ──────────────────────────────────────────────────────────────────
 
 function ksScoreAll() {
   if (!ks.couplets) { ks.scores = []; return; }
 
-  // Collect all species across all couplets
   const allNames = new Set();
   for (const cp of ks.couplets) {
     for (const n of cp.species_a) allNames.add(n);
     for (const n of cp.species_b) allNames.add(n);
   }
 
-  // Non-skip answered couplets only
-  const answered = [...ks.answers.entries()].filter(([, v]) => v !== 'skip');
+  const answered = ks.answers.filter(a => a.choice !== 'skip');
 
   ks.scores = [...allNames].map(name => {
     let score = 0, max = 0;
-    for (const [id, ans] of answered) {
-      const cp = ks.couplets.find(c => c.id === id);
+    for (const a of answered) {
+      const cp = ks.couplets.find(c => c.id === a.coupletId);
       if (!cp) continue;
       const inA = cp.species_a.includes(name);
       const inB = cp.species_b.includes(name);
-      if (!inA && !inB) continue; // species not in this couplet — neutral
+      if (!inA && !inB) continue;
       max++;
-      if (inA && ans === 'A') score++;
-      else if (inA && ans === 'B') score--;
-      else if (inB && ans === 'B') score++;
-      else if (inB && ans === 'A') score--;
+      if (inA && a.choice === 'A') score++;
+      else if (inA && a.choice === 'B') score--;
+      else if (inB && a.choice === 'B') score++;
+      else if (inB && a.choice === 'A') score--;
     }
     return { name, score, max };
   }).sort((a, b) => {
@@ -103,7 +169,6 @@ function ksEscAttr(s) {
   return (s || '').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-// Apply guide link to a phrase within text; returns safe HTML
 function ksLinkify(text, phrase, url) {
   if (!phrase || !url || !text) return ksEsc(text);
   const idx = text.indexOf(phrase);
@@ -121,10 +186,9 @@ function ksRenderText(text, phrase, url) {
 
 function ksRenderCandidates() {
   const listEl = document.getElementById('ks-candidates');
-
-  const nonSkip = [...ks.answers.values()].filter(v => v !== 'skip').length;
+  const nonSkip = ks.answers.filter(a => a.choice !== 'skip').length;
   if (nonSkip === 0) {
-    listEl.innerHTML = '<p class="ks-empty">Answer couplet questions below to rank candidates.</p>';
+    listEl.innerHTML = '<p class="ks-empty">Answer key questions above to rank candidates.</p>';
     return;
   }
 
@@ -150,10 +214,10 @@ function ksRenderCandidates() {
             </span>
             <span class="ks-score-num${s.score < 0 ? ' neg' : ''}">${s.score > 0 ? '+' : ''}${s.score}</span>
           </span>
-          ${inatHref ? `<a class="ks-inat-icon" href="${inatHref}" target="_blank" rel="noopener" title="View on iNaturalist" aria-label="View ${ksEscAttr(s.name)} on iNaturalist">🔗</a>` : ''}
+          ${inatHref ? `<a class="ks-inat-icon" href="${inatHref}" target="_blank" rel="noopener" title="View on iNaturalist" aria-label="View ${ksEscAttr(s.name)} on iNaturalist">&#128279;</a>` : ''}
         </div>
         ${isExpanded ? `<div class="ks-cand-detail">
-          <a class="ks-inat-link" href="${inatHref}" target="_blank" rel="noopener">View on iNaturalist →</a>
+          <a class="ks-inat-link" href="${inatHref}" target="_blank" rel="noopener">View on iNaturalist &#8594;</a>
         </div>` : ''}
       </div>`;
   }).join('');
@@ -162,94 +226,146 @@ function ksRenderCandidates() {
     ks.expandedName = null;
 }
 
-function ksRenderCouplets() {
+function ksRenderHistory() {
+  const el = document.getElementById('ks-history');
+  if (!el) return;
+  if (ks.answers.length === 0) { el.innerHTML = ''; return; }
+
+  const items = ks.answers.map((a, i) => {
+    const cp = ks.couplets.find(c => c.id === a.coupletId);
+    if (!cp) return '';
+    const leadNum = a.choice === 'A' ? cp.num_a : a.choice === 'B' ? cp.num_b : null;
+    const label = a.choice === 'skip'
+      ? `${cp.label}: Skip`
+      : `${cp.label}: Key ${leadNum}`;
+    return `<span class="ks-hist-item" data-step="${i}" role="button" tabindex="0" title="Back to ${ksEscAttr(cp.label)}">${ksEsc(label)}</span>`;
+  }).filter(Boolean).join('<span class="ks-hist-sep">&#8250;</span>');
+
+  el.innerHTML = `<div class="ks-hist">${items}</div>`;
+}
+
+function ksRenderCouplet() {
   const el = document.getElementById('ks-couplets');
-  if (!ks.couplets) return;
+  if (!el) return;
 
-  const answeredCount = [...ks.answers.values()].filter(v => v !== 'skip').length;
-  const unanswered = ks.couplets.filter(cp => !ks.answers.has(cp.id));
-
-  const visible = ks.couplets.filter(cp => {
-    if (ks.answers.has(cp.id)) return true;
-    if (ks.showAll) return true;
-    // Show first 10 unanswered
-    return unanswered.indexOf(cp) < 10;
-  });
-
-  el.innerHTML = visible.map((cp, idx) => {
-    const ans = ks.answers.get(cp.id) || null;
-
-    const hintHTML = cp.hint
-      ? `<details class="ks-hint">
-           <summary>Hint</summary>
-           <p>${ksEsc(cp.hint)}</p>
-         </details>`
-      : '';
-
-    const aBtnCls = `ks-btn ks-btn-a${ans === 'A' ? ' sel' : ''}`;
-    const bBtnCls = `ks-btn ks-btn-b${ans === 'B' ? ' sel' : ''}`;
-    const skipBtnCls = `ks-btn ks-btn-skip${ans === 'skip' ? ' sel' : ''}`;
-
-    const aHTML = ksRenderText(cp.a_text, cp.guide_phrase, cp.guide_link);
-    const bHTML = ksRenderText(cp.b_text, cp.guide_phrase, cp.guide_link);
-
-    const skipBtn = cp.upperside
-      ? `<button class="${skipBtnCls}" data-id="${ksEscAttr(cp.id)}" data-v="skip">Skip — upperside feature</button>`
-      : '';
-
-    return `
-      <div class="ks-cp${ans && ans !== 'skip' ? ' answered' : ''}${ans === 'skip' ? ' skipped' : ''}" id="ks-cp-${ksEscAttr(cp.id)}">
-        <p class="ks-cp-label"><span class="ks-label-tag">${ksEsc(cp.label)}</span> ${ksEsc(cp.question)}</p>
-        ${hintHTML}
-        <div class="ks-btn-row">
-          <button class="${aBtnCls}" data-id="${ksEscAttr(cp.id)}" data-v="A">
-            <span class="ks-btn-side">A</span><span class="ks-btn-text">${aHTML}</span>
-          </button>
-          <button class="${bBtnCls}" data-id="${ksEscAttr(cp.id)}" data-v="B">
-            <span class="ks-btn-side">B</span><span class="ks-btn-text">${bHTML}</span>
-          </button>
-          ${skipBtn}
-        </div>
+  if (ks.result) {
+    const info = ks.speciesInfo.get(ks.result.speciesName) || {};
+    const inatHref = info.inat_url ? ksEscAttr(info.inat_url) : '';
+    el.innerHTML = `
+      <div class="ks-result-card">
+        <p class="ks-result-label">&#9658; Identification</p>
+        <p class="ks-result-species">Key ${ksEsc(String(ks.result.leadNum))}: <em>${ksEsc(ks.result.speciesName)}</em></p>
+        ${info.common_name ? `<p class="ks-result-common">${ksEsc(info.common_name)}</p>` : ''}
+        <p class="ks-result-text">${ksEsc(ks.result.text)}</p>
+        ${inatHref ? `<a class="ks-inat-link" href="${inatHref}" target="_blank" rel="noopener">View on iNaturalist &#8594;</a>` : ''}
       </div>`;
-  }).join('');
-
-  if (unanswered.length > 10) {
-    el.insertAdjacentHTML('beforeend', `
-      <button class="ks-more" id="ks-show-more">
-        ${ks.showAll ? '▲ Show fewer' : `▼ Show all ${unanswered.length} couplets`}
-      </button>`);
+    return;
   }
+
+  if (!ks.currentCouplet) {
+    el.innerHTML = '<p class="ks-empty">Key complete.</p>';
+    return;
+  }
+
+  const cp = ks.currentCouplet;
+  const hintHTML = cp.hint
+    ? `<details class="ks-hint">
+         <summary>Hint</summary>
+         <p>${ksEsc(cp.hint)}</p>
+       </details>`
+    : '';
+
+  const aHTML = ksRenderText(cp.a_text, cp.guide_phrase, cp.guide_link);
+  const bHTML = ksRenderText(cp.b_text, cp.guide_phrase, cp.guide_link);
+
+  // Skip only if upperside and at least one branch is non-terminal
+  const canSkip = cp.upperside && ksSkipNext(cp) !== null;
+  const skipBtn = canSkip
+    ? `<button class="ks-btn ks-btn-skip" data-id="${ksEscAttr(cp.id)}" data-v="skip">Skip — upperside feature</button>`
+    : '';
+
+  el.innerHTML = `
+    <div class="ks-cp" id="ks-cp-current">
+      <p class="ks-cp-label"><span class="ks-label-tag">${ksEsc(cp.label)}</span> ${ksEsc(cp.question)}</p>
+      ${hintHTML}
+      <div class="ks-btn-row">
+        <button class="ks-btn ks-btn-a" data-id="${ksEscAttr(cp.id)}" data-v="A">
+          <span class="ks-btn-side">A</span><span class="ks-btn-text">${aHTML}</span>
+        </button>
+        <button class="ks-btn ks-btn-b" data-id="${ksEscAttr(cp.id)}" data-v="B">
+          <span class="ks-btn-side">B</span><span class="ks-btn-text">${bHTML}</span>
+        </button>
+        ${skipBtn}
+      </div>
+    </div>`;
 }
 
 function ksRender() {
   ksScoreAll();
+  ksRenderHistory();
+  ksRenderCouplet();
   ksRenderCandidates();
-  ksRenderCouplets();
 
   const badge = document.getElementById('ks-answered-count');
-  const n = [...ks.answers.values()].filter(v => v !== 'skip').length;
-  if (badge) badge.textContent = n > 0 ? `${n} answered` : '';
+  if (badge) {
+    if (ks.result) {
+      badge.textContent = 'Done';
+    } else if (ks.currentCouplet) {
+      badge.textContent = ks.currentCouplet.label;
+    } else {
+      badge.textContent = '';
+    }
+  }
 }
 
 // ── Event handlers ────────────────────────────────────────────────────────────
 
 function ksOnCoupletClick(e) {
-  if (e.target.id === 'ks-show-more' || e.target.closest('#ks-show-more')) {
-    ks.showAll = !ks.showAll;
-    ksRenderCouplets();
-    return;
-  }
   if (e.target.closest('.ks-guide-link')) return;
 
   const btn = e.target.closest('.ks-btn');
   if (!btn || !btn.dataset.id) return;
   const id = btn.dataset.id;
-  const v = btn.dataset.v;
-  if (ks.answers.get(id) === v) {
-    ks.answers.delete(id);
-  } else {
-    ks.answers.set(id, v);
+  const choice = btn.dataset.v;
+
+  if (!ks.currentCouplet || ks.currentCouplet.id !== id) return;
+  const cp = ks.currentCouplet;
+
+  if (choice === 'skip') {
+    const next = ksSkipNext(cp);
+    if (!next) return;
+    ks.answers.push({ coupletId: id, choice: 'skip' });
+    ks.currentCouplet = next;
+    ksSaveAnswers();
+    ksRender();
+    return;
   }
+
+  const leadNum = choice === 'A' ? cp.num_a : cp.num_b;
+  ks.answers.push({ coupletId: id, choice });
+
+  if (ksIsTerminal(leadNum)) {
+    const text = ks.leads[String(leadNum)] || '';
+    ks.result = { leadNum, text, speciesName: ksExtractSpecies(text) };
+    ks.currentCouplet = null;
+  } else {
+    ks.currentCouplet = ksGetNext(cp, choice);
+  }
+
+  ksSaveAnswers();
+  ksRender();
+}
+
+function ksOnHistoryClick(e) {
+  const item = e.target.closest('.ks-hist-item');
+  if (!item) return;
+  const step = parseInt(item.dataset.step, 10);
+  if (isNaN(step)) return;
+
+  // Truncate to just before this step so user re-answers from here
+  ks.answers = ks.answers.slice(0, step);
+  ks.result = null;
+  ksReplayHistory();
   ksSaveAnswers();
   ksRender();
 }
@@ -275,21 +391,32 @@ async function ksInit() {
     ]);
 
     ksInitData(keyData, speciesData);
+    ks.currentCouplet = ks.couplets[0];
     ks.answers = ksLoadAnswers();
+    ksReplayHistory();
     ksRender();
 
     document.getElementById('loading').style.display = 'none';
     document.getElementById('ks-app').style.display = 'block';
 
     document.getElementById('ks-couplets').addEventListener('click', ksOnCoupletClick);
+
+    const histEl = document.getElementById('ks-history');
+    histEl.addEventListener('click', ksOnHistoryClick);
+    histEl.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') ksOnHistoryClick(e);
+    });
+
     document.getElementById('ks-candidates').addEventListener('click', ksOnCandidateClick);
     document.getElementById('ks-candidates').addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') ksOnCandidateClick(e);
     });
+
     document.getElementById('ks-reset').addEventListener('click', () => {
-      ks.answers.clear();
-      ks.showAll = false;
+      ks.answers = [];
+      ks.result = null;
       ks.expandedName = null;
+      ks.currentCouplet = ks.couplets[0];
       ksClearAnswers();
       ksRender();
     });
