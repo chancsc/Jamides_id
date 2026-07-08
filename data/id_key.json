@@ -10,8 +10,8 @@
       "b_text": "Underside forewing postdiscal band completely dislocated at vein 4, so that the inner stria in space 3 forms a more or less continuous line with the outer stria or the end-cell bar and the outer postdiscal striae in spaces 1b and 2.",
       "upperside": false,
       "hint": "Look at the underside of the forewing. Compare the stria in space 3 with those in spaces 4 and 5. In option A the band runs more or less straight across. In option B (elpis subgroup: J. elpis, J. caeruleus, J. alecto, J. abdul, J. cunilda, J. limes, J. talinga, J. ferrari), the stria in space 3 is clearly shifted basad (inward) to form a nearly continuous line with the end-cell bar.",
-      "guide_phrase": "dislocated at vein 4",
-      "guide_link": "guide.html#fw-band-vein4",
+      "guide_phrase": "",
+      "guide_link": "",
       "species_a": [
         "Jamides bochus nabonassar",
         "Jamides cyta minna",
@@ -34,7 +34,8 @@
         "Jamides limes",
         "Jamides alecto ageladas",
         "Jamides abdul abdul"
-      ]
+      ],
+      "question_link": "guide.html#fw-band-vein3-vein6"
     },
     {
       "id": "cp_2_7",
@@ -426,39 +427,156 @@
       ]
     }
   ],
-
   "species_paths": {
-    "Jamides bochus nabonassar":        [1, 2, 3],
-    "Jamides cyta minna":               [1, 2, 4, 5],
-    "Jamides lugine":                   [1, 2, 4, 6],
-    "Jamides yehi":                     [1, 7, 8],
-    "Jamides celeno aelianus":          [1, 7, 9, 10, 11],
-    "Jamides pura pura":                [1, 7, 9, 10, 12, 13],
-    "Jamides zebra lakatti":            [1, 7, 9, 10, 12, 14],
-    "Jamides malaccanus malaccanus":    [1, 7, 9, 10, 15, 16],
-    "Jamides parasaturatus paramalaccanus": [1, 7, 9, 10, 15, 17],
-    "Jamides philatus subditus":        [1, 7, 9, 18, 19],
-    "Jamides aratus adana":             [1, 7, 9, 18, 20],
-    "Jamides cunilda nisanca":          [21, 22, 23, 24, 25],
-    "Jamides ferrari evansi":          [21, 22, 23, 24, 26],
-    "Jamides talinga talinga":          [21, 22, 23, 27, 28],
-    "Jamides caeruleus caeruleus":      [21, 22, 23, 27, 29, 30],
-    "Jamides elpis pseudelpis":         [21, 22, 23, 27, 29, 31, 32, 33],
-    "Jamides limes":                    [21, 22, 23, 27, 29, 31, 32, 34],
-    "Jamides alecto ageladas":          [21, 22, 23, 27, 29, 31, 35],
-    "Jamides abdul abdul":              [21, 22, 36]
+    "Jamides bochus nabonassar": [
+      1,
+      2,
+      3
+    ],
+    "Jamides cyta minna": [
+      1,
+      2,
+      4,
+      5
+    ],
+    "Jamides lugine": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "Jamides yehi": [
+      1,
+      7,
+      8
+    ],
+    "Jamides celeno aelianus": [
+      1,
+      7,
+      9,
+      10,
+      11
+    ],
+    "Jamides pura pura": [
+      1,
+      7,
+      9,
+      10,
+      12,
+      13
+    ],
+    "Jamides zebra lakatti": [
+      1,
+      7,
+      9,
+      10,
+      12,
+      14
+    ],
+    "Jamides malaccanus malaccanus": [
+      1,
+      7,
+      9,
+      10,
+      15,
+      16
+    ],
+    "Jamides parasaturatus paramalaccanus": [
+      1,
+      7,
+      9,
+      10,
+      15,
+      17
+    ],
+    "Jamides philatus subditus": [
+      1,
+      7,
+      9,
+      18,
+      19
+    ],
+    "Jamides aratus adana": [
+      1,
+      7,
+      9,
+      18,
+      20
+    ],
+    "Jamides cunilda nisanca": [
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "Jamides ferrari evansi": [
+      21,
+      22,
+      23,
+      24,
+      26
+    ],
+    "Jamides talinga talinga": [
+      21,
+      22,
+      23,
+      27,
+      28
+    ],
+    "Jamides caeruleus caeruleus": [
+      21,
+      22,
+      23,
+      27,
+      29,
+      30
+    ],
+    "Jamides elpis pseudelpis": [
+      21,
+      22,
+      23,
+      27,
+      29,
+      31,
+      32,
+      33
+    ],
+    "Jamides limes": [
+      21,
+      22,
+      23,
+      27,
+      29,
+      31,
+      32,
+      34
+    ],
+    "Jamides alecto ageladas": [
+      21,
+      22,
+      23,
+      27,
+      29,
+      31,
+      35
+    ],
+    "Jamides abdul abdul": [
+      21,
+      22,
+      36
+    ]
   },
-
   "leads": {
-    "1":  "Underside forewing postdiscal band in space 3 more or less in line with the band in spaces 4 and 5.",
-    "2":  "Underside forewing postdiscal band slightly dislocated at vein 6, with the portion in space 6 shifted basad.",
-    "3":  "Underside greyish brown with very pale buff, lunulate striae. ♂ upperside metallic blue with very broad black forewing border; no androconia. ♀ non-metallic blue. → Jamides bochus",
-    "4":  "Underside paler and greyer, with white to whitish striae. ♂ upperside not metallic, with or without androconia.",
-    "5":  "Underside spaces between the inner and outer submarginal striae strongly darkened. ♂ upperside blue with long paddle-shaped androconia. ♀ blue. → Jamides cyta",
-    "6":  "Underside spaces between inner and outer submarginal striae barely darker than the ground colour. ♂ upperside purple with narrow border; no androconia. ♀ paler purple. Borneo. → Jamides lugine",
-    "7":  "Underside forewing postdiscal band continuous from vein 3 to vein 7. ♂ with battledore androconia except for J. yehi which has no androconia.",
-    "8":  "♂ underside atypical for Jamides: white with blackish-brown markings but with the usual black tornal spot crowned with orange; fwl 19 mm. ♀ unknown. → Jamides yehi",
-    "9":  "Underside hindwing spaces between inner and outer submarginal striae not blackened.",
+    "1": "Underside forewing postdiscal band in space 3 more or less in line with the band in spaces 4 and 5.",
+    "2": "Underside forewing postdiscal band slightly dislocated at vein 6, with the portion in space 6 shifted basad.",
+    "3": "Underside greyish brown with very pale buff, lunulate striae. ♂ upperside metallic blue with very broad black forewing border; no androconia. ♀ non-metallic blue. → Jamides bochus",
+    "4": "Underside paler and greyer, with white to whitish striae. ♂ upperside not metallic, with or without androconia.",
+    "5": "Underside spaces between the inner and outer submarginal striae strongly darkened. ♂ upperside blue with long paddle-shaped androconia. ♀ blue. → Jamides cyta",
+    "6": "Underside spaces between inner and outer submarginal striae barely darker than the ground colour. ♂ upperside purple with narrow border; no androconia. ♀ paler purple. Borneo. → Jamides lugine",
+    "7": "Underside forewing postdiscal band continuous from vein 3 to vein 7. ♂ with battledore androconia except for J. yehi which has no androconia.",
+    "8": "♂ underside atypical for Jamides: white with blackish-brown markings but with the usual black tornal spot crowned with orange; fwl 19 mm. ♀ unknown. → Jamides yehi",
+    "9": "Underside hindwing spaces between inner and outer submarginal striae not blackened.",
     "10": "Underside hindwing striae arranged so that there is only a subbasal pair of continuous, straight white lines.",
     "11": "♂ upperside whitish blue with the forewing border increasing to at least 1.0 mm at apex. ♀ upperside almost white. → Jamides celeno",
     "12": "♂ upperside pale, slightly shining blue, with forewing border less than 1.0 mm at apex. ♀ upperside pale; clear blue.",

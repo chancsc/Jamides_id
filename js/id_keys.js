@@ -284,9 +284,13 @@ function ksRenderCouplet() {
     ? `<button class="ks-btn ks-btn-skip" data-id="${ksEscAttr(cp.id)}" data-v="skip">Skip — upperside feature</button>`
     : '';
 
+  const qHTML = cp.question_link
+    ? `<a href="${ksEscAttr(cp.question_link)}" class="ks-q-link" target="_blank" rel="noopener">${ksEsc(cp.question)}</a>`
+    : ksEsc(cp.question);
+
   el.innerHTML = `
     <div class="ks-cp" id="ks-cp-current">
-      <p class="ks-cp-label"><span class="ks-label-tag">${ksEsc(cp.label)}</span> ${ksEsc(cp.question)}</p>
+      <p class="ks-cp-label"><span class="ks-label-tag">${ksEsc(cp.label)}</span> ${qHTML}</p>
       ${hintHTML}
       <div class="ks-btn-row">
         <button class="ks-btn ks-btn-a" data-id="${ksEscAttr(cp.id)}" data-v="A">
