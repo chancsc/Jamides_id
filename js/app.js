@@ -748,8 +748,8 @@ function buildCPKeyPath(speciesName) {
     // Use the couplet's own answer text, not the lead's — a shared lead (9) has
     // one lead entry but different meanings in Key 8 (its alternate) vs Key 9
     // (its entry), so leads['9'] would show Key 9's wording under Key 8.
-    const text = choice === 'A' ? cur.a_text : cur.b_text;
-    steps.push({ entry: cur.num_a, lead: n, text: text || '' });
+    const answer = choice === 'A' ? cur.a_text : cur.b_text;
+    steps.push({ entry: cur.num_a, lead: n, question: cur.question || '', answer: answer || '' });
     if (isTerminal(n)) { cur = null; break; }
     // Advance exactly as ksGetNext does in the scoring tool.
     if (choice === 'A') {
@@ -765,10 +765,12 @@ function buildCPKeyPath(speciesName) {
     // next couplet in the trail — otherwise "Key 8 → 9" then "Key 9" repeats 9.
     const next = steps[i + 1];
     const showArrow = s.lead !== s.entry && (!next || next.entry !== s.lead);
-    const heading = showArrow ? `Key ${s.entry} &rarr; ${s.lead}` : `Key ${s.entry}`;
-    return `<li class="path-step" data-key-num="${escapeHtml(String(s.entry))}">
-      <span class="path-q"><strong>${heading}.</strong></span>
-      <span class="path-a">${escapeHtml(s.text)}</span>
+    const badge = showArrow ? `Key ${s.entry} &rarr; ${s.lead}` : `Key ${s.entry}`;
+    // Mirror the Direct/CD path layout: a Key badge + the couplet question, then
+    // the chosen answer on a "↳" line.
+    return `<li class="path-step">
+      <span class="path-q"><span class="path-qnum">${badge}</span> ${escapeHtml(s.question)}</span>
+      <span class="path-a">&#8627; ${escapeHtml(s.answer)}</span>
     </li>`;
   }).join('');
 
