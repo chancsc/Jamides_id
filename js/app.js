@@ -4,6 +4,7 @@ const state = {
   speciesIndex: [],    // [{name, common_name, note, taxon_photos, inat_url}] sorted A-Z
   questionNumbers: null, // Map<questionText, number> — stable Q-numbers by DFS order
   simCdPaths: null,    // Map<resultName, [{question, choice}]> — pre-computed by Python
+  idKeyData: null,     // data from id_key.json — { couplets, species_paths, leads }
   currentNodeId: null,
   history: []          // [{ nodeId, choiceLabel }, ...]
 };
@@ -642,10 +643,11 @@ async function initSpeciesPage() {
   const loadingEl = document.getElementById('loading');
   const appEl = document.getElementById('species-app');
   try {
-    const [treeRes, speciesRes, simCdRes] = await Promise.all([
+    const [treeRes, speciesRes, simCdRes, idKeyRes] = await Promise.all([
       fetch('data/tree.json', { cache: 'no-cache' }),
       fetch('data/species.json', { cache: 'no-cache' }),
-      fetch('data/sim_cd_paths.json', { cache: 'no-cache' })
+      fetch('data/sim_cd_paths.json', { cache: 'no-cache' }),
+      fetch('data/id_key.json', { cache: 'no-cache' })
     ]);
     if (!treeRes.ok || !speciesRes.ok) throw new Error('Failed to load data');
     const [treeData, speciesData] = await Promise.all([treeRes.json(), speciesRes.json()]);
@@ -653,6 +655,7 @@ async function initSpeciesPage() {
     state.speciesIndex = buildSpeciesIndex(treeData, speciesData);
     state.questionNumbers = buildQuestionNumbers(treeData);
     state.simCdPaths = simCdRes.ok ? new Map(Object.entries(await simCdRes.json())) : null;
+    state.idKeyData = idKeyRes.ok ? await idKeyRes.json() : null;
     loadingEl.style.display = 'none';
     appEl.style.display = '';
 
@@ -715,6 +718,43 @@ async function initSpeciesPage() {
   }
 }
 
+function buildCPKeyPath(speciesName) {
+  if (!state.idKeyData) return '';
+  const paths = state.idKeyData.species_paths;
+  const leads = state.idKeyData.leads;
+  if (!paths || !leads) return '';
+
+  // Match by first two words (genus + species epithet) to handle subspecies variants
+  const sp2 = speciesName.split(' ').slice(0, 2).join(' ');
+  let leadNums = null;
+  for (const [key, val] of Object.entries(paths)) {
+    if (key.split(' ').slice(0, 2).join(' ') === sp2) { leadNums = val; break; }
+  }
+  if (!leadNums || leadNums.length === 0) return '';
+
+  const bubbles = leadNums.map(n =>
+    `<span class="cpkey-lead" title="${escapeAttr(leads[String(n)] || '')}">&#8202;${escapeHtml(String(n))}&#8202;</span>`
+  ).join('<span class="cpkey-sep">·</span>');
+
+  const stepsHTML = leadNums.map(n => {
+    const txt = leads[String(n)] || '';
+    return `<li class="path-step">
+      <span class="path-q"><strong>Lead ${escapeHtml(String(n))}.</strong></span>
+      <span class="path-a">${escapeHtml(txt)}</span>
+    </li>`;
+  }).join('');
+
+  return `
+    <details class="path-details path-details--cpkey">
+      <summary class="path-summary">C&amp;P key path — ${leadNums.length} lead${leadNums.length !== 1 ? 's' : ''}</summary>
+      <div class="path-content">
+        <div class="cpkey-bubble-row">${bubbles}</div>
+        <ol class="path-steps">${stepsHTML}</ol>
+      </div>
+    </details>
+  `;
+}
+
 function showSpeciesDetailInline(sp) {
   const appEl = document.getElementById('species-app');
   if (appEl) appEl.classList.add('species-view');
@@ -730,6 +770,7 @@ function showSpeciesDetailInline(sp) {
     ${sp.common_name ? `<p class="species-name">${escapeHtml(sp.name)}</p>` : ''}
     ${noteHTML}
     ${buildPathDisplay(sp.paths, sp.note, sp.resultFeatures, sp.name)}
+    ${buildCPKeyPath(sp.name)}
     ${buildPhotoGallery(sp)}
     <a class="btn-inat" href="${escapeAttr(sp.inat_url)}" target="_blank" rel="noopener noreferrer">
       ${iconExternal()} View on iNaturalist

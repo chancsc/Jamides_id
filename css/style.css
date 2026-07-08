@@ -965,6 +965,32 @@ details[open] .path-summary::before { content: '▼ '; }
   margin: 0 0 0.5rem;
 }
 
+.path-details--cpkey .path-summary {
+  background: #eef6ee;
+  color: var(--primary);
+}
+
+.cpkey-bubble-row {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 0.05rem; margin: 0 0 0.55rem;
+}
+
+.cpkey-lead {
+  display: inline-block;
+  font-size: 0.75rem; font-weight: 700;
+  color: var(--primary); background: var(--border);
+  border-radius: 4px; padding: 0.1em 0.4em;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.cpkey-lead[title]:hover { background: #d4e6d0; }
+
+.cpkey-sep {
+  font-size: 0.72rem; color: var(--text-muted);
+  padding: 0 0.15rem;
+}
+
 .path-step--skip .path-a {
   color: #9e6c00;
   font-style: italic;

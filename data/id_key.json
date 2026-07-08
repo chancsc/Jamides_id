@@ -1,0 +1,491 @@
+{
+  "couplets": [
+    {
+      "id": "cp_1_21",
+      "num_a": 1,
+      "num_b": 21,
+      "label": "K1",
+      "question": "Forewing band at space 3 — in line or dislocated?",
+      "a_text": "Underside forewing postdiscal band in space 3 more or less in line with the band in spaces 4 and 5.",
+      "b_text": "Underside forewing postdiscal band completely dislocated at vein 4, so that the inner stria in space 3 forms a more or less continuous line with the outer stria or the end-cell bar and the outer postdiscal striae in spaces 1b and 2.",
+      "upperside": false,
+      "hint": "Look at the underside of the forewing. Compare the stria in space 3 with those in spaces 4 and 5. In option A the band runs more or less straight across. In option B (elpis subgroup: J. elpis, J. caeruleus, J. alecto, J. abdul, J. cunilda, J. limes, J. talinga, J. ferrari), the stria in space 3 is clearly shifted basad (inward) to form a nearly continuous line with the end-cell bar.",
+      "guide_phrase": "dislocated at vein 4",
+      "guide_link": "guide.html#fw-band-vein4",
+      "species_a": [
+        "Jamides bochus nabonassar",
+        "Jamides cyta minna",
+        "Jamides lugine",
+        "Jamides yehi",
+        "Jamides celeno aelianus",
+        "Jamides pura pura",
+        "Jamides zebra lakatti",
+        "Jamides malaccanus malaccanus",
+        "Jamides parasaturatus paramalaccanus",
+        "Jamides philatus subditus",
+        "Jamides aratus adana"
+      ],
+      "species_b": [
+        "Jamides cunilda nisanca",
+        "Jamides ferrari evansi",
+        "Jamides talinga talinga",
+        "Jamides caeruleus caeruleus",
+        "Jamides elpis pseudelpis",
+        "Jamides limes",
+        "Jamides alecto ageladas",
+        "Jamides abdul abdul"
+      ]
+    },
+    {
+      "id": "cp_2_7",
+      "num_a": 2,
+      "num_b": 7,
+      "label": "K2",
+      "question": "Forewing band — slightly dislocated at vein 6 or continuous?",
+      "a_text": "Underside forewing postdiscal band slightly dislocated at vein 6, with the portion in space 6 shifted basad.",
+      "b_text": "Underside forewing postdiscal band continuous from vein 3 to vein 7.",
+      "upperside": false,
+      "hint": "Within the celeno group (band not dislocated at vein 4), check whether the band is also slightly shifted at vein 6. In J. bochus, J. cyta and J. lugine (cyta/bochus subgroup), the portion in space 6 is slightly shifted basad. In the celeno subgroup (J. celeno, J. pura, J. zebra, J. malaccanus, J. parasaturatus) and yehi group, the band is continuous.",
+      "guide_phrase": "dislocated at vein 6",
+      "guide_link": "guide.html#fw-band-vein3-vein6",
+      "species_a": [
+        "Jamides bochus nabonassar",
+        "Jamides cyta minna",
+        "Jamides lugine"
+      ],
+      "species_b": [
+        "Jamides yehi",
+        "Jamides celeno aelianus",
+        "Jamides pura pura",
+        "Jamides zebra lakatti",
+        "Jamides malaccanus malaccanus",
+        "Jamides parasaturatus paramalaccanus",
+        "Jamides philatus subditus",
+        "Jamides aratus adana"
+      ]
+    },
+    {
+      "id": "cp_3_4",
+      "num_a": 3,
+      "num_b": 4,
+      "label": "K3",
+      "question": "Underside ground colour — greyish-brown with lunulate striae, or paler grey with white striae?",
+      "a_text": "Underside greyish brown with very pale buff, lunulate striae. ♂ upperside metallic blue with very broad black forewing border; no androconia. ♀ non-metallic blue.",
+      "b_text": "Underside paler and greyer, with white to whitish striae. ♂ upperside not metallic, with or without androconia.",
+      "upperside": false,
+      "hint": "J. bochus (bochus group) has a distinctively greyish-brown underside with pale buff, lunulate (scalloped, comma-like) striae — this is the same character as the striae-style question. In J. cyta and J. lugine the ground is paler grey and the striae are white and straight.",
+      "guide_phrase": null,
+      "guide_link": null,
+      "species_a": [
+        "Jamides bochus nabonassar"
+      ],
+      "species_b": [
+        "Jamides cyta minna",
+        "Jamides lugine"
+      ]
+    },
+    {
+      "id": "cp_5_6",
+      "num_a": 5,
+      "num_b": 6,
+      "label": "K4",
+      "question": "HW submarginal spaces — strongly darkened or barely darker?",
+      "a_text": "Underside spaces between the inner and outer submarginal striae strongly darkened.",
+      "b_text": "Underside spaces between inner and outer submarginal striae barely darker than the ground colour. ♂ upperside purple with narrow border; no androconia. ♀ paler purple. Borneo.",
+      "upperside": false,
+      "hint": "J. cyta minna is uniquely identified within this pair by having the spaces between the inner and outer HW submarginal striae strongly filled with dark brown — a conspicuous dark band. J. lugine has the same straight white striae as J. cyta but the submarginal spaces are only barely darker. J. lugine is also a Bornean endemic.",
+      "guide_phrase": null,
+      "guide_link": null,
+      "species_a": [
+        "Jamides cyta minna"
+      ],
+      "species_b": [
+        "Jamides lugine"
+      ]
+    },
+    {
+      "id": "cp_8_9",
+      "num_a": 8,
+      "num_b": 9,
+      "label": "K5",
+      "question": "♂ underside — atypical white pattern (yehi) or typical?",
+      "a_text": "♂ underside atypical for Jamides: white with blackish-brown markings but with the usual black tornal spot crowned with orange; fwl 19 mm. ♀ unknown.",
+      "b_text": "♂ underside typical for the celeno group — grey or pale grey ground colour with white striae.",
+      "upperside": false,
+      "hint": "Jamides yehi has a completely inverted underside pattern: white ground with blackish-brown markings, the reverse of all other Malaysian Jamides. Despite the unusual colouring, the tornal spot crowned with orange is still present. Known from only one specimen from Tapah Hills, Perak; exceptionally rare.",
+      "guide_phrase": null,
+      "guide_link": null,
+      "species_a": [
+        "Jamides yehi"
+      ],
+      "species_b": [
+        "Jamides celeno aelianus",
+        "Jamides pura pura",
+        "Jamides zebra lakatti",
+        "Jamides malaccanus malaccanus",
+        "Jamides parasaturatus paramalaccanus",
+        "Jamides philatus subditus",
+        "Jamides aratus adana"
+      ]
+    },
+    {
+      "id": "cp_9_18",
+      "num_a": 9,
+      "num_b": 18,
+      "label": "K6",
+      "question": "HW submarginal spaces — not blackened or forming black wedge-shaped spots?",
+      "a_text": "Underside hindwing spaces between inner and outer submarginal striae not blackened.",
+      "b_text": "Underside hindwing with the spaces between the inner and outer submarginal striae forming black, wedge-shaped spots.",
+      "upperside": false,
+      "hint": "In J. aratus and J. philatus, the spaces between the HW submarginal striae form prominent black wedge-shaped (∧) spots. In J. celeno, J. pura, J. zebra, J. malaccanus and J. parasaturatus the spaces are not blackened.",
+      "guide_phrase": "wedge-shaped (∧)",
+      "guide_link": "guide.html#hw-wedge-spots",
+      "species_a": [
+        "Jamides celeno aelianus",
+        "Jamides pura pura",
+        "Jamides zebra lakatti",
+        "Jamides malaccanus malaccanus",
+        "Jamides parasaturatus paramalaccanus"
+      ],
+      "species_b": [
+        "Jamides philatus subditus",
+        "Jamides aratus adana"
+      ]
+    },
+    {
+      "id": "cp_10_15",
+      "num_a": 10,
+      "num_b": 15,
+      "label": "K7",
+      "question": "HW striae — subbasal pair only, or discal and subbasal pairs?",
+      "a_text": "Underside hindwing striae arranged so that there is only a subbasal pair of continuous, straight white lines.",
+      "b_text": "Underside hindwing striae arranged so that there are discal as well as subbasal pairs of continuous, straight white lines.",
+      "upperside": false,
+      "hint": "Count the pairs of parallel continuous white lines on the HW underside. In J. celeno, J. pura and J. zebra there is a single subbasal pair. In J. malaccanus and J. parasaturatus there are two pairs — a subbasal pair and a discal pair.",
+      "guide_phrase": "pairs of continuous white lines",
+      "guide_link": "guide.html#hw-two-pairs-striae",
+      "species_a": [
+        "Jamides celeno aelianus",
+        "Jamides pura pura",
+        "Jamides zebra lakatti"
+      ],
+      "species_b": [
+        "Jamides malaccanus malaccanus",
+        "Jamides parasaturatus paramalaccanus"
+      ]
+    },
+    {
+      "id": "cp_11_12",
+      "num_a": 11,
+      "num_b": 12,
+      "label": "K8",
+      "question": "♂ upperside — whitish blue broad border, or pale shining blue narrow border?",
+      "a_text": "♂ upperside whitish blue with the forewing border increasing to at least 1.0 mm at apex. ♀ upperside almost white.",
+      "b_text": "♂ upperside pale, slightly shining blue, with forewing border less than 1.0 mm at apex. ♀ upperside pale; clear blue.",
+      "upperside": true,
+      "hint": "Separates J. celeno (A: ♂ whitish blue, border ≥1.0mm at apex, ♀ almost white) from J. pura and J. zebra (B: ♂ pale shining blue, border <1.0mm, ♀ pale clear blue).",
+      "guide_phrase": null,
+      "guide_link": null,
+      "species_a": [
+        "Jamides celeno aelianus"
+      ],
+      "species_b": [
+        "Jamides pura pura",
+        "Jamides zebra lakatti"
+      ]
+    },
+    {
+      "id": "cp_13_14",
+      "num_a": 13,
+      "num_b": 14,
+      "label": "K9",
+      "question": "♂ upperside — unicolorous blue thread border (pura) or border expanding at apex (zebra)?",
+      "a_text": "♂ upperside unicolorous blue; forewing border a thread. ♀ upperside forewing with the underside markings visible by transparency.",
+      "b_text": "♂ upperside forewing blue deepens and border expands slightly and diffusely towards the apex. ♀ upperside forewing with the underside markings barely visible by transparency.",
+      "upperside": true,
+      "hint": "In J. pura (A) the male upperside is a uniform pale blue with the FW border just a thread, and the female FW shows the underside markings through transparency. In J. zebra (B) the male blue deepens and the border widens slightly and diffusely towards the apex, and the female FW markings are barely visible by transparency.",
+      "guide_phrase": null,
+      "guide_link": null,
+      "species_a": [
+        "Jamides pura pura"
+      ],
+      "species_b": [
+        "Jamides zebra lakatti"
+      ]
+    },
+    {
+      "id": "cp_16_17",
+      "num_a": 16,
+      "num_b": 17,
+      "label": "K10",
+      "question": "♂ upperside — shining deep sky blue with HW submarginal spots (malaccanus) or paler blue without spots (parasaturatus)?",
+      "a_text": "♂ upperside shining, deep sky blue with black submarginal spots in the tornal half of the hindwing, and the underside markings barely visible by transparency. ♀ upperside with the veins usually slightly dark-dusted in the distal third.",
+      "b_text": "♂ upperside paler blue without submarginal markings on the hindwing, and with the underside markings visible by transparency. ♀ upperside paler and clearer blue.",
+      "upperside": true,
+      "hint": "Both species have two pairs of continuous HW striae. J. malaccanus (A) has a deeper, more metallic blue upperside with black HW submarginal spots in the tornal half; J. parasaturatus (B) is a paler blue without HW submarginal markings.",
+      "guide_phrase": null,
+      "guide_link": null,
+      "species_a": [
+        "Jamides malaccanus malaccanus"
+      ],
+      "species_b": [
+        "Jamides parasaturatus paramalaccanus"
+      ]
+    },
+    {
+      "id": "cp_19_20",
+      "num_a": 19,
+      "num_b": 20,
+      "label": "K11",
+      "question": "♂ upperside — sky blue thread border no HW spots (philatus) or almost white with spots (aratus)?",
+      "a_text": "♂ upperside sky blue, with the forewing border a thread and the hindwing without submarginal spots. ♀ upperside pale blue.",
+      "b_text": "♂ upperside almost white. ♀ upperside forewing with diffuse border nearly 1.0 mm wide; hindwing with a double series of dark submarginal spots.",
+      "upperside": true,
+      "hint": "Both species have black wedge-shaped HW submarginal spots on the underside. J. philatus (A) is sky blue above with a thread-like FW border; J. aratus (B) is almost white above. J. aratus is recorded from Pulau Tioman and east-coast islands; J. philatus from the mainland, Singapore and Borneo.",
+      "guide_phrase": null,
+      "guide_link": null,
+      "species_a": [
+        "Jamides philatus subditus"
+      ],
+      "species_b": [
+        "Jamides aratus adana"
+      ]
+    },
+    {
+      "id": "cp_22_37",
+      "num_a": 22,
+      "num_b": 37,
+      "label": "K12",
+      "question": "Underside striae — all clearly defined, or so broad the outer wing is mostly white?",
+      "a_text": "Underside all white striae clearly defined.",
+      "b_text": "Underside postdiscal and submarginal striae so broad, and with such narrow dark interspaces, that the outer halves of both wings are mostly white. ♂ upperside pale blue; no androconia. Sumatra.",
+      "upperside": false,
+      "hint": "All 8 Malaysian elpis-subgroup species have clearly defined striae (option A). Option B leads to J. lucide, known only from Sumatra and not recorded from Malaysia — if the striae look very broad with almost no dark interspace, the specimen is likely not from this key's coverage area.",
+      "guide_phrase": null,
+      "guide_link": null,
+      "species_a": [
+        "Jamides cunilda nisanca",
+        "Jamides ferrari evansi",
+        "Jamides talinga talinga",
+        "Jamides caeruleus caeruleus",
+        "Jamides elpis pseudelpis",
+        "Jamides limes",
+        "Jamides alecto ageladas",
+        "Jamides abdul abdul"
+      ],
+      "species_b": []
+    },
+    {
+      "id": "cp_23_36",
+      "num_a": 23,
+      "num_b": 36,
+      "label": "K13",
+      "question": "Forewing band slightly dislocated at vein 6, or only curved (not dislocated)?",
+      "a_text": "Underside forewing postdiscal band slightly dislocated at vein 6, the portion in space 6 shifted basad. ♂ upperside blue. ♀ upperside forewing black border not extending along costa to base.",
+      "b_text": "Underside forewing postdiscal band slightly curved but not dislocated at vein 6. ♂ upperside green, with broad borders; no androconia. ♀ upperside blue, forewing border extending broadly along the costa to the base.",
+      "upperside": false,
+      "hint": "Within the elpis subgroup, J. abdul (B) is the only species with a ♂ upperside that is coppery green — the most instantly recognisable character. On the underside, the FW band is only slightly curved at vein 6 in J. abdul, not sharply dislocated. All other elpis-subgroup species (A) have the FW band shifted basad at vein 6.",
+      "guide_phrase": "dislocated at vein 6",
+      "guide_link": "guide.html#fw-band-vein3-vein6",
+      "species_a": [
+        "Jamides cunilda nisanca",
+        "Jamides ferrari evansi",
+        "Jamides talinga talinga",
+        "Jamides caeruleus caeruleus",
+        "Jamides elpis pseudelpis",
+        "Jamides limes",
+        "Jamides alecto ageladas"
+      ],
+      "species_b": [
+        "Jamides abdul abdul"
+      ]
+    },
+    {
+      "id": "cp_24_27",
+      "num_a": 24,
+      "num_b": 27,
+      "label": "K14",
+      "question": "HW subbasal striae — forming a continuous pair, or dislocated?",
+      "a_text": "Underside hindwing striae arranged so that there is a more or less continuous pair of subbasal white lines.",
+      "b_text": "Underside hindwing subbasal striae dislocated.",
+      "upperside": false,
+      "hint": "J. cunilda (A) and J. ferrari (A) have a continuous (unbroken) pair of HW subbasal striae. J. talinga, J. caeruleus, J. elpis, J. limes and J. alecto (B) all have the HW subbasal striae dislocated (offset/broken).",
+      "guide_phrase": null,
+      "guide_link": null,
+      "species_a": [
+        "Jamides cunilda nisanca",
+        "Jamides ferrari evansi"
+      ],
+      "species_b": [
+        "Jamides talinga talinga",
+        "Jamides caeruleus caeruleus",
+        "Jamides elpis pseudelpis",
+        "Jamides limes",
+        "Jamides alecto ageladas"
+      ]
+    },
+    {
+      "id": "cp_25_26",
+      "num_a": 25,
+      "num_b": 26,
+      "label": "K15",
+      "question": "♂ upperside — purple blue no androconia with costal dashes (cunilda), or paler blue androconia no costal dashes (ferrari)?",
+      "a_text": "♂ upperside purple blue, forewing border usually a thread but sometimes expanding slightly and diffusely at apex; hindwing with faint submarginal markings, no androconia. ♀ much paler, slightly chalky blue. Underside forewing usually with a pair of costal white dashes above the end-cell bar; hindwing orange tornal area comparatively large.",
+      "b_text": "♂ upperside paler blue, with the forewing border expanding to about 1.0 mm at apex and the hindwing with submarginal markings; androconia present. ♀ upperside forewing border regular, hindwing submarginal spots well defined on a whitish ground. Underside without costal white dashes; hindwing with orange area not reaching the postdiscal stria in space 2.",
+      "upperside": true,
+      "hint": "J. cunilda nisanca (A) has a purple-blue upperside without androconia and usually shows costal white dashes on the FW underside. J. ferrari evansi (B) is a paler blue with a slightly wider FW border, androconia, and no costal dashes. The underside orange tornal area is also larger in J. cunilda.",
+      "guide_phrase": "costal white dashes",
+      "guide_link": "guide.html#fw-costal-dashes-endcell",
+      "species_a": [
+        "Jamides cunilda nisanca"
+      ],
+      "species_b": [
+        "Jamides ferrari evansi"
+      ]
+    },
+    {
+      "id": "cp_28_29",
+      "num_a": 28,
+      "num_b": 29,
+      "label": "K16",
+      "question": "FW costal dashes and size — small with costal dashes (talinga), or larger without?",
+      "a_text": "Underside forewing usually with a pair of costal white dashes above the end-cell bar. Small, fwl less than 15.0 mm. ♂ upperside shining blue, with the forewing border 1.0 mm at tornus increasing to at least 2.0 mm at apex; no androconia. ♀ upperside pale silky blue.",
+      "b_text": "Underside forewing without costal dashes, except in J. limes sometimes. Larger, forewing normally more than 15.0 mm.",
+      "upperside": false,
+      "hint": "J. talinga (A) is the smallest elpis-subgroup species with dislocated HW subbasal striae (fwl <15mm) and usually shows a pair of FW costal dashes. J. caeruleus, J. elpis, J. limes and J. alecto (B) are larger (fwl >15mm) and typically lack FW costal dashes (though J. limes occasionally shows them).",
+      "guide_phrase": "costal white dashes",
+      "guide_link": "guide.html#fw-costal-dashes-endcell",
+      "species_a": [
+        "Jamides talinga talinga"
+      ],
+      "species_b": [
+        "Jamides caeruleus caeruleus",
+        "Jamides elpis pseudelpis",
+        "Jamides limes",
+        "Jamides alecto ageladas"
+      ]
+    },
+    {
+      "id": "cp_30_31",
+      "num_a": 30,
+      "num_b": 31,
+      "label": "K17",
+      "question": "HW stria 7 position — in line with 3rd cell stria (caeruleus) or midway (elpis group)?",
+      "a_text": "Underside hindwing with the second white stria from the base in space 7 in line with the third stria from the base in the cell, or at least nearer to this stria than to the second cell stria. ♂ upperside metallic caerulean blue, with forewing border increasing to about 1.0 mm at apex; hindwing without submarginal spots; no androconia. ♀ upperside blue deeper and more shining than in the other species of the group.",
+      "b_text": "Underside hindwing with the second white stria from the base in space 7 about midway between the second and third striae from the base in the cell. ♂ upperside paler blue.",
+      "upperside": false,
+      "hint": "Look at the second stria from the wing base in HW space 7 and compare its position to the 2nd and 3rd cell striae. In J. caeruleus caeruleus (A) this stria aligns with the 3rd (outer) cell stria. In J. elpis, J. limes and J. alecto (B) it sits midway between the 2nd and 3rd cell striae.",
+      "guide_phrase": "second white stria from the base in space 7",
+      "guide_link": "guide.html#hw-stria7-cell-striae",
+      "species_a": [
+        "Jamides caeruleus caeruleus"
+      ],
+      "species_b": [
+        "Jamides elpis pseudelpis",
+        "Jamides limes",
+        "Jamides alecto ageladas"
+      ]
+    },
+    {
+      "id": "cp_32_35",
+      "num_a": 32,
+      "num_b": 35,
+      "label": "K18",
+      "question": "♂ upperside border — thread with no HW markings (elpis/limes) or expanding to ~1mm with HW markings (alecto)?",
+      "a_text": "♂ upperside border a thread, hindwing without submarginal markings. ♀ upperside forewing border ends at midcosta.",
+      "b_text": "♂ upperside forewing border expands to about 1.0 mm at apex; hindwing with submarginal markings; no androconia. ♀ upperside forewing border runs narrowly to base along costa.",
+      "upperside": true,
+      "hint": "J. elpis and J. limes (A) have a thread-like male FW border and no HW submarginal markings. J. alecto ageladas (B) has a slightly wider border (~1.0mm at apex) and HW submarginal markings in the male; the female FW border runs to the base along the costa.",
+      "guide_phrase": null,
+      "guide_link": null,
+      "species_a": [
+        "Jamides elpis pseudelpis",
+        "Jamides limes"
+      ],
+      "species_b": [
+        "Jamides alecto ageladas"
+      ]
+    },
+    {
+      "id": "cp_33_34",
+      "num_a": 33,
+      "num_b": 34,
+      "label": "K19",
+      "question": "Size and striae — smaller narrow striae with androconia (elpis) or larger diffuse striae Borneo (limes)?",
+      "a_text": "Smaller, fwl less than 18.0 mm. Underside striae narrow; tornal orange area on hindwing not unusually large. ♂ upperside pale shining sky blue; androconia present.",
+      "b_text": "Larger, fwl at least 18.0 mm. Underside striae broad and rather diffuse; usually with costal white dashes above end-cell bar on forewing; orange tornal area on hindwing large. ♂ without androconia. Borneo.",
+      "upperside": true,
+      "hint": "J. elpis pseudelpis (A) is the smaller species (fwl <18mm) with narrow, clearly defined striae and androconia present in the male. J. limes (B) is a larger Bornean species (fwl ≥18mm) with broader, more diffuse striae, often costal dashes, and no androconia.",
+      "guide_phrase": "costal white dashes",
+      "guide_link": "guide.html#fw-costal-dashes-endcell",
+      "species_a": [
+        "Jamides elpis pseudelpis"
+      ],
+      "species_b": [
+        "Jamides limes"
+      ]
+    }
+  ],
+
+  "species_paths": {
+    "Jamides bochus nabonassar":        [1, 2, 3],
+    "Jamides cyta minna":               [1, 2, 4, 5],
+    "Jamides lugine":                   [1, 2, 4, 6],
+    "Jamides yehi":                     [1, 7, 8],
+    "Jamides celeno aelianus":          [1, 7, 9, 10, 11],
+    "Jamides pura pura":                [1, 7, 9, 10, 12, 13],
+    "Jamides zebra lakatti":            [1, 7, 9, 10, 12, 14],
+    "Jamides malaccanus malaccanus":    [1, 7, 9, 10, 15, 16],
+    "Jamides parasaturatus paramalaccanus": [1, 7, 9, 10, 15, 17],
+    "Jamides philatus subditus":        [1, 7, 9, 18, 19],
+    "Jamides aratus adana":             [1, 7, 9, 18, 20],
+    "Jamides cunilda nisanca":          [21, 22, 23, 24, 25],
+    "Jamides ferrari evansi":          [21, 22, 23, 24, 26],
+    "Jamides talinga talinga":          [21, 22, 23, 27, 28],
+    "Jamides caeruleus caeruleus":      [21, 22, 23, 27, 29, 30],
+    "Jamides elpis pseudelpis":         [21, 22, 23, 27, 29, 31, 32, 33],
+    "Jamides limes":                    [21, 22, 23, 27, 29, 31, 32, 34],
+    "Jamides alecto ageladas":          [21, 22, 23, 27, 29, 31, 35],
+    "Jamides abdul abdul":              [21, 22, 36]
+  },
+
+  "leads": {
+    "1":  "Underside forewing postdiscal band in space 3 more or less in line with the band in spaces 4 and 5.",
+    "2":  "Underside forewing postdiscal band slightly dislocated at vein 6, with the portion in space 6 shifted basad.",
+    "3":  "Underside greyish brown with very pale buff, lunulate striae. ♂ upperside metallic blue with very broad black forewing border; no androconia. ♀ non-metallic blue. → Jamides bochus",
+    "4":  "Underside paler and greyer, with white to whitish striae. ♂ upperside not metallic, with or without androconia.",
+    "5":  "Underside spaces between the inner and outer submarginal striae strongly darkened. ♂ upperside blue with long paddle-shaped androconia. ♀ blue. → Jamides cyta",
+    "6":  "Underside spaces between inner and outer submarginal striae barely darker than the ground colour. ♂ upperside purple with narrow border; no androconia. ♀ paler purple. Borneo. → Jamides lugine",
+    "7":  "Underside forewing postdiscal band continuous from vein 3 to vein 7. ♂ with battledore androconia except for J. yehi which has no androconia.",
+    "8":  "♂ underside atypical for Jamides: white with blackish-brown markings but with the usual black tornal spot crowned with orange; fwl 19 mm. ♀ unknown. → Jamides yehi",
+    "9":  "Underside hindwing spaces between inner and outer submarginal striae not blackened.",
+    "10": "Underside hindwing striae arranged so that there is only a subbasal pair of continuous, straight white lines.",
+    "11": "♂ upperside whitish blue with the forewing border increasing to at least 1.0 mm at apex. ♀ upperside almost white. → Jamides celeno",
+    "12": "♂ upperside pale, slightly shining blue, with forewing border less than 1.0 mm at apex. ♀ upperside pale; clear blue.",
+    "13": "♂ upperside unicolorous blue; forewing border a thread. ♀ upperside forewing with the underside markings visible by transparency. → Jamides pura",
+    "14": "♂ upperside forewing blue deepens and border expands slightly and diffusely towards the apex. ♀ upperside forewing with the underside markings barely visible by transparency. → Jamides zebra",
+    "15": "Underside hindwing striae arranged so that there are discal as well as subbasal pairs of continuous, straight white lines.",
+    "16": "♂ upperside shining, deep sky blue with black submarginal spots in the tornal half of the hindwing, and the underside markings barely visible by transparency. ♀ upperside with the veins usually slightly dark-dusted in the distal third. → Jamides malaccanus",
+    "17": "♂ upperside paler blue without submarginal markings on the hindwing, and with the underside markings visible by transparency. ♀ upperside paler and clearer blue. → Jamides parasaturatus",
+    "18": "Underside hindwing with the spaces between the inner and outer submarginal striae forming black, wedge-shaped spots.",
+    "19": "♂ upperside sky blue, with the forewing border a thread and the hindwing without submarginal spots. ♀ upperside pale blue. → Jamides philatus",
+    "20": "♂ upperside almost white. ♀ upperside forewing with diffuse border nearly 1.0 mm wide; hindwing with a double series of dark submarginal spots. → Jamides aratus",
+    "21": "Underside forewing postdiscal band completely dislocated at vein 4, so that the inner stria in space 3 forms a more or less continuous line with the outer stria or the end-cell bar and the outer postdiscal striae in spaces 1b and 2. ♂ with or without androconia.",
+    "22": "Underside all white striae clearly defined.",
+    "23": "Underside forewing postdiscal band slightly dislocated at vein 6, the portion in space 6 shifted basad. ♂ upperside blue. ♀ upperside forewing black border not extending along costa to base.",
+    "24": "Underside hindwing striae arranged so that there is a more or less continuous pair of subbasal white lines.",
+    "25": "♂ upperside purple blue, forewing border usually a thread but sometimes expanding slightly and diffusely at apex; hindwing with faint submarginal markings, no androconia. ♀ much paler, slightly chalky blue, with forewing border rather diffuse and usually expanding abruptly just above vein 4; hindwing submarginal spots rather small and diffuse on a bluish ground. Underside forewing usually with a pair of costal white dashes above the end-cell bar; hindwing orange tornal area comparatively large often obliterating the outer postdiscal stria in space 2 and sometimes that in space 3 also. → Jamides cunilda",
+    "26": "♂ upperside paler blue, with the forewing border expanding to about 1.0 mm at apex and the hindwing with submarginal markings; androconia present. ♀ upperside forewing border regular, hindwing submarginal spots well defined on a whitish ground, that in space 2 being rather linear. Underside without costal white dashes; hindwing with orange area not reaching the postdiscal stria in space 2. → Jamides ferrari",
+    "27": "Underside hindwing subbasal striae dislocated.",
+    "28": "Underside forewing usually with a pair of costal white dashes above the end-cell bar. Small, fwl less than 15.0 mm. ♂ upperside shining blue, with the forewing border 1.0 mm at tornus increasing to at least 2.0 mm at apex; no androconia. ♀ upperside pale silky blue. → Jamides talinga",
+    "29": "Underside forewing without costal dashes, except in J. limes sometimes. Larger, forewing normally more than 15.0 mm.",
+    "30": "Underside hindwing with the second white stria from the base in space 7 in line with the third stria from the base in the cell, or at least nearer to this stria than to the second cell stria. ♂ upperside metallic caerulean blue, with forewing border increasing to about 1.0 mm at apex; hindwing without submarginal spots; no androconia. ♀ upperside blue deeper and more shining than in the other species of the group. → Jamides caeruleus",
+    "31": "Underside hindwing with the second white stria from the base in space 7 about midway between the second and third striae from the base in the cell. ♂ upperside paler blue.",
+    "32": "♂ upperside border a thread, hindwing without submarginal markings. ♀ upperside forewing border ends at midcosta.",
+    "33": "Smaller, fwl less than 18.0 mm. Underside striae narrow; tornal orange area on hindwing not unusually large. ♂ upperside pale shining sky blue; androconia present. → Jamides elpis",
+    "34": "Larger, fwl at least 18.0 mm. Underside striae broad and rather diffuse; usually with costal white dashes above end-cell bar on forewing; orange tornal area on hindwing large. ♂ without androconia. Borneo. → Jamides limes",
+    "35": "♂ upperside forewing border expands to about 1.0 mm at apex; hindwing with submarginal markings; no androconia. ♀ upperside forewing border runs narrowly to base along costa. → Jamides alecto",
+    "36": "Underside forewing postdiscal band slightly curved but not dislocated at vein 6. ♂ upperside green, with broad borders; no androconia. ♀ upperside blue, forewing border extending broadly along the costa to the base. → Jamides abdul",
+    "37": "Underside postdiscal and submarginal striae so broad, and with such narrow dark interspaces, that the outer halves of both wings are mostly white. ♂ upperside pale blue; no androconia. Sumatra. → Jamides lucide (not recorded from Malaysia)"
+  }
+}
