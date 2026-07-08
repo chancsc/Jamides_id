@@ -249,10 +249,15 @@ function ksRenderCouplet() {
   if (!el) return;
 
   if (ks.result) {
+    const info = ks.speciesInfo.get(ks.result.speciesName) || {};
+    const inatHref = info.inat_url ? ksEscAttr(info.inat_url) : '';
     el.innerHTML = `
       <div class="ks-result-card">
-        <p class="ks-result-label">&#9658; Identification</p>
-        <p class="ks-result-species">Key ${ksEsc(String(ks.result.leadNum))}</p>
+        <p class="ks-result-label">&#9658; Identification &middot; Key ${ksEsc(String(ks.result.leadNum))}</p>
+        <p class="ks-result-species"><em>${ksEsc(ks.result.speciesName)}</em></p>
+        ${info.common_name ? `<p class="ks-result-common">${ksEsc(info.common_name)}</p>` : ''}
+        <p class="ks-result-text">${ksEsc(ks.result.text)}</p>
+        ${inatHref ? `<a class="ks-inat-link" href="${inatHref}" target="_blank" rel="noopener">View on iNaturalist &#8594;</a>` : ''}
       </div>`;
     return;
   }
