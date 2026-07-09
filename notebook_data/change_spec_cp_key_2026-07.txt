@@ -1,0 +1,163 @@
+CHANGE SPEC — C&P KEY SCORING & SPECIES KEY-PATH ENHANCEMENTS
+=============================================================
+Date:    July 2026
+Area:    C&P Key Scoring page (id_keys.html / js/id_keys.js)
+         Species Search detail page (js/app.js)
+         Key data (data/id_key.json)
+Branch:  main
+
+
+1. SUMMARY
+----------
+A set of enhancements and one significant bug fix to the C&P dichotomous
+key tools. The work (a) makes couplet labelling use the real C&P key
+numbers, (b) fixes a navigation defect that made two species unreachable,
+(c) rebuilds the stored species paths to match the corrected navigation,
+and (d) reworks the species-detail "C&P key path" so it reads in the same
+question/answer style as the Direct / Simulation-CD path and stays
+identical to the scoring-page breadcrumb.
+
+
+2. BACKGROUND
+-------------
+The C&P key is a numbered-lead dichotomous key. In the notation "N (M)":
+  - N is the current statement (couplet entry lead).
+  - If statement N is TRUE  → go to the next statement (N+1).
+  - If statement N is FALSE → jump to statement M (the parenthetical),
+    then follow M's own routing.
+
+Data model (data/id_key.json):
+  - couplets[]      ordered couplet objects {num_a, num_b, question,
+                    a_text, b_text, species_a, species_b, ...}
+  - leads{}         lead number → full lead text
+  - species_paths{} species name → ordered list of chosen lead numbers
+
+
+3. ENHANCEMENTS
+---------------
+
+3.1 Couplet labelling by real key number (scoring page)
+  - Couplet header shows "Key N" (entry lead num_a), not the "N·M" pair.
+  - Result card shows the identified species (name, common name, lead
+    text, iNaturalist link) with the terminal key number in its label.
+  - Top-bar badge shows "Key N" while navigating and the terminal
+    "Key N" once identified.
+  - History breadcrumb records the trail as:
+        "Key N"        when the entry lead was taken,
+        "Key N → M"    when the alternate lead M was taken,
+        "Key N → Skip" for a skipped upperside couplet.
+
+3.2 Species-detail "C&P key path" — completeness from Key 1
+  - Previously the path started at the first CHOSEN lead (e.g. Key 21 for
+    talinga), hiding the first couplet. It now starts at Key 1 and shows
+    every couplet on the route, in the same "Key N" / "Key N → M" form as
+    the scoring breadcrumb.
+  - The renderer WALKS the couplet chain (tracking the current couplet)
+    rather than resolving each lead in isolation. This disambiguates a
+    shared lead (lead 9 is both Key 8's alternate and Key 9's entry) and
+    guarantees the detail path and the scoring breadcrumb read identically.
+
+3.3 Redundant-arrow suppression
+  - When the alternate lead M is itself the next couplet in the trail
+    (the shared-lead-9 case: "Key 8 → 9" immediately followed by "Key 9"),
+    the "→ M" arrow is suppressed so the number is not shown twice. The
+    step reads "Key 8". Meaningful jumps (Key 1 → 21, Key 22 → 37) are kept.
+
+3.4 Correct answer text per couplet
+  - The path uses each couplet's own a_text / b_text for the chosen
+    branch, not leads[chosenLead]. A shared lead has one leads{} entry
+    but different meanings across couplets, so leads['9'] previously
+    showed Key 9's wording under Key 8.
+
+3.5 Question/answer layout (species-detail path)
+  - Each step now mirrors the Direct / Simulation-CD path display:
+        [Key N]  <couplet question>
+                 ↳ <chosen answer>
+    The "Key N" (or "Key N → M") badge identifies the step (styled like
+    the Direct path's "Q5" badge); the number bubble was removed.
+
+
+4. BUG FIX — shared-lead navigation (Key 8 → Key 9)
+---------------------------------------------------
+Defect
+  ksGetNext() resolved a FALSE/B choice by jumping to num_b + 1. That is
+  correct only when statement M (= num_b) is a plain contrast lead. When
+  M is itself a couplet head — lead 9 is couplet "9 (18)" — the code
+  skipped couplet 9·18 (Key 9) entirely.
+
+Impact
+  Key 9 is the only route to lead 18, and lead 18 is the only route to
+  J. philatus and J. aratus. Both species were UNREACHABLE in the C&P
+  Key Scoring tool (18 of 20 terminals reachable).
+
+Fix
+  For a B choice, look up a couplet whose entry lead IS M first, then
+  fall back to M+1:
+        couplets.find(c => c.num_a === leadNum)         // M is a couplet head
+     || couplets.find(c => c.num_a === leadNum + 1)     // else flows to next
+  Only couplet 8·9 is affected (it is the only couplet whose num_b equals
+  another couplet's num_a). All other routes are unchanged.
+
+  Terminal detection and A-navigation are unchanged.
+
+
+5. DATA CHANGES (data/id_key.json)
+----------------------------------
+5.1 J. lucide candidate fix
+  - Couplet 22·37 (Key 37 = option B, the out-of-range Sumatran branch)
+    had species_b = []. J. lucide was therefore never scored or shown as
+    a candidate. Added "Jamides lucide" to species_b and registered its
+    path [21, 37] in species_paths.
+
+5.2 species_paths regenerated from corrected navigation
+  - Rebuilt so the celeno subgroup routes through Key 9 (couplet 9·18),
+    adding the second lead-9 step the old paths had dropped. Changed:
+        celeno        [1,7,9,10,11]        -> [1,7,9,9,10,11]
+        pura          [1,7,9,10,12,13]     -> [1,7,9,9,10,12,13]
+        zebra         [1,7,9,10,12,14]     -> [1,7,9,9,10,12,14]
+        malaccanus    [1,7,9,10,15,16]     -> [1,7,9,9,15,16]
+        parasaturatus [1,7,9,10,15,17]     -> [1,7,9,9,15,17]
+    All other species paths were already correct and are unchanged.
+
+
+6. FILES CHANGED
+----------------
+  js/id_keys.js   ksGetNext navigation fix; couplet/result/badge labels;
+                  breadcrumb "Key N → M" with redundant-arrow suppression.
+  js/app.js       buildCPKeyPath rewritten to walk the couplet chain,
+                  use couplet a_text/b_text, suppress redundant arrows,
+                  and render the question/answer layout.
+  data/id_key.json  J. lucide added to couplet 22·37 species_b;
+                  species_paths regenerated.
+  css/style.css   Removed the false-step styles and the cpkey number-bubble
+                  override; cpkey steps now render without a bubble.
+  id_keys.html    "Key N" labelling / result-card styles (earlier in the
+                  same effort).
+
+
+7. VERIFICATION
+---------------
+  - All 20 terminal leads reachable with the corrected navigation
+    (was 18; philatus and aratus were unreachable).
+  - Following each species' own key path ranks that species #1 with a
+    full score in the scoring simulation (20 / 20).
+  - Species-detail path and scoring breadcrumb produce identical trails
+    for every species, e.g.:
+        celeno    Key 1 · Key 2 → 7 · Key 8 · Key 9 · Key 10 · Key 11
+        philatus  Key 1 · Key 2 → 7 · Key 8 · Key 9 → 18 · Key 19
+        talinga   Key 1 → 21 · Key 22 · Key 23 · Key 24 → 27 · Key 28
+  - scripts/validate_scoring.py: all checks pass (unchanged tree.json
+    tooling; no regression).
+
+
+8. NOTES FOR FUTURE MAINTENANCE
+-------------------------------
+  - The navigation logic lives in ksGetNext (js/id_keys.js) and is
+    duplicated by the walk in buildCPKeyPath (js/app.js). If the A/B
+    routing rules change, update both.
+  - The shared-lead rule (num_a === leadNum before num_a === leadNum + 1)
+    is required by any key where a lead number is reused as both an
+    alternate and a couplet head. Preserve it when adapting to another genus.
+  - species_paths must list the exact CHOSEN-lead sequence (including the
+    repeated lead 9 for the celeno subgroup) so the detail-page walk can
+    reconstruct the couplet chain unambiguously.
