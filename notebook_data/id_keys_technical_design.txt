@@ -9,12 +9,23 @@ Purpose: Interactive, sequential C&P-style dichotomous key with real-time
 
 OVERVIEW
 --------
-The tool presents one key couplet at a time. The user selects option A or B;
-the page immediately navigates to the next couplet determined by the key's
-branching structure. In parallel, a candidate ranking panel updates in real
-time using a simple +1/−1 scoring model. When the user reaches a terminal
-lead (a lead whose text names a specific taxon), the page displays the
-identification result.
+The tool presents one key couplet at a time as a SERIAL-LEAD key. In C&P
+notation "N (M)" means: "Is statement N true? — Yes → go to the next lead
+(N+1); No → jump to lead M." Accordingly each couplet card shows the single
+statement (lead num_a) in full and is answered Yes (matches → advance) or
+No (doesn't match → jump to lead num_b). In parallel, a candidate ranking
+panel updates in real time using a simple +1/−1 scoring model. When the
+user reaches a terminal lead (a lead whose text names a specific taxon),
+the page displays the identification result.
+
+  NOTE ON THE Yes/No MODEL
+  Internally the two answers are still stored as the choices 'A' (Yes,
+  the num_a statement matched) and 'B' (No, it did not). The Yes/No
+  wording is presentation only — navigation, scoring and species_paths
+  are all defined in terms of A/B. An earlier layout showed lead num_a as
+  option A and lead num_b as option B side by side; that made choosing B
+  look like it re-asked the same question with the alternate lead's text,
+  so it was replaced by the single-statement Yes/No card.
 
 Three files define the complete tool:
 
@@ -38,33 +49,38 @@ Each element of the "couplets" array describes one choice-pair in the key:
 
   {
     "id":             "cp_1_21",          // unique string, e.g. "cp_<num_a>_<num_b>"
-    "num_a":          1,                  // lead number of option A
-    "num_b":          21,                 // lead number of option B
-    "label":          "K1",              // display label shown in the UI
-    "question":       "Forewing band…",  // the question posed to the user
-    "a_text":         "Band in line…",   // full text of option A
-    "b_text":         "Band dislocated…",// full text of option B
+    "num_a":          1,                  // lead number of the statement (Yes side)
+    "num_b":          21,                 // lead to jump to on No
+    "label":          "K1",              // legacy display label (no longer shown)
+    "question":       "Forewing band…",  // legacy two-option summary (no longer shown)
+    "a_text":         "Band in line…",   // THE STATEMENT shown on the card (num_a)
+    "b_text":         "Band dislocated…",// text of the No branch (num_b); used by the
+                                         //   species-detail path, not the card
     "upperside":      false,             // true if upperside character → shows Skip button
     "hint":           "…",              // optional explanatory text (collapsed by default)
-    "guide_phrase":   "dislocated at vein 6", // substring in a_text or b_text to linkify
+    "guide_phrase":   "band in space 3", // substring of a_text to hyperlink
     "guide_link":     "guide.html#fw-band-vein3-vein6", // href for guide_phrase link
-    "question_phrase":"band at space 3", // optional: substring in question to linkify
-    "question_link":  "guide.html#fw-band-vein3-vein6", // href for question_phrase link
-    "species_a":      [ "Genus sp1", "Genus sp2", ... ], // taxa matching option A
-    "species_b":      [ "Genus sp3", ... ]               // taxa matching option B
+    "species_a":      [ "Genus sp1", "Genus sp2", ... ], // taxa on the Yes side
+    "species_b":      [ "Genus sp3", ... ]               // taxa on the No side
   }
+
+  (question_phrase / question_link still exist on some couplets but are no
+   longer rendered — the card shows a_text, not the two-option question.)
 
   FIELD NOTES
   - num_a / num_b: must match the lead numbers used in the original key text.
     The couplets array must be in the same order as the key's text flow (the
-    sub-key that follows option A always occupies the NEXT position in the array).
-  - label: use any short string; "K1"–"K19" is the Jamides convention.
+    lead reached by answering Yes always occupies the NEXT position in the array).
+  - label / question: retained for reference; the current card shows only the
+    "Key <num_a>" tag plus a_text. Neither field is displayed.
+  - a_text: the single statement the user answers Yes/No about. Write it as a
+    positive assertion of the num_a condition (Yes = specimen matches it).
   - upperside: set to true for any couplet whose characters require the upperside
     of the specimen. This adds a "Skip" button in the UI.
-  - guide_phrase / guide_link: the first occurrence of guide_phrase in a_text or
-    b_text is hyperlinked to guide_link. Leave both empty to show no link in buttons.
-  - question_phrase / question_link: same mechanism but applied to the question
-    label rather than the button text. Leave absent or empty if not needed.
+  - guide_phrase / guide_link: the first occurrence of guide_phrase in a_text is
+    hyperlinked to guide_link. If the illustrated feature is described in the No
+    branch instead (phrase only in b_text), the card appends a small trailing
+    "visual guide" link to guide_link. Leave both empty for no link.
   - species_a / species_b: full scientific names (including subspecies if desired).
     Every taxon the key can identify should appear in exactly one side of every
     couplet that is relevant to it. Irrelevant couplets (where the taxon is on
@@ -114,23 +130,41 @@ State variables:
   ks.currentCouplet  — the couplet object currently displayed (null if done)
   ks.result          — {leadNum, text, speciesName} when identification reached
 
-2a. CHOOSING A (option A, lead num_a)
-  - If num_a is terminal → set ks.result, clear ks.currentCouplet.
-  - Otherwise → next couplet = couplets[currentIndex + 1]  (next in array).
+  The answers map onto the serial-lead reading as: Yes = choice 'A'
+  (the num_a statement matched), No = choice 'B' (it did not).
 
-2b. CHOOSING B (option B, lead num_b)
+2a. Yes  (choice 'A' — statement num_a matched, lead num_a)
+  - If num_a is terminal → set ks.result, clear ks.currentCouplet.
+  - Otherwise → next couplet = couplets[currentIndex + 1]  (next in array,
+    i.e. the next lead N+1).
+
+2b. No  (choice 'B' — statement num_a did NOT match → jump to lead num_b)
   - If num_b is terminal → set ks.result, clear ks.currentCouplet.
-  - Otherwise → find the couplet whose num_a = num_b + 1.
-    SPECIAL CASE: if no couplet has num_a = num_b + 1, fall back to
-    the couplet whose num_a = num_b. This handles keys where the same
-    lead number acts as both the B lead of one couplet and the A lead
-    of the next (a quirk in some published keys where an intermediate
-    lead is shared — see K5/K6 in the Jamides key, lead 9).
+  - Otherwise → jump to statement num_b, then follow ITS routing:
+      find the couplet whose num_a = num_b   (num_b is itself a couplet
+                                               head, e.g. lead 9 = "9 (18)")
+      else find the couplet whose num_a = num_b + 1  (num_b is a plain
+                                               contrast lead that flows on
+                                               to the next statement).
+    ORDER MATTERS. The num_a = num_b lookup MUST come first. C&P notation
+    "N (M)" means a No jumps to statement M and then follows M's own
+    routing; when M is itself a couplet head that couplet must be read
+    next. Looking up num_b + 1 first skips it.
+
+    BUG HISTORY: the original code tried num_b + 1 first, which skipped
+    couplet 9·18 (Key 9) — reached only when statement 9 (couplet "9 (18)")
+    is entered from the No branch of Key 8 (couplet 8·9). Key 9 is the only
+    route to lead 18, and lead 18 the only route to J. philatus / J. aratus,
+    so both species were unreachable until the lookup order was corrected.
+    Only couplet 8·9 is affected in the Jamides key (it is the only couplet
+    whose num_b equals another couplet's num_a); every other route is
+    identical under either order.
 
 2c. SKIP (upperside couplets only)
-  - Advance to the first non-terminal branch. Specifically:
-      if num_a is NOT terminal → skip via A (index + 1)
-      else if num_b is NOT terminal → skip via B (num_b + 1 search)
+  - Advance to the first non-terminal branch (ksSkipNext → ksGetNext), so it
+    uses the same routing as a normal answer:
+      if num_a is NOT terminal → skip via Yes (A, index + 1)
+      else if num_b is NOT terminal → skip via No (B, num_a = num_b rule)
       else both terminal → Skip button hidden; user must choose.
   - Skip contributes no score (neutral). Scoring treats skip as absent.
 
@@ -196,8 +230,9 @@ STEP 1 — Prepare the key data
 STEP 2 — Build id_key.json
   a. "leads" object: copy every lead text verbatim, keyed by lead number.
   b. "couplets" array: one object per couplet, in key-text order (the
-     sub-key entered by choosing A must immediately follow in the array).
-     Fill in num_a, num_b, label (K1, K2…), question, a_text, b_text.
+     sub-key entered by answering Yes must immediately follow in the array).
+     Fill in num_a, num_b, a_text (the Yes statement), b_text (the No
+     branch). label / question are optional (retained but not rendered).
      Set upperside: true for couplets that require the upperside of the
      specimen. Set guide_phrase / guide_link for any illustrated features.
   c. "species_paths": trace each terminal taxon's path through the key
@@ -249,21 +284,28 @@ STEP 6 — Update id_keys.html
 
 STEP 7 — Verify the navigation structure
   Run the key manually for 2–3 known species to confirm:
-  - Choosing A always reaches the correct next couplet.
-  - Choosing B jumps to the right sub-key (num_b + 1 rule).
+  - Yes (A) always reaches the correct next couplet.
+  - No (B) jumps to the right sub-key (num_a = num_b first, else num_b + 1).
   - Each terminal lead correctly identifies the expected taxon.
   - Skip (where applicable) advances to the non-terminal branch.
+  - Every taxon is reachable: run a reachability check (BFS over A/B from
+    couplets[0]) and confirm the set of reachable terminal leads equals the
+    full taxon set. This catches shared-lead routing bugs (see below).
 
 COMMON PITFALLS
-  - Array order matters: couplets must be in key-text order. If A always
+  - Array order matters: couplets must be in key-text order. If Yes always
     goes to the immediately next couplet in the array, ordering is correct.
   - Terminal lead text: the genus name must appear verbatim in the lead text
     for ksIsTerminal() to fire. Check spelling and spacing.
-  - Lead-9-style dual use: if a lead number appears as both the B of one
-    couplet and the A of the next (shared intermediate lead), the fallback
-    in ksGetNext() (num_a === leadNum) handles it automatically.
+  - Shared-lead routing (the num_a = num_b rule): if a lead number appears as
+    both the No lead (num_b) of one couplet and the statement lead (num_a) of
+    another, the No branch MUST route to that couplet (num_a = num_b lookup
+    first). Getting the order wrong silently skips the shared couplet and can
+    make whole subtrees — and the taxa in them — unreachable. In the Jamides
+    key this is lead 9 (Key 8's No branch = Key 9's statement); the reachability
+    check in Step 7 is what surfaces it.
   - Skip on all-terminal couplets: the Skip button is automatically hidden
-    when both A and B are terminal (both lead to a species name). This is
+    when both Yes and No are terminal (both lead to a species name). This is
     by design — the user must choose one.
 
 
@@ -276,8 +318,12 @@ id_keys.html
       └── fetches data/species.json (common names, iNat URLs at runtime)
 
 app.js (species detail page) also consumes id_key.json:
-  └── buildCPKeyPath() reads species_paths + leads to render the key
-      path in the species info panel, showing both chosen and false leads.
+  └── buildCPKeyPath() walks the couplet chain from species_paths to render
+      the key path in the species info panel. Each step shows "Key <num_a>"
+      plus the statement (a_text) and a "↳ Yes" / "↳ No" verdict — Yes when
+      the path took choice A at that couplet, No when it took choice B. The
+      walk uses the SAME A/B routing as ksGetNext (including the num_a = num_b
+      rule) so the detail path and the scoring breadcrumb read identically.
 
 
 6. KEY CONSTANTS AND CONFIGURATION POINTS
@@ -285,13 +331,21 @@ app.js (species detail page) also consumes id_key.json:
 In id_keys.js:
   ANSWERS_KEY     localStorage key (change per deployment)
   GENUS_MARKER    string used to detect terminal leads ("Jamides")
-  ksGetNext()     navigation logic for A/B choices
+  ksGetNext()     navigation logic for Yes/No (A/B) choices; encodes the
+                  num_a = num_b (before num_a = num_b + 1) shared-lead rule
   ksSkipNext()    skip navigation (picks non-terminal branch)
   ksScoreAll()    scoring algorithm (+1/−1 model)
+  ksRenderCouplet()  single-statement card: a_text + Yes/No buttons
+  ksRenderHistory()  breadcrumb "Key N: Yes/No"
+
+Presentation vs. logic:
+  Yes/No is UI wording only. ks.answers stores 'A' / 'B' / 'skip'; scoring,
+  navigation and species_paths are all defined in terms of A/B. To retheme
+  the wording, change ksRenderCouplet/ksRenderHistory/buildCPKeyPath only.
 
 In id_key.json (per couplet):
   upperside       controls Skip button visibility
-  guide_phrase    phrase to linkify in button text
+  a_text          the statement shown on the card (Yes = matches)
+  guide_phrase    phrase in a_text to linkify (else a trailing guide link)
   guide_link      href for guide_phrase
-  question_phrase phrase to linkify in question label
-  question_link   href for question_phrase
+  question_phrase / question_link   legacy; retained but not rendered
