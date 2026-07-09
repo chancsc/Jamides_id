@@ -10,8 +10,8 @@
       "b_text": "Underside forewing postdiscal band completely dislocated at vein 4, so that the inner stria in space 3 forms a more or less continuous line with the outer stria or the end-cell bar and the outer postdiscal striae in spaces 1b and 2.",
       "upperside": false,
       "hint": "Look at the underside of the forewing. Compare the stria in space 3 with those in spaces 4 and 5. In option A the band runs more or less straight across. In option B (elpis subgroup: J. elpis, J. caeruleus, J. alecto, J. abdul, J. cunilda, J. limes, J. talinga, J. ferrari), the stria in space 3 is clearly shifted basad (inward) to form a nearly continuous line with the end-cell bar.",
-      "guide_phrase": "",
-      "guide_link": "",
+      "guide_phrase": "band in space 3",
+      "guide_link": "guide.html#fw-band-vein3-vein6",
       "species_a": [
         "Jamides bochus nabonassar",
         "Jamides cyta minna",

@@ -745,11 +745,9 @@ function buildCPKeyPath(speciesName) {
     if (!cur) break;
     const choice = n === cur.num_a ? 'A' : n === cur.num_b ? 'B' : null;
     if (choice === null) break; // stale/invalid path — stop rendering
-    // Use the couplet's own answer text, not the lead's — a shared lead (9) has
-    // one lead entry but different meanings in Key 8 (its alternate) vs Key 9
-    // (its entry), so leads['9'] would show Key 9's wording under Key 8.
-    const answer = choice === 'A' ? cur.a_text : cur.b_text;
-    steps.push({ entry: cur.num_a, lead: n, question: cur.question || '', answer: answer || '' });
+    // Serial-lead reading: each step is the statement (lead num_a), answered
+    // Yes when the specimen matched it (choice A) or No when it didn't (choice B).
+    steps.push({ entry: cur.num_a, statement: cur.a_text || '', verdict: choice === 'A' ? 'Yes' : 'No' });
     if (isTerminal(n)) { cur = null; break; }
     // Advance exactly as ksGetNext does in the scoring tool.
     if (choice === 'A') {
@@ -760,17 +758,11 @@ function buildCPKeyPath(speciesName) {
     }
   }
 
-  const stepsHTML = steps.map((s, i) => {
-    // Show the "→ M" arrow only when the alternate lead M isn't already the
-    // next couplet in the trail — otherwise "Key 8 → 9" then "Key 9" repeats 9.
-    const next = steps[i + 1];
-    const showArrow = s.lead !== s.entry && (!next || next.entry !== s.lead);
-    const badge = showArrow ? `Key ${s.entry} &rarr; ${s.lead}` : `Key ${s.entry}`;
-    // Mirror the Direct/CD path layout: a Key badge + the couplet question, then
-    // the chosen answer on a "↳" line.
+  const stepsHTML = steps.map(s => {
+    // Serial-lead layout: a "Key N" badge + the statement, then ↳ Yes / ↳ No.
     return `<li class="path-step">
-      <span class="path-q"><span class="path-qnum">${badge}</span> ${escapeHtml(s.question)}</span>
-      <span class="path-a">&#8627; ${escapeHtml(s.answer)}</span>
+      <span class="path-q"><span class="path-qnum">Key ${s.entry}</span> ${escapeHtml(s.statement)}</span>
+      <span class="path-a">&#8627; ${escapeHtml(s.verdict)}</span>
     </li>`;
   }).join('');
 

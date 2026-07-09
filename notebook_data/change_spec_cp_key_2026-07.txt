@@ -70,11 +70,33 @@ Data model (data/id_key.json):
     showed Key 9's wording under Key 8.
 
 3.5 Question/answer layout (species-detail path)
-  - Each step now mirrors the Direct / Simulation-CD path display:
-        [Key N]  <couplet question>
-                 ↳ <chosen answer>
-    The "Key N" (or "Key N → M") badge identifies the step (styled like
-    the Direct path's "Q5" badge); the number bubble was removed.
+  - Interim step: each step mirrored the Direct / Simulation-CD display
+    with "[Key N] <question> / ↳ <answer>". Superseded by 3.6.
+
+3.6 Serial-lead Yes/No presentation (supersedes the A/B two-option layout)
+  A C&P key is a serial-lead key: "N (M)" means "Is statement N true?
+  Yes → next lead; No → jump to lead M." The old A/B layout showed lead
+  num_a as option A and lead num_b as option B, so choosing B looked like
+  it re-asked the same question with the alternate lead. Each couplet is
+  now worked the way a printed key is read:
+    - Couplet card — the single statement (lead num_a) shown in full,
+      up front, answered with Yes (matches → advance) / No (doesn't →
+      jump to lead num_b). Skip stays for upperside couplets.
+    - Breadcrumb — "Key 1: Yes › Key 2: No › Key 8: No › Key 9: Yes › …"
+      (the "→ M" arrow was dropped).
+    - Species-detail C&P path — each step shows the full statement with
+      "↳ Yes" / "↳ No".
+  Mapping: Yes ≡ the previous A choice, No ≡ the previous B choice, so
+  navigation, scoring and species_paths are UNCHANGED — this is a
+  presentation change only.
+  Jamides note: Jamides couplets pair two leads (e.g. 2·7), so a num_b
+  lead such as 7 has no card of its own; the breadcrumb reads
+  "Key 2: No › Key 8", not "… › Key 7 › …". (In a strictly per-lead key
+  the same code would show a Key 7 card.)
+  Guide links: the card shows lead num_a's text, so cp_1_21's guide link
+  was moved from question_phrase onto guide_phrase ("band in space 3").
+  Where a couplet's illustrated feature lives in the No branch (b_text),
+  a small "visual guide" link is appended so the guide stays reachable.
 
 
 4. BUG FIX — shared-lead navigation (Key 8 → Key 9)

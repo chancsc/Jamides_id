@@ -73,8 +73,12 @@
     .ks-cp.skipped { border-left-color: #b0a090; }
 
     .ks-cp-label {
-      padding: 0.65rem 0.85rem 0.25rem;
+      padding: 0.65rem 0.85rem 0.15rem;
       font-size: 0.87rem; font-weight: 600; color: var(--text); line-height: 1.4;
+    }
+    .ks-cp-statement {
+      padding: 0 0.85rem 0.4rem;
+      font-size: 0.9rem; color: var(--text); line-height: 1.5;
     }
     .ks-label-tag {
       display: inline-block;
@@ -109,6 +113,17 @@
     }
     .ks-btn:hover { background: #f0ece4; border-color: var(--primary); }
     .ks-btn.sel { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+    /* Yes / No answer row */
+    .ks-btn-row--yesno { flex-direction: row; gap: 0.5rem; padding-bottom: 0.5rem; }
+    .ks-btn-yes, .ks-btn-no {
+      flex: 1; justify-content: center; align-items: center;
+      font-weight: 700; font-size: 0.9rem; padding: 0.5rem;
+    }
+    .ks-btn-yes { color: var(--primary); }
+    .ks-btn-yes:hover { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .ks-btn-no { color: #b45; }
+    .ks-btn-no:hover { background: #b45; border-color: #b45; color: #fff; }
     .ks-btn-skip {
       border-style: dashed; color: var(--text-muted); font-style: italic;
       font-size: 0.75rem; justify-content: center;
