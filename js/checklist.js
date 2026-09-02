@@ -165,7 +165,11 @@ function initData(treeData, speciesData, borneoData) {
       return m;
     };
     for (const sp of borneoData.species || []) {
-      const feats = resolveFeatures(sp.features);
+      // Inherit the "like" counterpart's canonical features (shared gateway
+      // characters), then override/add this taxon's own features. This keeps the
+      // taxon a live candidate whenever a shared character is answered consistently.
+      const feats = sp.like && matrix.has(sp.like) ? new Map(matrix.get(sp.like)) : new Map();
+      for (const [q, c] of resolveFeatures(sp.features)) feats.set(q, c);
       matrix.set(sp.name, feats);
       cs.regions.set(sp.name, regionLabel);
       resultNotes.set(sp.name, sp.note || '');

@@ -106,6 +106,28 @@ function buildBorneoIndex(borneoData, treeData, speciesData) {
   for (const node of Object.values(treeData.nodes))
     if (node.type === 'question') idToText[node.id] = node.question;
   for (const q of borneoData.questions || []) idToText[q.id] = q.question;
+  const borneoQTexts = new Set((borneoData.questions || []).map(q => q.question));
+
+  const pathsMap = buildTreePaths(treeData);
+  const qNums = buildQuestionNumbers(treeData);
+  const resultByName = {};
+  for (const n of Object.values(treeData.nodes))
+    if (n.type === 'result' && n.name) resultByName[n.name] = n;
+
+  // Canonical feature map (question text -> answer) of a core species — used to
+  // inherit the gateway characters for a "like" Borneo taxon.
+  const coreFeatures = name => {
+    const node = resultByName[name];
+    const rf = (node && node.features) || {};
+    const canon = pickCanonicalPath(pathsMap.get(name) || [], (node && node.note) || '', rf) || [];
+    const m = new Map();
+    for (const s of canon)
+      if (s.question && s.choice && !s.choice.startsWith('Cannot determine')) m.set(s.question, s.choice);
+    for (const [q, c] of Object.entries(rf)) {
+      if (c.startsWith('Cannot determine')) m.delete(q); else m.set(q, c);
+    }
+    return m;
+  };
 
   const region = borneoData.region_label || 'Borneo';
   return (borneoData.species || []).map(sp => {
@@ -114,10 +136,21 @@ function buildBorneoIndex(borneoData, treeData, speciesData) {
     for (const s of speciesData.species) {
       if (s.name.split(' ').slice(0, 2).join(' ') === sp2) { spData = s; break; }
     }
-    const borneoFeatures = Object.entries(sp.features || {}).map(([qid, answer]) => ({
-      question: idToText[qid] || qid,
-      answer
-    }));
+
+    const feats = sp.like ? coreFeatures(sp.like) : new Map();
+    for (const [qid, answer] of Object.entries(sp.features || {})) {
+      const t = idToText[qid]; if (t) feats.set(t, answer);
+    }
+    // Ordered steps: shared gateway questions (which carry a Q-number) first in
+    // Q-number order, then regional-specific characters (badged with the region).
+    const borneoFeatures = [...feats.entries()]
+      .map(([question, answer]) => ({
+        question, answer,
+        qnum: qNums.get(question) || null,
+        region: borneoQTexts.has(question) ? region : null
+      }))
+      .sort((a, b) => (a.qnum ? 0 : 1) - (b.qnum ? 0 : 1) || (a.qnum || 0) - (b.qnum || 0));
+
     return {
       name: sp.name,
       common_name: (spData && spData.common_name) || '',
@@ -133,19 +166,26 @@ function buildBorneoIndex(borneoData, treeData, speciesData) {
   });
 }
 
-// Render a regional taxon's diagnostic characters as a collapsible feature list,
-// styled like the C&P key path (statement + "↳ answer").
+// Render a regional taxon's diagnostic characters as a numbered feature list —
+// step numbers and Q-numbers as in the Direct path; regional-only characters
+// carry the region badge in place of a Q-number.
 function buildBorneoFeatures(sp) {
   if (!sp.borneoFeatures || sp.borneoFeatures.length === 0) return '';
-  const steps = sp.borneoFeatures.map(f => `
-    <li class="path-step">
-      <span class="path-q">${escapeHtml(f.question)}</span>
-      <span class="path-a">&#8627; ${escapeHtml(f.answer)}</span>
-    </li>`).join('');
+  const steps = sp.borneoFeatures.map(f => {
+    const badge = f.qnum
+      ? `<span class="path-qnum">Q${f.qnum}</span> `
+      : (f.region ? `<span class="sp-region">${escapeHtml(f.region)}</span> ` : '');
+    return `
+      <li class="path-step">
+        <span class="path-q">${badge}${escapeHtml(f.question)}</span>
+        <span class="path-a">&#8627; ${escapeHtml(f.answer)}</span>
+      </li>`;
+  }).join('');
   const label = sp.region || 'Regional';
+  const n = sp.borneoFeatures.length;
   return `
-    <details class="path-details path-details--cpkey" open>
-      <summary class="path-summary">Diagnostic features — ${escapeHtml(label)} key (${sp.borneoFeatures.length})</summary>
+    <details class="path-details" open>
+      <summary class="path-summary">${escapeHtml(label)} key features — ${n} step${n !== 1 ? 's' : ''}</summary>
       <div class="path-content">
         <ol class="path-steps">${steps}</ol>
       </div>

@@ -57,71 +57,56 @@
       ]
     }
   ],
+  "_species_comment": "Each taxon may set \"like\": <core species name> to inherit that Malaysian species' canonical feature set (the shared gateway characters — striae style, inverted pattern, wedge spots, band dislocation, etc.); \"features\" then overrides/adds on top. This keeps a Borneo taxon a live candidate whenever the user answers a shared character consistently, and gives it a full Direct-style path. Taxa with no Malaysian counterpart (virgulatus, puloensis) list every feature explicitly.",
   "species": [
     {
       "name": "Jamides cyta lividus",
+      "like": "Jamides cyta minna",
       "note": "Borneo. Bornean subspecies of J. cyta. Underside as cyta — straight white striae with the spaces between the hindwing inner and outer submarginal striae strongly filled with dark brown. Male upperside whitish violet-blue with long paddle-shaped androconia; ♀ white, tinged blue.",
-      "features": {
-        "q_striae_style": "White, straight or slightly wavy striae",
-        "q_fw_vein3": "No — band continuous, space 3 more or less in line with spaces 4 and 5",
-        "q_hw_sub_dark": "Yes — strongly filled with dark brown (conspicuous dark band)"
-      }
+      "features": {}
     },
     {
       "name": "Jamides philatus armatheus",
+      "like": "Jamides philatus subditus",
       "note": "Borneo. Bornean subspecies of J. philatus. Forewing band in line; hindwing with prominent wedge-shaped submarginal spots, spot 6 about equal to spots 4–5. Male upperside bluish white, with androconia; ♀ white, tinged blue.",
       "features": {
-        "q_striae_style": "White, straight or slightly wavy striae",
-        "q_fw_vein3": "No — band continuous, space 3 more or less in line with spaces 4 and 5",
-        "q_hw_wedge_spots": "Yes — prominent black wedge-shaped (∧) spots on HW submarginal area",
         "q_bo_spot6": "Spot 6 about the same size as the spots in spaces 4 and 5",
         "q_bo_philatus_upperside": "Bluish white (♀ upperside white, tinged blue)"
       }
     },
     {
       "name": "Jamides philatus amphissyna",
+      "like": "Jamides philatus subditus",
       "note": "Borneo. Bornean subspecies of J. philatus. As armatheus but male upperside sky blue (♀ white). Hindwing wedge-shaped submarginal spots, spot 6 about equal to spots 4–5.",
       "features": {
-        "q_striae_style": "White, straight or slightly wavy striae",
-        "q_fw_vein3": "No — band continuous, space 3 more or less in line with spaces 4 and 5",
-        "q_hw_wedge_spots": "Yes — prominent black wedge-shaped (∧) spots on HW submarginal area",
         "q_bo_spot6": "Spot 6 about the same size as the spots in spaces 4 and 5",
         "q_bo_philatus_upperside": "Sky blue (♀ upperside white)"
       }
     },
     {
       "name": "Jamides celeno lawasa",
+      "like": "Jamides celeno aelianus",
       "note": "Borneo. Bornean subspecies of J. celeno. Underside pale greyish-brown; hindwing orange area in space 2 usually under 1 mm. Male upperside greyish white, with androconia; forewing black border more than 1 mm in spaces 3–6.",
       "features": {
-        "q_striae_style": "White, straight or slightly wavy striae",
-        "q_fw_vein3": "No — band continuous, space 3 more or less in line with spaces 4 and 5",
-        "q_hw_wedge_spots": "No — submarginal spots absent or not wedge-shaped (∧)",
-        "q_bo_celeno_ground": "Pale greyish-brown; orange area in space 2 usually less than 1 mm",
-        "q_celeno_fw_border": "Broad, conspicuously wide — at least 1.0mm at apex (upperside)"
+        "q_bo_celeno_ground": "Pale greyish-brown; orange area in space 2 usually less than 1 mm"
       }
     },
     {
       "name": "Jamides zebra zebra",
+      "like": "Jamides zebra lakatti",
       "note": "Borneo. Bornean subspecies of J. zebra. Underside greyish-brown; hindwing orange area in space 2 usually over 1 mm; hindwing postdiscal white striae completely dislocated at vein 6. Male upperside with thread-like forewing border.",
       "features": {
-        "q_striae_style": "White, straight or slightly wavy striae",
-        "q_fw_vein3": "No — band continuous, space 3 more or less in line with spaces 4 and 5",
-        "q_hw_wedge_spots": "No — submarginal spots absent or not wedge-shaped (∧)",
         "q_bo_celeno_ground": "Greyish-brown; orange area in space 2 usually more than 1 mm",
-        "q_bo_hw_striae_vein6": "Yes — hindwing postdiscal striae dislocated at vein 6",
-        "q_celeno_fw_border": "Thread-like or very slightly expanding — much narrower than 1.0mm (upperside)"
+        "q_bo_hw_striae_vein6": "Yes — hindwing postdiscal striae dislocated at vein 6"
       }
     },
     {
       "name": "Jamides pura tenus",
+      "like": "Jamides pura pura",
       "note": "Borneo. Bornean subspecies of J. pura. Underside greyish-brown; hindwing orange area in space 2 usually over 1 mm; hindwing postdiscal white striae NOT dislocated at vein 6. Male upperside with thread-like forewing border.",
       "features": {
-        "q_striae_style": "White, straight or slightly wavy striae",
-        "q_fw_vein3": "No — band continuous, space 3 more or less in line with spaces 4 and 5",
-        "q_hw_wedge_spots": "No — submarginal spots absent or not wedge-shaped (∧)",
         "q_bo_celeno_ground": "Greyish-brown; orange area in space 2 usually more than 1 mm",
-        "q_bo_hw_striae_vein6": "No — hindwing postdiscal striae not dislocated at vein 6",
-        "q_celeno_fw_border": "Thread-like or very slightly expanding — much narrower than 1.0mm (upperside)"
+        "q_bo_hw_striae_vein6": "No — hindwing postdiscal striae not dislocated at vein 6"
       }
     },
     {
@@ -129,6 +114,10 @@
       "note": "Borneo. Forewing band completely dislocated at vein 4, also slightly dislocated at vein 6; hindwing subbasal stria in space 7 in line with the cell striae. Male upperside bright blue, forewing black border regular about 1 mm, no androconia; ♀ pale sky blue.",
       "features": {
         "q_striae_style": "White, straight or slightly wavy striae",
+        "q_inverted": "No — grey or pale grey ground with white striae",
+        "q_hw_wedge_spots": "No — submarginal spots absent or not wedge-shaped (∧)",
+        "q_hw_sub_dark": "No — not distinctly darkened (or at most barely darker than ground)",
+        "q_lugine_ground_colour": "No — typical pale grey ground colour",
         "q_fw_vein3": "Yes — band completely dislocated at vein 3 (space 3 portion shifted inward)",
         "q_fw_vein6": "Yes — band also slightly dislocated at vein 6 (space 6 shifted inward)",
         "q_bo_hw_stria7_cell": "Yes — subbasal stria in space 7 in line with the cell striae",
@@ -140,6 +129,10 @@
       "note": "Borneo. Forewing band completely dislocated at vein 4, also slightly dislocated at vein 6; hindwing subbasal stria in space 7 in line with the cell striae. Male upperside shining white with bluish tints, forewing border a thread, no androconia; ♀ white.",
       "features": {
         "q_striae_style": "White, straight or slightly wavy striae",
+        "q_inverted": "No — grey or pale grey ground with white striae",
+        "q_hw_wedge_spots": "No — submarginal spots absent or not wedge-shaped (∧)",
+        "q_hw_sub_dark": "No — not distinctly darkened (or at most barely darker than ground)",
+        "q_lugine_ground_colour": "No — typical pale grey ground colour",
         "q_fw_vein3": "Yes — band completely dislocated at vein 3 (space 3 portion shifted inward)",
         "q_fw_vein6": "Yes — band also slightly dislocated at vein 6 (space 6 shifted inward)",
         "q_bo_hw_stria7_cell": "Yes — subbasal stria in space 7 in line with the cell striae",
