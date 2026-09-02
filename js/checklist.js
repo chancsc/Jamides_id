@@ -7,6 +7,8 @@ const cs = {
   questionNumbers: null,  // Map<questionText, number> — stable Q-numbers by DFS order
   resultNotes: null,      // Map<name, string>
   speciesInfo: null,      // Map<name, {common_name, inat_url}>
+  regions: null,          // Map<name, string> — e.g. "Borneo" (absent = core/Malaysian)
+  questionRegions: null,  // Map<questionText, string> — region tag for supplement-only questions
   treeNodes: null,        // raw nodes map from tree.json — used for CD-followup lookup
   answers: new Map(),     // Map<questionText, choiceLabel>
   scores: [],
@@ -54,8 +56,10 @@ function clearSavedAnswers() {
 
 // ── Data initialisation ──────────────────────────────────────────────────────
 
-function initData(treeData, speciesData) {
+function initData(treeData, speciesData, borneoData) {
   cs.treeNodes = treeData.nodes;
+  cs.regions = new Map();
+  cs.questionRegions = new Map();
   const pathsMap = buildTreePaths(treeData);
   const matrix = new Map();
   const qMeta = new Map();
@@ -133,6 +137,58 @@ function initData(treeData, speciesData) {
       common_name: sp ? (sp.common_name || '') : '',
       inat_url: sp ? sp.inat_url : `https://www.inaturalist.org/search?q=${encodeURIComponent(sp2)}`,
     });
+  }
+
+  // ── Regional supplement (e.g. Borneo) ───────────────────────────────────────
+  // Adds taxa and questions that live outside the core decision tree. New taxa
+  // carry an explicit feature map; new questions carry their own choices/hint.
+  // Feature keys reference question node ids (existing tree ids or new supplement
+  // ids); we resolve them to question text so they slot into the same matrix.
+  if (borneoData) {
+    const regionLabel = borneoData.region_label || 'Borneo';
+    const idToText = {};
+    for (const node of Object.values(treeData.nodes)) {
+      if (node.type === 'question') idToText[node.id] = node.question;
+    }
+    for (const q of borneoData.questions || []) {
+      idToText[q.id] = q.question;
+      if (!qMeta.has(q.question))
+        qMeta.set(q.question, { choices: (q.choices || []).slice(), hint: q.hint || '' });
+      cs.questionRegions.set(q.question, regionLabel);
+    }
+    const resolveFeatures = obj => {
+      const m = new Map();
+      for (const [qid, choice] of Object.entries(obj || {})) {
+        const qtext = idToText[qid];
+        if (qtext) m.set(qtext, choice);
+      }
+      return m;
+    };
+    for (const sp of borneoData.species || []) {
+      const feats = resolveFeatures(sp.features);
+      matrix.set(sp.name, feats);
+      cs.regions.set(sp.name, regionLabel);
+      resultNotes.set(sp.name, sp.note || '');
+      for (const q of feats.keys()) qCov.set(q, (qCov.get(q) || 0) + 1);
+      const sp2 = sp.name.split(' ').slice(0, 2).join(' ');
+      const s = sp2Map.get(sp2);
+      spInfo.set(sp.name, {
+        common_name: s ? (s.common_name || '') : '',
+        inat_url: s ? s.inat_url : `https://www.inaturalist.org/search?q=${encodeURIComponent(sp2)}`,
+      });
+    }
+    // Augment existing (core) species with supplement-only characters so the new
+    // questions can actually discriminate against them.
+    for (const aug of borneoData.augment || []) {
+      const feats = matrix.get(aug.name);
+      if (!feats) continue;
+      for (const [qid, choice] of Object.entries(aug.features || {})) {
+        const qtext = idToText[qid];
+        if (!qtext) continue;
+        if (!feats.has(qtext)) qCov.set(qtext, (qCov.get(qtext) || 0) + 1);
+        feats.set(qtext, choice);
+      }
+    }
   }
 
   cs.featureMatrix = matrix;
@@ -254,6 +310,7 @@ function renderCandidates() {
 
   listEl.innerHTML = top.map((s, i) => {
     const info = cs.speciesInfo.get(s.name) || {};
+    const region = cs.regions && cs.regions.get(s.name);
     const barW = s.max > 0 ? Math.round(Math.max(0, s.score) / s.max * 100) : 0;
     const isExpanded = cs.expandedName === s.name;
     const inatHref = info.inat_url ? esc(info.inat_url) : '';
@@ -262,7 +319,7 @@ function renderCandidates() {
         <div class="cl-cand-row" role="button" tabindex="0" aria-expanded="${isExpanded}">
           <span class="cl-rank">${medals[i] || i + 1}</span>
           <span class="cl-cname">
-            <em class="cl-sci">${esc(s.name)}</em>
+            <em class="cl-sci">${esc(s.name)}${region ? ` <span class="cl-region">${esc(region)}</span>` : ''}</em>
             ${info.common_name ? `<span class="cl-common">${esc(info.common_name)}</span>` : ''}
           </span>
           <span class="cl-bar-wrap">
@@ -333,9 +390,11 @@ function renderQuestions() {
     const qNum = cs.questionNumbers && cs.questionNumbers.has(q)
       ? `<span class="cl-qnum">Q${cs.questionNumbers.get(q)}</span> `
       : '';
+    const qRegion = cs.questionRegions && cs.questionRegions.get(q);
+    const qRegionTag = qRegion ? `<span class="cl-region">${esc(qRegion)}</span> ` : '';
     return `
       <div class="cl-q${sel ? ' answered' : ''}">
-        <p class="cl-qtext">${qNum}${linkifyQ(q)}</p>
+        <p class="cl-qtext">${qNum}${qRegionTag}${linkifyQ(q)}</p>
         ${hintHTML}
         <div class="cl-choices">${btns}</div>
       </div>`;
@@ -400,12 +459,15 @@ function onCandidateClick(e) {
 
 async function init() {
   try {
-    const [treeData, speciesData] = await Promise.all([
+    const [treeData, speciesData, borneoData] = await Promise.all([
       fetch('data/tree.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error('tree.json'); return r.json(); }),
       fetch('data/species.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error('species.json'); return r.json(); }),
+      // Optional regional supplement; tolerate its absence.
+      fetch('data/borneo_supplement.json', { cache: 'no-cache' })
+        .then(r => (r.ok ? r.json() : null)).catch(() => null),
     ]);
 
-    initData(treeData, speciesData);
+    initData(treeData, speciesData, borneoData);
     cs.answers = loadAnswers();
     render();
 

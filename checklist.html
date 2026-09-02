@@ -130,6 +130,15 @@
       padding: 0.65rem 0.85rem 0.35rem;
       font-size: 0.87rem; font-weight: 600; color: var(--text); line-height: 1.4;
     }
+    /* Regional supplement badge (e.g. Borneo) — on candidate names and questions */
+    .cl-region {
+      display: inline-block;
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.03em;
+      text-transform: uppercase; font-style: normal;
+      color: #fff; background: #b8763a;
+      border-radius: 3px; padding: 0.05em 0.4em;
+      vertical-align: 0.1em; white-space: nowrap;
+    }
     .cl-hint {
       margin: 0 0.85rem 0.35rem;
       font-size: 0.75rem;
@@ -236,6 +245,7 @@
         Mark only the features visible in your photo — leave everything else blank.
         Species are scored and ranked in real time; unanswered features do not penalise any candidate.
         Tap a ranked candidate to see its identification note.
+        Bornean taxa and their features are marked <span class="cl-region">Borneo</span>.
       </p>
 
       <div class="cl-section-label">Observable features</div>
