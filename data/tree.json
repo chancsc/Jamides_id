@@ -345,8 +345,8 @@
           "next": "q_celeno_transparency_one"
         },
         {
-          "label": "Cannot determine FW border width (upperside)",
-          "next": "g_celeno_pura_zebra"
+          "label": "Cannot determine FW border width — check underside instead",
+          "next": "q_celeno_ground"
         }
       ]
     },
@@ -366,7 +366,49 @@
           "next": "r_zebra"
         },
         {
-          "label": "Cannot determine upperside transparency",
+          "label": "Cannot determine transparency — check underside instead",
+          "next": "q_zebra_pura_striae"
+        }
+      ]
+    },
+
+    "q_celeno_ground": {
+      "type": "question",
+      "id": "q_celeno_ground",
+      "question": "Underside ground colour and hindwing orange tornal area in space 2?",
+      "hint": "An underside alternative when the upperside (FW border width) can't be seen. J. celeno has a pale greyish-brown underside with the orange area in HW space 2 usually under 1 mm. J. zebra and J. pura have a browner (greyish-brown) underside with the orange area usually over 1 mm. (Character from the Bornean key; applies across the celeno subgroup.)",
+      "choices": [
+        {
+          "label": "Pale greyish-brown; orange area in space 2 usually less than 1 mm",
+          "next": "r_celeno"
+        },
+        {
+          "label": "Greyish-brown; orange area in space 2 usually more than 1 mm",
+          "next": "q_zebra_pura_striae"
+        },
+        {
+          "label": "Cannot determine underside ground colour",
+          "next": "g_celeno_pura_zebra"
+        }
+      ]
+    },
+
+    "q_zebra_pura_striae": {
+      "type": "question",
+      "id": "q_zebra_pura_striae",
+      "question": "On the hindwing underside, are the postdiscal white striae dislocated at vein 6 (the portion in space 6 shifted basad)?",
+      "hint": "An underside separator for J. zebra vs J. pura when the upperside can't be seen. In J. zebra the HW postdiscal white striae are completely dislocated at vein 6 (the space-6 portion shifted toward the base); in J. pura they run unbroken, not dislocated at vein 6. (Character from the Bornean key; applies across the celeno subgroup.)",
+      "choices": [
+        {
+          "label": "Yes — hindwing postdiscal striae dislocated at vein 6",
+          "next": "r_zebra"
+        },
+        {
+          "label": "No — hindwing postdiscal striae not dislocated at vein 6",
+          "next": "r_pura"
+        },
+        {
+          "label": "Cannot determine HW striae dislocation at vein 6",
           "next": "g_pura_zebra"
         }
       ]
@@ -522,7 +564,10 @@
       "taxon_id": null,
       "name": "Jamides celeno aelianus",
       "common_name": "Common Caerulean",
-      "note": "Celeno subgroup. The most widespread and abundant Jamides in the Malay Peninsula; gardens, secondary growth, and open forest below 1,200m. HW underside with a single subbasal pair of continuous white lines. FW postdiscal band continuous (vein 3–vein 7). Male: whitish blue upperside with conspicuously broad black FW border reaching at least 1.0mm at the apex. Female: characteristically dingy whitish blue (less clear and bright than J. pura or J. zebra). Tailed at vein 2."
+      "note": "Celeno subgroup. The most widespread and abundant Jamides in the Malay Peninsula; gardens, secondary growth, and open forest below 1,200m. HW underside with a single subbasal pair of continuous white lines. FW postdiscal band continuous (vein 3–vein 7). Male: whitish blue upperside with conspicuously broad black FW border reaching at least 1.0mm at the apex. Female: characteristically dingy whitish blue (less clear and bright than J. pura or J. zebra). Tailed at vein 2.",
+      "features": {
+        "Underside ground colour and hindwing orange tornal area in space 2?": "Pale greyish-brown; orange area in space 2 usually less than 1 mm"
+      }
     },
 
     "r_pura": {
@@ -531,7 +576,11 @@
       "taxon_id": null,
       "name": "Jamides pura pura",
       "common_name": "White Caerulean",
-      "note": "Celeno subgroup. Lowland forest; Langkawi Islands to Singapore. HW underside with a single subbasal pair of continuous white lines. FW postdiscal band continuous (vein 3–vein 7). Underside markings often visible from the upperside by transparency (in males). Male: clear unicolorous blue with thread-like FW border. Female: pale clear blue, brighter and clearer than J. celeno. Tailed at vein 2."
+      "note": "Celeno subgroup. Lowland forest; Langkawi Islands to Singapore. HW underside with a single subbasal pair of continuous white lines. FW postdiscal band continuous (vein 3–vein 7). Underside markings often visible from the upperside by transparency (in males). Male: clear unicolorous blue with thread-like FW border. Female: pale clear blue, brighter and clearer than J. celeno. Tailed at vein 2.",
+      "features": {
+        "Underside ground colour and hindwing orange tornal area in space 2?": "Greyish-brown; orange area in space 2 usually more than 1 mm",
+        "On the hindwing underside, are the postdiscal white striae dislocated at vein 6 (the portion in space 6 shifted basad)?": "No — hindwing postdiscal striae not dislocated at vein 6"
+      }
     },
 
     "r_zebra": {
@@ -540,7 +589,11 @@
       "taxon_id": null,
       "name": "Jamides zebra lakatti",
       "common_name": "Zebra Caerulean",
-      "note": "Celeno subgroup. Primary forest. HW underside with a single subbasal pair of continuous white lines. FW postdiscal band continuous (vein 3–vein 7). Underside markings barely visible from the upperside by transparency. Male: clearer blue than J. celeno; blue deepens toward FW apex; black border slightly and diffusely expanding at the apex. Female: brighter and clearer blue than the dingy J. celeno. Tailed at vein 2."
+      "note": "Celeno subgroup. Primary forest. HW underside with a single subbasal pair of continuous white lines. FW postdiscal band continuous (vein 3–vein 7). Underside markings barely visible from the upperside by transparency. Male: clearer blue than J. celeno; blue deepens toward FW apex; black border slightly and diffusely expanding at the apex. Female: brighter and clearer blue than the dingy J. celeno. Tailed at vein 2.",
+      "features": {
+        "Underside ground colour and hindwing orange tornal area in space 2?": "Greyish-brown; orange area in space 2 usually more than 1 mm",
+        "On the hindwing underside, are the postdiscal white striae dislocated at vein 6 (the portion in space 6 shifted basad)?": "Yes — hindwing postdiscal striae dislocated at vein 6"
+      }
     },
 
     "g_aratus_philatus": {

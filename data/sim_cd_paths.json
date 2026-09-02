@@ -97,12 +97,12 @@
       "choice": "One pair of white lines (subbasal pair only)"
     },
     {
-      "question": "In the male, how broad is the forewing black border at the apex? (Jamides celeno vs pura/zebra — upperside character)",
-      "choice": "Cannot determine FW border width (upperside)"
+      "question": "Underside ground colour and hindwing orange tornal area in space 2?",
+      "choice": "Pale greyish-brown; orange area in space 2 usually less than 1 mm"
     },
     {
-      "question": "Are the underside markings clearly visible from the upperside by transparency? (Jamides pura vs zebra — upperside or back-lit character)",
-      "choice": "Cannot determine upperside transparency"
+      "question": "In the male, how broad is the forewing black border at the apex? (Jamides celeno vs pura/zebra — upperside character)",
+      "choice": "Cannot determine FW border width — check underside instead"
     }
   ],
   "Jamides pura pura": [
@@ -135,12 +135,20 @@
       "choice": "One pair of white lines (subbasal pair only)"
     },
     {
+      "question": "Underside ground colour and hindwing orange tornal area in space 2?",
+      "choice": "Greyish-brown; orange area in space 2 usually more than 1 mm"
+    },
+    {
+      "question": "On the hindwing underside, are the postdiscal white striae dislocated at vein 6 (the portion in space 6 shifted basad)?",
+      "choice": "No — hindwing postdiscal striae not dislocated at vein 6"
+    },
+    {
       "question": "In the male, how broad is the forewing black border at the apex? (Jamides celeno vs pura/zebra — upperside character)",
-      "choice": "Cannot determine FW border width (upperside)"
+      "choice": "Cannot determine FW border width — check underside instead"
     },
     {
       "question": "Are the underside markings clearly visible from the upperside by transparency? (Jamides pura vs zebra — upperside or back-lit character)",
-      "choice": "Cannot determine upperside transparency"
+      "choice": "Cannot determine transparency — check underside instead"
     }
   ],
   "Jamides zebra lakatti": [
@@ -173,12 +181,20 @@
       "choice": "One pair of white lines (subbasal pair only)"
     },
     {
+      "question": "Underside ground colour and hindwing orange tornal area in space 2?",
+      "choice": "Greyish-brown; orange area in space 2 usually more than 1 mm"
+    },
+    {
+      "question": "On the hindwing underside, are the postdiscal white striae dislocated at vein 6 (the portion in space 6 shifted basad)?",
+      "choice": "Yes — hindwing postdiscal striae dislocated at vein 6"
+    },
+    {
       "question": "In the male, how broad is the forewing black border at the apex? (Jamides celeno vs pura/zebra — upperside character)",
-      "choice": "Cannot determine FW border width (upperside)"
+      "choice": "Cannot determine FW border width — check underside instead"
     },
     {
       "question": "Are the underside markings clearly visible from the upperside by transparency? (Jamides pura vs zebra — upperside or back-lit character)",
-      "choice": "Cannot determine upperside transparency"
+      "choice": "Cannot determine transparency — check underside instead"
     }
   ]
 }
