@@ -98,6 +98,60 @@ function buildSpeciesIndex(treeData, speciesData) {
   return index.sort((a, b) => a.name.localeCompare(b.name));
 }
 
+// Build species-index entries for the regional supplement (e.g. Borneo).
+// These taxa aren't in the decision tree, so they carry no Direct/C&P path —
+// instead each keeps its diagnostic characters (question → answer) for display.
+function buildBorneoIndex(borneoData, treeData, speciesData) {
+  const idToText = {};
+  for (const node of Object.values(treeData.nodes))
+    if (node.type === 'question') idToText[node.id] = node.question;
+  for (const q of borneoData.questions || []) idToText[q.id] = q.question;
+
+  const region = borneoData.region_label || 'Borneo';
+  return (borneoData.species || []).map(sp => {
+    const sp2 = sp.name.split(' ').slice(0, 2).join(' ');
+    let spData = null;
+    for (const s of speciesData.species) {
+      if (s.name.split(' ').slice(0, 2).join(' ') === sp2) { spData = s; break; }
+    }
+    const borneoFeatures = Object.entries(sp.features || {}).map(([qid, answer]) => ({
+      question: idToText[qid] || qid,
+      answer
+    }));
+    return {
+      name: sp.name,
+      common_name: (spData && spData.common_name) || '',
+      note: sp.note || '',
+      taxon_photos: (spData && spData.taxon_photos) || [],
+      inat_url: (spData && spData.inat_url)
+        || `https://www.inaturalist.org/search?q=${encodeURIComponent(sp2)}`,
+      paths: [],
+      resultFeatures: {},
+      region,
+      borneoFeatures
+    };
+  });
+}
+
+// Render a regional taxon's diagnostic characters as a collapsible feature list,
+// styled like the C&P key path (statement + "↳ answer").
+function buildBorneoFeatures(sp) {
+  if (!sp.borneoFeatures || sp.borneoFeatures.length === 0) return '';
+  const steps = sp.borneoFeatures.map(f => `
+    <li class="path-step">
+      <span class="path-q">${escapeHtml(f.question)}</span>
+      <span class="path-a">&#8627; ${escapeHtml(f.answer)}</span>
+    </li>`).join('');
+  const label = sp.region || 'Regional';
+  return `
+    <details class="path-details path-details--cpkey" open>
+      <summary class="path-summary">Diagnostic features — ${escapeHtml(label)} key (${sp.borneoFeatures.length})</summary>
+      <div class="path-content">
+        <ol class="path-steps">${steps}</ol>
+      </div>
+    </details>`;
+}
+
 // ===== Main render =====
 
 function render() {
@@ -321,7 +375,7 @@ function renderSearchList(query) {
 
   resultsEl.innerHTML = matches.map(s => `
     <button class="search-item" role="listitem" data-name="${escapeAttr(s.name)}">
-      <span class="search-item-sci">${escapeHtml(s.name)}</span>
+      <span class="search-item-sci">${escapeHtml(s.name)}${s.region ? ` <span class="sp-region">${escapeHtml(s.region)}</span>` : ''}</span>
       ${s.common_name ? `<span class="search-item-common">${escapeHtml(s.common_name)}</span>` : ''}
     </button>
   `).join('');
@@ -643,16 +697,25 @@ async function initSpeciesPage() {
   const loadingEl = document.getElementById('loading');
   const appEl = document.getElementById('species-app');
   try {
-    const [treeRes, speciesRes, simCdRes, idKeyRes] = await Promise.all([
+    const [treeRes, speciesRes, simCdRes, idKeyRes, borneoRes] = await Promise.all([
       fetch('data/tree.json', { cache: 'no-cache' }),
       fetch('data/species.json', { cache: 'no-cache' }),
       fetch('data/sim_cd_paths.json', { cache: 'no-cache' }),
-      fetch('data/id_key.json', { cache: 'no-cache' })
+      fetch('data/id_key.json', { cache: 'no-cache' }),
+      fetch('data/borneo_supplement.json', { cache: 'no-cache' }).catch(() => null)
     ]);
     if (!treeRes.ok || !speciesRes.ok) throw new Error('Failed to load data');
     const [treeData, speciesData] = await Promise.all([treeRes.json(), speciesRes.json()]);
     state.tree = treeData;
     state.speciesIndex = buildSpeciesIndex(treeData, speciesData);
+    // Append regional-supplement taxa (e.g. Borneo), badged and shown with their
+    // diagnostic characters rather than a tree/C&P path (which they don't have).
+    const borneoData = borneoRes && borneoRes.ok ? await borneoRes.json() : null;
+    if (borneoData) {
+      state.speciesIndex = state.speciesIndex
+        .concat(buildBorneoIndex(borneoData, treeData, speciesData))
+        .sort((a, b) => a.name.localeCompare(b.name));
+    }
     state.questionNumbers = buildQuestionNumbers(treeData);
     state.simCdPaths = simCdRes.ok ? new Map(Object.entries(await simCdRes.json())) : null;
     state.idKeyData = idKeyRes.ok ? await idKeyRes.json() : null;
@@ -785,13 +848,20 @@ function showSpeciesDetailInline(sp) {
   detailEl.style.display = 'block';
   detailEl.scrollTop = 0;
   const noteHTML = sp.note ? `<div class="id-note">${escapeHtml(sp.note)}</div>` : '';
+  const regionBadge = sp.region ? ` <span class="sp-region">${escapeHtml(sp.region)}</span>` : '';
+  // Scientific-name line: shown under the common name; if there is no common name
+  // the heading already carries the name, so show only the region badge there.
+  const nameLine = sp.common_name
+    ? `<p class="species-name">${escapeHtml(sp.name)}${regionBadge}</p>`
+    : (sp.region ? `<p class="species-name">${regionBadge}</p>` : '');
   detailEl.innerHTML = `
     <span class="result-badge">Species Info</span>
     <h2 class="species-common">${escapeHtml(sp.common_name || sp.name)}</h2>
-    ${sp.common_name ? `<p class="species-name">${escapeHtml(sp.name)}</p>` : ''}
+    ${nameLine}
     ${noteHTML}
     ${buildPathDisplay(sp.paths, sp.note, sp.resultFeatures, sp.name)}
     ${buildCPKeyPath(sp.name)}
+    ${buildBorneoFeatures(sp)}
     <a class="btn-inat" href="${escapeAttr(sp.inat_url)}" target="_blank" rel="noopener noreferrer">
       ${iconExternal()} View on iNaturalist
     </a>

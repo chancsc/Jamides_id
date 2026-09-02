@@ -657,6 +657,16 @@ body {
   font-weight: 500;
 }
 
+/* Regional-supplement badge (e.g. Borneo) — search list & species detail */
+.sp-region {
+  display: inline-block;
+  font-size: 0.58rem; font-weight: 700; letter-spacing: 0.03em;
+  text-transform: uppercase; font-style: normal;
+  color: #fff; background: #b8763a;
+  border-radius: 3px; padding: 0.05em 0.4em;
+  vertical-align: 0.12em; white-space: nowrap;
+}
+
 .search-item-common {
   display: block;
   font-size: 0.76rem;
