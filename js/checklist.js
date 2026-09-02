@@ -358,13 +358,17 @@ function renderQuestions() {
 
   // Show questions in their stable order. Cap the unanswered tail at 15 so the
   // initial list isn't overwhelming; answered questions are always shown regardless.
+  // Regional-supplement questions (e.g. Borneo) are exempt from the cap so they
+  // stay findable — getDisplayQuestions() already drops them once their taxa are
+  // ruled out, so this only shows the few that are still relevant.
+  const isRegionalQ = q => cs.questionRegions && cs.questionRegions.has(q);
   const unansweredSeen = [];
   const visible = qs.filter(q => {
-    if (cs.answers.has(q)) return true;
+    if (cs.answers.has(q) || isRegionalQ(q)) return true;
     unansweredSeen.push(q);
     return cs.showAll || unansweredSeen.length <= 15;
   });
-  const unansweredQs = qs.filter(q => !cs.answers.has(q));
+  const unansweredQs = qs.filter(q => !cs.answers.has(q) && !isRegionalQ(q));
 
   el.innerHTML = visible.map((q, idx) => {
     const meta = cs.questionMeta.get(q) || { choices: [], hint: '' };
