@@ -1,0 +1,84 @@
+Key for the separation of the Bornean species of Jamides
+
+1 (17) UnF postdiscal band in space 3 more or less in line with the band in spaces 4 and 5.
+
+2 (6) UnF postdiscal band slightly dislocated at vein 6, with the portion in space 6 shifted basad.
+
+3 (4) ♂ Up whitish violet-blue, with long paddle-shaped androconia; F black border a thread. ♀ Up white, tinged with blue.
+J. cyta lividus
+
+4 (5) ♂ Up dull purple, without androconia; F with narrow black border. ♀ Up paler purple.
+J. lugine
+
+5 ♂ Up metallic blue, without androconia; F black border very broad. ♀ Up non-metallic blue.
+J. bochus nabonassar
+
+6 UnF postdiscal band continuous from spaces 3 to 6.
+
+7 (12) UnH with the spaces between the inner and outer submarginal striae forming prominent black, wedge-shaped spots.
+
+8 (11) UnH submarginal black spot in space 6 almost the same as the spots in spaces 4 and 5.
+
+9 (10) ♂ Up bluish white, with androconia; ♀ Up white, slightly tinged with blue.
+J. philatus armatheus
+
+10 ♂ Up sky blue, with androconia; ♀ Up white.
+J. philatus amphissyna
+
+11 UnH submarginal black spot in space 6 rather quadrate and larger than the other spots. ♂ Up white, with androconia. ♀ Up white.
+J. aratus adana
+
+12 UnH spaces between the inner and outer submarginal striae not prominently blackened and not wedge-shaped.
+
+13 (14) Un pale greyish brown; H the submarginal orange area in space 2 usually less than 1 mm in width. ♂ Up greyish white, with androconia; F black border more than 1 mm in spaces 3 to 6. ♀ Up sullied white, slightly tinged with grey.
+J. celeno lawasa
+
+14 Un greyish brown; H the submarginal orange area in space 2 usually more than 1 mm in width. ♂ Up slightly shining pale bluish white, with androconia; F black border a thread, or expands slightly and diffusely towards the apex. ♀ Up white, slightly tinged with blue; F with broad black border in varying width.
+
+15 (16) UnH postdiscal white striae completely dislocated at vein 6, the portion in space 6 shifted basad.
+J. zebra zebra
+
+16 UnH postdiscal white striae not dislocated at vein 6.
+J. pura tenus
+
+17 UnF postdiscal band completely dislocated at vein 4, so that the inner stria in space 3 forms a more or less continuous line with the outer stria of the end-cell bar and the outer postdiscal striae in spaces 1b and 2.
+
+18 (30) UnF postdiscal band slightly dislocated at vein 6, the portion in space 6 shifted basad.
+
+19 (22) UnH subbasal white striae in space 7 in line with those in cell.
+
+20 (21) ♂ Up bright blue; F black border regular, about 1 mm from tornus to apex; no androconia. ♀ Up pale sky blue, sometimes rather greyish.
+J. virgulatus virgulatus
+
+21 ♂ Up shining white with some tints of blue; F black border a thread; no androconia. ♀ Up white.
+J. puloensis
+
+22 UnH subbasal white striae in space 7 not in line with those in cell.
+
+23 (26) UnF usually with a pair of costal white dashes above the end-cell bar.
+
+24 (25) Small, FWL less than 15 mm. ♂ Up shining blue, with F black border 1 mm at tornus increasing to at least 2 mm at apex; no androconia. ♀ Up pale sky blue.
+J. talinga
+
+25 Large, FWL at least 18 mm. Un striae broad and rather diffuse; H orange tornal area large. ♂ Up shining blue, with border a thread; no androconia.
+J. limes
+
+26 UnF without costal dashes above the end-cell.
+
+Abbreviations:
+
+UnF = underside of forewing
+
+UnH = underside of hindwing
+
+Up = upperside
+
+F = forewing
+
+H = hindwing
+
+FWL = forewing length
+
+♂ / ♀ = male / female
+
+basad = toward the base of the wing
