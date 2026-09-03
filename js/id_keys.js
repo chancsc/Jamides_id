@@ -314,8 +314,15 @@ function ksRender() {
 
   const badge = document.getElementById('ks-answered-count');
   if (badge) {
+    const answered = ks.answers.filter(a => a.choice !== 'skip').length;
     if (ks.result) {
       badge.textContent = `Key ${ks.result.leadNum}`;
+    } else if (answered > 0) {
+      // Candidates still consistent with the answers so far: a species is
+      // filtered off once an answer puts it on the opposite branch of a
+      // couplet it appears in (score < max); untouched species stay in play.
+      const left = ks.scores.filter(s => s.score === s.max).length;
+      badge.textContent = `${left} species left`;
     } else if (ks.currentCouplet) {
       badge.textContent = `Key ${ks.currentCouplet.num_a}`;
     } else {
