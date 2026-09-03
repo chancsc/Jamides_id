@@ -421,12 +421,22 @@ function render() {
   renderCandidates();
   renderQuestions();
 
-  // Update answered-count badge
+  // Update badge: how many species remain consistent with the marked features.
+  // A species is "filtered off" when a marked (non-CD) feature it carries
+  // contradicts the user's answer; species lacking that feature stay in play.
   const badge = document.getElementById('cl-answered-count');
-  const meaningful = [...cs.answers.values()].filter(v => !v.startsWith('Cannot determine')).length;
-  if (badge) badge.textContent = meaningful > 0
-    ? `${meaningful} feature${meaningful !== 1 ? 's' : ''} marked`
-    : '';
+  if (badge) {
+    const answered = [...cs.answers.entries()].filter(([, a]) => !a.startsWith('Cannot determine'));
+    if (answered.length === 0) {
+      badge.textContent = '';
+    } else {
+      let left = 0;
+      for (const [, features] of cs.featureMatrix) {
+        if (!answered.some(([q, a]) => features.has(q) && features.get(q) !== a)) left++;
+      }
+      badge.textContent = `${left} species left`;
+    }
+  }
 }
 
 // ── Event handlers ───────────────────────────────────────────────────────────
