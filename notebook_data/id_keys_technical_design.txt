@@ -207,12 +207,32 @@ For each taxon T known from any couplet:
     if (inA && choice == 'A') or (inB && choice == 'B'): score_T += 1
     if (inA && choice == 'B') or (inB && choice == 'A'): score_T -= 1
 
-Candidates are ranked by score_T / max_T descending. The top 8 are
-shown in the panel with a proportional progress bar.
+Candidates are ranked by score_T / max_T descending.
 
 KEY PROPERTY: a taxon that does not appear in any side of a couplet is
 unaffected by that couplet's answer. Only couplets genuinely relevant to a
 taxon contribute to its score.
+
+3a. CANDIDATE FILTERING — "N species left"
+  The candidate panel does not list all taxa; it lists only those still
+  CONSISTENT with the answers so far, and the topbar shows their count as
+  "N species left". A taxon is "filtered off" the moment an answer places it
+  on the opposite branch of a couplet it appears in — i.e. it has picked up
+  at least one −1. In score terms that is exactly:
+
+      surviving  ⟺  score_T === max_T      (no mismatch on any answered couplet)
+
+  ksSurviving() returns ks.scores.filter(s => s.score === s.max); both the
+  topbar count and the candidate list (top 8 of the survivors) derive from it.
+  A taxon neutral to every answered couplet has score 0 === max 0, so it
+  stays "in play" until an answer actually contradicts it (standard key
+  behaviour — you cannot rule out an untested character). If every taxon is
+  contradicted the panel shows a "use Back to change a choice" hint.
+
+  Feature Scoring (checklist.js) shows the same "N species left" indicator,
+  but note its max is GLOBAL (incremented per answered question, not per
+  taxon), so there "surviving" is a per-feature mismatch test, NOT
+  score === max. Keep the two definitions distinct when porting.
 
 
 4. ADAPTING FOR ANOTHER GENUS
@@ -349,3 +369,89 @@ In id_key.json (per couplet):
   guide_phrase    phrase in a_text to linkify (else a trailing guide link)
   guide_link      href for guide_phrase
   question_phrase / question_link   legacy; retained but not rendered
+
+
+7. REGIONAL SUPPLEMENT (BORNEO)
+--------------------------------
+The app's primary coverage is the Malaysian Jamides (Peninsular + Sabah/
+Sarawak). A second regional key — the Bornean species (notebook_data/
+keys_borneo.txt) — is layered on WITHOUT touching the core key data, via
+data/borneo_supplement.json. This section documents that integration and
+is the template for adding any further region.
+
+7a. WHERE BORNEO APPEARS (and where it does not)
+  - Feature Scoring (checklist.html/js): Bornean taxa are added as scorable
+    candidates and Borneo-specific questions are added. Primary home.
+  - Species Search (species.html/app.js): Bornean taxa are listed (badged
+    "Borneo") with a numbered diagnostic path.
+  - C&P Key Scoring (this tool, id_key.json): NOT extended with the 8 Bornean
+    taxa. The C&P key remains the 19 Malaysian species + J. lucide. The only
+    Borneo-driven change here is data completeness for lucide (see 7e).
+  Rationale: Feature Scoring and Species Search are driven by data/tree.json
+  and the supplement; the C&P key is a distinct, self-contained serial key.
+
+7b. data/borneo_supplement.json  (consumed by checklist.js and app.js)
+  {
+    "region_label": "Borneo",
+    "questions": [ { id, question, hint, choices:[...] }, ... ],
+    "species":   [ { name, like?, note, features:{ qid: choiceLabel } }, ... ],
+    "augment":   [ { name, features:{ qid: choiceLabel } }, ... ]
+  }
+  - questions: region-specific characters that have no equivalent in
+    tree.json. Rendered with a "Borneo" badge; they carry no tree Q-number.
+  - species: the Bornean taxa. Feature keys are question node IDs — existing
+    tree.json IDs OR new supplement IDs — resolved to question text at load.
+  - augment: adds a feature to an EXISTING core taxon so a new question can
+    discriminate against it (e.g. give aratus the "spot 6 quadrate" value).
+
+7c. "like" INHERITANCE
+  A Bornean taxon that is a subspecies of a species already in tree.json
+  sets  "like": "<core taxon name>"  and inherits that species' full
+  canonical feature set (the shared "gateway" characters — striae style,
+  inverted pattern, wedge spots, band dislocation, etc.), then its own
+  "features" override/add on top. This is essential: without the gateway
+  features a Bornean taxon would drop out of the candidate pool the moment
+  the user answered a shared character it happens not to list. Taxa with no
+  core counterpart (virgulatus, puloensis) list every feature explicitly.
+  checklist.js: feats = new Map(matrix.get(like)); then apply overrides.
+  app.js buildBorneoIndex(): same, recomputed from the canonical path.
+
+7d. UNDERSIDE CD PATH (celeno / pura / zebra)  — tree.json change
+  The Malaysian key separated celeno/pura/zebra by UPPERSIDE only (border
+  width Q17, transparency Q18); their "Cannot determine" branch dead-ended
+  at an unresolved group. The Bornean key supplies underside separators, so
+  two general (species-level) questions were added to tree.json —
+  q_celeno_ground (ground colour + HW orange area; celeno vs zebra/pura) and
+  q_zebra_pura_striae (HW postdiscal striae dislocated at vein 6; zebra vs
+  pura) — wired as the CD target of Q17/Q18, with the matching features
+  added to r_celeno/r_pura/r_zebra. Because these characters are
+  species-level, the Bornean celeno lawasa / zebra zebra / pura tenus inherit
+  them automatically via "like"; the two originally Borneo-only questions
+  were consolidated into these tree questions. Regenerate sim_cd_paths.json
+  after such a change (node scripts/compute_sim_cd_paths.js).
+
+7e. C&P KEY DATA COMPLETENESS (lucide)
+  J. lucide is a terminal in the C&P key (Key 37) but appeared in only one
+  couplet's species lists. For the "N species left" filter to rule it out
+  correctly it must be listed on EVERY couplet on its path: it was added to
+  cp_1_21.species_b (dislocated side) as well as cp_22_37.species_b. General
+  rule: every taxon must appear in species_a/species_b of every couplet its
+  path passes through, or the scoring cannot filter it.
+
+7f. UI: REGION BADGES
+  checklist.js tracks cs.regions (taxon → label) and cs.questionRegions
+  (question text → label); app.js index entries carry a region field.
+  Both render a "Borneo" badge (.cl-region / .sp-region) on candidate names,
+  region-specific questions, and species-detail headers. Regional questions
+  are also exempt from the Feature-Scoring 15-question display cap so they
+  stay findable.
+
+7g. ADDING ANOTHER REGION
+  1. Author data/<region>_supplement.json (same shape; region_label set).
+  2. Load it alongside tree.json in checklist.js init() and app.js
+     initSpeciesPage() (tolerate its absence).
+  3. Prefer "like" for taxa that are subspecies of existing species; list
+     full features only for genuinely new taxa.
+  4. If a region contributes a genuinely general (species-level) character,
+     add it to tree.json instead so both the core and regional taxa share it
+     (see 7d), then regenerate sim_cd_paths.json.
