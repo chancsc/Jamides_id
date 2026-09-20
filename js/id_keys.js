@@ -188,6 +188,15 @@ function ksRenderText(text, phrase, url) {
 
 // ── Render ───────────────────────────────────────────────────────────────────
 
+// Candidates still consistent with the answers so far, in ranked order. A
+// species is filtered off once an answer puts it on the opposite branch of a
+// couplet it appears in (score < max); untouched species stay in play.
+function ksSurviving() {
+  const answered = ks.answers.filter(a => a.choice !== 'skip').length;
+  if (answered === 0) return ks.scores;
+  return ks.scores.filter(s => s.score === s.max);
+}
+
 function ksRenderCandidates() {
   const listEl = document.getElementById('ks-candidates');
   const nonSkip = ks.answers.filter(a => a.choice !== 'skip').length;
@@ -196,7 +205,13 @@ function ksRenderCandidates() {
     return;
   }
 
-  const top = ks.scores.slice(0, 8);
+  const surviving = ksSurviving();
+  if (surviving.length === 0) {
+    listEl.innerHTML = '<p class="ks-empty">No species match every answer — use Back to change a choice.</p>';
+    return;
+  }
+
+  const top = surviving.slice(0, 8);
   const medals = ['🥇', '🥈', '🥉'];
 
   listEl.innerHTML = top.map((s, i) => {
@@ -318,11 +333,7 @@ function ksRender() {
     if (ks.result) {
       badge.textContent = `Key ${ks.result.leadNum}`;
     } else if (answered > 0) {
-      // Candidates still consistent with the answers so far: a species is
-      // filtered off once an answer puts it on the opposite branch of a
-      // couplet it appears in (score < max); untouched species stay in play.
-      const left = ks.scores.filter(s => s.score === s.max).length;
-      badge.textContent = `${left} species left`;
+      badge.textContent = `${ksSurviving().length} species left`;
     } else if (ks.currentCouplet) {
       badge.textContent = `Key ${ks.currentCouplet.num_a}`;
     } else {

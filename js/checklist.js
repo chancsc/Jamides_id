@@ -299,6 +299,20 @@ function linkifyChoice(text) {
 }
 
 
+// Candidates still consistent with the marked features, in ranked order.
+// A species is filtered off once a marked (non-CD) feature it carries
+// contradicts the answer; species lacking that feature stay in play.
+// (Feature Scoring uses a global max, so this is a per-feature mismatch test,
+// not score === max.)
+function clSurviving() {
+  const answered = [...cs.answers.entries()].filter(([, a]) => !a.startsWith('Cannot determine'));
+  if (answered.length === 0) return cs.scores;
+  return cs.scores.filter(s => {
+    const feats = cs.featureMatrix.get(s.name) || new Map();
+    return !answered.some(([q, a]) => feats.has(q) && feats.get(q) !== a);
+  });
+}
+
 function renderCandidates() {
   const listEl = document.getElementById('cl-candidates');
   const detailEl = document.getElementById('cl-detail');
@@ -309,7 +323,14 @@ function renderCandidates() {
     return;
   }
 
-  const top = cs.scores.slice(0, 8);
+  const surviving = clSurviving();
+  if (surviving.length === 0) {
+    listEl.innerHTML = '<p class="cl-empty">No species match every marked feature — remove a selection to widen the search.</p>';
+    detailEl.style.display = 'none';
+    return;
+  }
+
+  const top = surviving.slice(0, 8);
   const medals = ['🥇', '🥈', '🥉'];
 
   listEl.innerHTML = top.map((s, i) => {
@@ -426,16 +447,8 @@ function render() {
   // contradicts the user's answer; species lacking that feature stay in play.
   const badge = document.getElementById('cl-answered-count');
   if (badge) {
-    const answered = [...cs.answers.entries()].filter(([, a]) => !a.startsWith('Cannot determine'));
-    if (answered.length === 0) {
-      badge.textContent = '';
-    } else {
-      let left = 0;
-      for (const [, features] of cs.featureMatrix) {
-        if (!answered.some(([q, a]) => features.has(q) && features.get(q) !== a)) left++;
-      }
-      badge.textContent = `${left} species left`;
-    }
+    const hasAnswer = [...cs.answers.values()].some(a => !a.startsWith('Cannot determine'));
+    badge.textContent = hasAnswer ? `${clSurviving().length} species left` : '';
   }
 }
 
