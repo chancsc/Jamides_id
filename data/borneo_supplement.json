@@ -3,6 +3,15 @@
   "_comment": "Supplements Feature Scoring with Bornean Jamides taxa from notebook_data/keys_borneo.txt. Loaded by js/checklist.js alongside tree.json; does NOT alter tree.json, so the ID Key / Direct-path tools are unaffected. Feature keys reference question node ids (existing tree.json ids or the new q_bo_* ids defined below); choice values must match the referenced question's choice labels verbatim.",
   "questions": [
     {
+      "id": "q_bo_celeno_ground",
+      "question": "Underside ground colour and hindwing orange tornal area in space 2 (Bornean celeno group)?",
+      "hint": "A Bornean character (reliable for the Bornean subspecies, not applied to the Malaysian ones). Separates celeno lawasa (pale greyish-brown; orange area in space 2 usually under 1 mm) from the zebra / pura pair (greyish-brown; orange area usually over 1 mm).",
+      "choices": [
+        "Pale greyish-brown; orange area in space 2 usually less than 1 mm",
+        "Greyish-brown; orange area in space 2 usually more than 1 mm"
+      ]
+    },
+    {
       "id": "q_bo_spot6",
       "question": "On the hindwing underside, how does the submarginal black spot in space 6 compare with the spots in spaces 4 and 5?",
       "hint": "A Bornean character separating philatus (spot 6 about equal to spots 4–5) from aratus (spot 6 quadrate and clearly larger).",
@@ -69,19 +78,25 @@
       "name": "Jamides celeno lawasa",
       "like": "Jamides celeno aelianus",
       "note": "Borneo. Bornean subspecies of J. celeno. Underside pale greyish-brown; hindwing orange area in space 2 usually under 1 mm. Male upperside greyish white, with androconia; forewing black border more than 1 mm in spaces 3–6.",
-      "features": {}
+      "features": {
+        "q_bo_celeno_ground": "Pale greyish-brown; orange area in space 2 usually less than 1 mm"
+      }
     },
     {
       "name": "Jamides zebra zebra",
       "like": "Jamides zebra lakatti",
       "note": "Borneo. Bornean subspecies of J. zebra. Underside greyish-brown; hindwing orange area in space 2 usually over 1 mm; hindwing postdiscal white striae completely dislocated at vein 6. Male upperside with thread-like forewing border.",
-      "features": {}
+      "features": {
+        "q_bo_celeno_ground": "Greyish-brown; orange area in space 2 usually more than 1 mm"
+      }
     },
     {
       "name": "Jamides pura tenus",
       "like": "Jamides pura pura",
       "note": "Borneo. Bornean subspecies of J. pura. Underside greyish-brown; hindwing orange area in space 2 usually over 1 mm; hindwing postdiscal white striae NOT dislocated at vein 6. Male upperside with thread-like forewing border.",
-      "features": {}
+      "features": {
+        "q_bo_celeno_ground": "Greyish-brown; orange area in space 2 usually more than 1 mm"
+      }
     },
     {
       "name": "Jamides virgulatus virgulatus",

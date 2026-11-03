@@ -419,16 +419,29 @@ is the template for adding any further region.
 7d. UNDERSIDE CD PATH (celeno / pura / zebra)  — tree.json change
   The Malaysian key separated celeno/pura/zebra by UPPERSIDE only (border
   width Q17, transparency Q18); their "Cannot determine" branch dead-ended
-  at an unresolved group. The Bornean key supplies underside separators, so
-  two general (species-level) questions were added to tree.json —
-  q_celeno_ground (ground colour + HW orange area; celeno vs zebra/pura) and
-  q_zebra_pura_striae (HW postdiscal striae dislocated at vein 6; zebra vs
-  pura) — wired as the CD target of Q17/Q18, with the matching features
-  added to r_celeno/r_pura/r_zebra. Because these characters are
-  species-level, the Bornean celeno lawasa / zebra zebra / pura tenus inherit
-  them automatically via "like"; the two originally Borneo-only questions
-  were consolidated into these tree questions. Regenerate sim_cd_paths.json
-  after such a change (node scripts/compute_sim_cd_paths.js).
+  at an unresolved group. The Bornean key supplies two underside characters,
+  but they differ in scope — a distinction that must be respected:
+
+    - HW postdiscal striae dislocated at vein 6 (zebra vs pura): SPECIES-level,
+      valid for the Malaysian taxa too. Kept as a general tree question
+      q_zebra_pura_striae, wired as the CD target of Q18 (transparency), with
+      the feature added to r_pura/r_zebra. The Bornean zebra zebra / pura tenus
+      inherit it via "like". This is the one working underside CD branch.
+
+    - Underside ground colour + HW orange area (celeno vs zebra/pura):
+      SUBSPECIES-level — reliable only for the Bornean taxa, NOT the Malaysian
+      ones. So it is NOT in the tree: it lives in borneo_supplement.json as the
+      Borneo-badged question q_bo_celeno_ground, carried only by celeno lawasa /
+      zebra zebra / pura tenus. The Malaysian r_celeno/r_pura/r_zebra do NOT
+      carry it, and Q17's CD reverts to the unresolved group g_celeno_pura_zebra
+      (Malaysian celeno genuinely cannot be separated from pura/zebra without
+      the upperside border).
+
+  LESSON: before promoting a regional character to a general tree question,
+  confirm it is species-level, not subspecies-level. A subspecies-level
+  character belongs in the regional supplement (badged), affecting only that
+  region's taxa. Regenerate sim_cd_paths.json after any such tree change
+  (node scripts/compute_sim_cd_paths.js).
 
 7e. C&P KEY DATA COMPLETENESS (lucide)
   J. lucide is a terminal in the C&P key (Key 37) but appeared in only one
